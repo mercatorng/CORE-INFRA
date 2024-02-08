@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .globalTransition {
-  @apply ease-out duration-300 transition-all;
+  @apply ease-in-out duration-300 transition-all;
 }
 
 /* .dot-grid-bg {

@@ -9,7 +9,7 @@ export const Navbar = () => {
   const notificationButtonClassname = "notificationButton";
 
   return (
-    <nav className="  border-white flex justify-between items-center pt-2 px-3 mb-16 md:px-16">
+    <nav className="  border-white flex justify-between items-center pt-2 px-3 mb-16 md:px-16 lg:px-24">
       {/* logo */}
       <div className=" w-[6rem] md:w-[160px]">
         <img src={logo} alt="logo" className=" w-full h-full object-cover" />
