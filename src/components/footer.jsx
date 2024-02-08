@@ -57,7 +57,7 @@ export const Footer = () => {
       </div>
       {/* footer content */}
       <div className=" pb-4 globalTransition bg-[#FDFDFD] pt-8 px-3 md:px-16 lg:px-24 text-sm md:text-base">
-        <div className=" lg:flex lg:justify-between lg:items-center">
+        <div className=" lg:flex lg:justify-between gap-x-4 lg:items-center">
           {/* logo */}
           <div className=" lg:mb-auto">
             <img src={coreInfraBlack} alt="logo" />
