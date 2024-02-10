@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import greenUnderline from "../assets/greenUnderline.svg";
 import { GlobalCTAButton } from "../components/button";
 import heroImg1 from "../assets/heroImg1.png";
 import companyLogo1 from "../assets/featherdev.png";
@@ -26,10 +25,10 @@ import padlockIcon from "../assets/padlock.svg";
 import headPhoneIcon from "../assets/headPhones.svg";
 import { Link, Element, animateScroll as scroll } from "react-scroll";
 import { useGlobalContext } from "../utils/context";
+import { GreenUnderline } from "../components/greenUnderline";
 
 export const Home = () => {
-
-  const {dispatch} = useGlobalContext()
+  const { dispatch } = useGlobalContext();
 
   const section2Data = [
     {
@@ -214,10 +213,10 @@ export const Home = () => {
     },
   ];
 
-  useEffect(()=>{
+  useEffect(() => {
     // set active page to empty string
     dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: "" });
-  },[])
+  }, []);
 
   const [activeLogoIndex, setActiveLogoIndex] = useState(0);
   useEffect(() => {
@@ -237,13 +236,12 @@ export const Home = () => {
     <>
       <section className=" px-3 md:px-16 lg:px-24">
         <div className=" mb-12">
-          <h1 className=" text-3xl relative z-20 font-medium mb-8 md:text-5xl lg:text-7xl  w-fit">
-            Transforming transactions, <br /> Elevating possibilities
-            <img
-              src={greenUnderline}
-              alt="green underline"
-              className=" absolute right-12 -bottom-1 w-[50%] -z-10 md:right-[4.5rem] md:-bottom-2 lg:right-[7rem]"
-            />
+          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit">
+            Transforming transactions, <br /> Elevating{" "}
+            <span className=" relative inline-block">
+              possibilities
+              <GreenUnderline  />
+            </span>
           </h1>
           <p className=" md:text-2xl">
             We are enabling a world where seamless transactions <br /> meet
@@ -327,7 +325,11 @@ export const Home = () => {
                     <h2 className=" font-bold text-lg md:text-2xl">
                       {headerText}
                     </h2>
-                    {text && <p className="  md:text-2xl w-[80vw] md:w-[70%] lg:w-full">{text}</p>}
+                    {text && (
+                      <p className="  md:text-2xl w-[80vw] md:w-[70%] lg:w-full">
+                        {text}
+                      </p>
+                    )}
                     {subText1 && (
                       <ul className=" list-disc list-inside  md:text-2xl ">
                         <li>{subText1}</li>

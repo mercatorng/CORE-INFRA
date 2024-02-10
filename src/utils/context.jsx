@@ -1,6 +1,7 @@
 import React, { useContext, useReducer } from "react";
 import { appReducer } from "./reducer";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export const AppContext = React.createContext();
 
@@ -11,8 +12,6 @@ export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, defaultState);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showUserSidebar, setShowUserSidebar] = useState(false);
-
-  console.log(defaultState.activePage);
 
   useEffect(() => {
     // Add an event listener to update the window width when it changes
@@ -36,12 +35,17 @@ export const AppProvider = ({ children }) => {
     setWindowWidth(window.innerWidth);
   };
 
-  //  checks if url is home
-  const getUrl = window.location.origin;
-  const homeUrl = getUrl === getUrl;
+  // check and set active page on page refresh
+  useEffect(() => {
+    dispatch({
+      type: "CHANGE_ACTIVE_PAGE",
+      payload: sessionStorage.getItem("activePage"),
+    });
+  }, []);
+
 
   return (
-    <AppContext.Provider value={{ ...state, homeUrl, dispatch }}>
+    <AppContext.Provider value={{ ...state, dispatch }}>
       {children}
     </AppContext.Provider>
   );

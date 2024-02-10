@@ -51,7 +51,7 @@ export const Footer = () => {
           />
           <GlobalCTAButton
             text={"Get started"}
-            style={" bg-ctaGreen text-gray-50"}
+            style={" bg-ctaGreen text-black"}
           />
         </div>
       </div>
@@ -69,7 +69,11 @@ export const Footer = () => {
           <div className=" lg:w-[70%] mt-4  md:flex md:justify-between">
             <div className=" flex flex-col w-fit gap-1">
               {navLinks.map(({ linkName, linkUrl }) => (
-                <Link className=" hover:text-ctaGreen " to={linkUrl}>
+                <Link
+                  key={linkName}
+                  className=" hover:text-ctaGreen "
+                  to={linkUrl}
+                >
                   {linkName}
                 </Link>
               ))}
@@ -79,7 +83,11 @@ export const Footer = () => {
               <p className=" font-bold">Solutions</p>
               <div className=" flex flex-col w-fit gap-1 ">
                 {solutionsData.map(({ linkName, linkUrl }) => (
-                  <Link className=" hover:text-ctaGreen " to={linkUrl}>
+                  <Link
+                    key={linkName}
+                    className=" hover:text-ctaGreen "
+                    to={linkUrl}
+                  >
                     {linkName}
                   </Link>
                 ))}
@@ -90,7 +98,11 @@ export const Footer = () => {
               <p className=" font-bold">Resources</p>
               <div className=" flex flex-col w-fit gap-1 ">
                 {resourcesData.map(({ linkName, linkUrl }) => (
-                  <Link className=" hover:text-ctaGreen " to={linkUrl}>
+                  <Link
+                    key={linkName}
+                    className=" hover:text-ctaGreen "
+                    to={linkUrl}
+                  >
                     {linkName}
                   </Link>
                 ))}
@@ -100,7 +112,11 @@ export const Footer = () => {
             <div className=" mt-4 md:mt-0 ">
               <div className=" flex flex-col w-fit gap-1 ">
                 {legalData.map(({ linkName, linkUrl }) => (
-                  <Link className=" hover:text-ctaGreen " to={linkUrl}>
+                  <Link
+                    key={linkName}
+                    className=" hover:text-ctaGreen "
+                    to={linkUrl}
+                  >
                     {linkName}
                   </Link>
                 ))}
