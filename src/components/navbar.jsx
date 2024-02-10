@@ -3,6 +3,7 @@ import logo from "../assets/coreInfraLogoWhite.svg";
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { GlobalCTAButton } from "./button";
+import { useGlobalContext } from "../utils/context";
 
 export const Navbar = () => {
   const [showDropDown, setDropDown] = useState(false);
@@ -11,11 +12,11 @@ export const Navbar = () => {
   return (
     <nav className="  border-white flex justify-between items-center pt-2 px-3 mb-16 md:px-16 lg:px-24">
       {/* logo */}
-      <div className=" w-[6rem] md:w-[160px]">
+      <Link to={"/"} className=" w-[6rem] md:w-[160px]">
         <img src={logo} alt="logo" className=" w-full h-full object-cover" />
-      </div>
+      </Link>
       {/* nav links */}
-      <div className=" flex gap-x-2 relative text-sm md:text-base">
+      <div className=" flex gap-x-2 relative text-sm md:text-base  md:w-[20%] md:justify-between">
         <Link>About</Link>
         <button
           onClick={() => setDropDown(true)}
@@ -44,22 +45,22 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
     {
       id: 0,
       title: "Bespoke Payment Software",
-      url: "Bespoke-Payment-Software",
+      url: "bespoke-payment-software",
     },
     {
       id: 1,
       title: "Infrastructure Solutions",
-      url: "Infrastructure-Solutions",
+      url: "infrastructure-solutions",
     },
     {
       id: 2,
       title: "Corporate Disbursement Platform",
-      url: "Corporate-Disbursement-Platform",
+      url: "corporate-disbursement-platform",
     },
     {
       id: 3,
       title: "Card and PIN Management Solutions",
-      url: "Card-and-PIN-Management-Solutions",
+      url: "card-and-pin-management-solutions",
     },
     { id: 4, title: "EngageNotify360", url: "EngageNotify360" },
     { id: 5, title: "SchemeComply360", url: "SchemeComply360" },
@@ -92,6 +93,14 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
     };
   }, []);
 
+  // set active page
+  const { dispatch, activePage } = useGlobalContext();
+  console.log(activePage);
+
+  function changeActivePage(pageName) {
+    dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: pageName });
+  }
+
   return (
     <div
       ref={linkContainerRef}
@@ -100,9 +109,14 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
       {data.map(({ id, title, url }) => {
         return (
           <Link
+            onClick={() => changeActivePage(title)}
             key={id}
             to={`/${url}`}
-            className=" hover:bg-[#DBFFEC] rounded-sm px-1 globalTransition font-bold  "
+            className={` rounded-md pl-2 py-2 globalTransition font-bold ${
+              activePage === title
+                ? "bg-black text-ctaGreen "
+                : "bg-transparent hover:bg-[#DBFFEC]"
+            }  `}
           >
             {title}
           </Link>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import greenUnderline from "../assets/greenUnderline.svg";
 import { GlobalCTAButton } from "../components/button";
 import heroImg1 from "../assets/heroImg1.png";
@@ -25,13 +25,17 @@ import checkMark from "../assets/checkmark.svg";
 import padlockIcon from "../assets/padlock.svg";
 import headPhoneIcon from "../assets/headPhones.svg";
 import { Link, Element, animateScroll as scroll } from "react-scroll";
+import { useGlobalContext } from "../utils/context";
 
 export const Home = () => {
+
+  const {dispatch} = useGlobalContext()
+
   const section2Data = [
     {
       icon: weOfferIconImg,
       headerText: "Every Transaction Matters",
-      text: "Transform every transaction into a meaningful engagement, even those that falter. Our solution redefines the story of failed transactions, leaving a positive and enduring impression on your customers",
+      text: "Transform every transaction into a meaningful engagement,  even those that falter. Our solution redefines the story of failed transactions, leaving a positive and enduring impression on your customers",
     },
     {
       icon: txnMattersImg,
@@ -183,11 +187,57 @@ export const Home = () => {
     },
   ];
 
+  const companyLogoData = [
+    {
+      id: 0,
+      img: companyLogo1,
+    },
+    {
+      id: 1,
+      img: companyLogo2,
+    },
+    {
+      id: 2,
+      img: companyLogo3,
+    },
+    {
+      id: 3,
+      img: companyLogo4,
+    },
+    {
+      id: 4,
+      img: companyLogo5,
+    },
+    {
+      id: 5,
+      img: companyLogo6,
+    },
+  ];
+
+  useEffect(()=>{
+    // set active page to empty string
+    dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: "" });
+  },[])
+
+  const [activeLogoIndex, setActiveLogoIndex] = useState(0);
+  useEffect(() => {
+    // const interval = setInterval(() => {
+    //   companyContainer.current.classList.add("translate-x-[100%]");
+    //   setActiveLogoIndex(
+    //     (prevIndex) => (prevIndex + 2) % companyLogoData.length
+    //   );
+    //   setInterval(() => {
+    //     companyContainer.current.classList.add("-translate-x-[100%]");
+    //   }, 4000);
+    // }, 5000); // Adjust the interval as needed
+    // return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <section className=" px-3 md:px-16 lg:px-24">
-        <div className=" mb-8">
-          <h1 className=" text-3xl relative z-20 font-medium mb-4 md:text-5xl lg:text-7xl  w-fit">
+        <div className=" mb-12">
+          <h1 className=" text-3xl relative z-20 font-medium mb-8 md:text-5xl lg:text-7xl  w-fit">
             Transforming transactions, <br /> Elevating possibilities
             <img
               src={greenUnderline}
@@ -196,13 +246,13 @@ export const Home = () => {
             />
           </h1>
           <p className=" md:text-2xl">
-            We are enabling a world where seamless transactions meet limitless
-            possibilities, shaping a future of unparalleled convenience and
-            empowerment.
+            We are enabling a world where seamless transactions <br /> meet
+            limitless possibilities, shaping a future of unparalleled <br />
+            convenience and empowerment.
           </p>
         </div>
         {/* buttons */}
-        <div className=" flex gap-x-4 mb-8">
+        <div className=" flex gap-x-4 mb-12">
           <Link
             to="aboutSection"
             smooth={true}
@@ -218,7 +268,7 @@ export const Home = () => {
           />
         </div>
         {/* hero image */}
-        <div className=" mb-12">
+        <div className=" mb-16">
           <img
             src={heroImg1}
             alt="hero"
@@ -228,14 +278,15 @@ export const Home = () => {
         <div className=" flex flex-col text-center md:text-xl mb-8">
           <p className=" mb-4">Trusted Partnership</p>
           <p>A trusted partner you can rely on</p>
-          <div className=" mt-8 grid grid-cols-[auto,auto] md:grid-cols-3 md:place-items-center lg:grid-cols-6 gap-4 justify-between h-fit relative">
-            <p className=" absolute h-full w-full bg-black bg-opacity-70"></p>
-            <img src={companyLogo1} alt="company" />
-            <img src={companyLogo2} alt="company" />
-            <img src={companyLogo3} alt="company" />
-            <img src={companyLogo4} alt="company" />
-            <img src={companyLogo5} alt="company" />
-            <img src={companyLogo6} alt="company" />
+          <div className=" mt-8 relative border overflow-hidden w-fit mx-auto">
+            <p className=" absolute h-full w-full bg-black bg-opacity-70 border z-10"></p>
+            <div className=" flex gap-8 items-center justify-center  mx-auto w-fit border border-red-500">
+              <div
+                className={` w-[10rem] px-2 border logo-box  transition duration-200 ease-in `}
+              >
+                <img src={companyLogo1} alt="company" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -246,10 +297,12 @@ export const Home = () => {
             Modern Payment Infrastructure
           </h1>
           <p className=" font-medium  md:text-2xl ">
-            CoreInfra helps financial institutions to modernize their core
-            payment infrastructure. With years of experience and passion for
+            CoreInfra helps financial institutions to modernize their core{" "}
+            <br />
+            payment infrastructure. With years of experience and passion for{" "}
+            <br />
             innovation, we have delivered many industry first solutions that
-            drive growth and increase efficiency
+            drive <br /> growth and increase efficiency
           </p>
         </div>
         {/* content and  macbook */}
@@ -274,7 +327,7 @@ export const Home = () => {
                     <h2 className=" font-bold text-lg md:text-2xl">
                       {headerText}
                     </h2>
-                    {text && <p className="  md:text-2xl ">{text}</p>}
+                    {text && <p className="  md:text-2xl w-[80vw] md:w-[70%] lg:w-full">{text}</p>}
                     {subText1 && (
                       <ul className=" list-disc list-inside  md:text-2xl ">
                         <li>{subText1}</li>
@@ -297,7 +350,7 @@ export const Home = () => {
       <Element name="aboutSection">
         <section className=" dot-grid-bg relative px-3 md:px-16 py-16 lg:px-24 ">
           {/* content */}
-          <div className=" mb-8">
+          <div className=" mb-12">
             <h1 className=" text-2xl md:text-5xl font-bold mb-4">
               Why Choose CoreInfra ?
             </h1>
@@ -309,7 +362,7 @@ export const Home = () => {
               business into the forefront of the finance and technology
               landscape, ensuring you stay ahead of the competition
             </p>
-            <p className=" font-bold md:text-xl mt-4 mb-3">
+            <p className=" font-bold md:text-xl mt-4 mb-4">
               Ready to enhance your payment infrastructure?
             </p>
             <GlobalCTAButton

@@ -5,19 +5,14 @@ import { useState, useEffect } from "react";
 export const AppContext = React.createContext();
 
 const defaultState = {
-  userLoggedin: false,
   activePage: "",
-  activePageUrl: "",
-  sublink: {
-    isActive: false,
-    activeSublink: "",
-  },
 };
-
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, defaultState);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showUserSidebar, setShowUserSidebar] = useState(false);
+
+  console.log(defaultState.activePage);
 
   useEffect(() => {
     // Add an event listener to update the window width when it changes
@@ -46,7 +41,7 @@ export const AppProvider = ({ children }) => {
   const homeUrl = getUrl === getUrl;
 
   return (
-    <AppContext.Provider value={{ ...state, homeUrl }}>
+    <AppContext.Provider value={{ ...state, homeUrl, dispatch }}>
       {children}
     </AppContext.Provider>
   );

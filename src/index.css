@@ -3,7 +3,21 @@
 @tailwind utilities;
 
 .globalTransition {
-  @apply ease-in-out duration-300 transition-all;
+  @apply ease-in-out duration-300 transition;
+}
+
+/* Bank Logo Carousel */
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-box.slide-out {
+  animation: slideOut 1s forwards; /* Adjust the duration as needed */
 }
 
 /* .dot-grid-bg {
