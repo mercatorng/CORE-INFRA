@@ -1,86 +1,28 @@
 import { GreenUnderline } from "../components/greenUnderline";
 import { GlobalCTAButton } from "../components/button";
 import { BlackWhiteImgComp } from "../components/blackWhiteImg";
-import { animated, useSpring } from "@react-spring/web";
-import { useEffect, useRef, useState } from "react";
+import { useRef,  } from "react";
 import AnimatedContent from "../components/animatedContent";
+import { useScrollVisibility } from "../hooks/useScrollHook";
 
 export const BespokePayment = () => {
-  const [hasAnimatedSection1, setHasAnimatedSection1] = useState(false);
-  const [hasAnimatedSection2, setHasAnimatedSection2] = useState(false);
-  const [hasAnimatedSection3, setHasAnimatedSection3] = useState(false);
-  const [hasAnimatedBlackWhiteImg, setHasAnimatedBlackWhiteImg] =
-    useState(false);
-
-  const [isVisibleSection1, setIsVisibleSection1] = useState(false);
-  const [isVisibleSection2, setIsVisibleSection2] = useState(false);
-  const [isVisibleSection3, setIsVisibleSection3] = useState(false);
-  const [isVisibleBlackWhiteImg, setIsVisibleBlackWhiteImg] = useState(false);
 
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
   const blackWhiteImgRef = useRef();
 
-  const handleScroll = () => {
-    checkVisibility(
-      section1Ref,
-      setIsVisibleSection1,
-      hasAnimatedSection1,
-      setHasAnimatedSection1
-    );
-    checkVisibility(
-      section2Ref,
-      setIsVisibleSection2,
-      hasAnimatedSection2,
-      setHasAnimatedSection2
-    );
-    checkVisibility(
-      section3Ref,
-      setIsVisibleSection3,
-      hasAnimatedSection3,
-      setHasAnimatedSection3
-    );
-    checkVisibility(
-      blackWhiteImgRef,
-      setIsVisibleBlackWhiteImg,
-      hasAnimatedBlackWhiteImg,
-      setHasAnimatedBlackWhiteImg
-    );
-  };
+  const { isVisible: isVisibleSection1 } = useScrollVisibility(
+    section1Ref,
+    true
+  );
 
-  const checkVisibility = (ref, setIsVisible, hasAnimated, setHasAnimated) => {
-    const element = ref.current;
+  const { isVisible: isVisibleSection2 } = useScrollVisibility(section2Ref);
 
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const scrollPosition = window.scrollY;
+  const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
-      // Adjust the threshold as needed
-      const threshold = 200;
-
-      const isVisible = scrollPosition > elementPosition - threshold;
-
-      if (isVisible && !hasAnimated) {
-        setIsVisible(true);
-        setHasAnimated(true);
-      }
-    }
-  };
-
-  useEffect(() => {
-    // Only animate the first section on mount
-    setIsVisibleSection1(true);
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [
-    hasAnimatedSection1,
-    hasAnimatedSection2,
-    hasAnimatedSection3,
-    hasAnimatedBlackWhiteImg,
-  ]);
+  const { isVisible: isVisibleBlackWhiteImg } =
+    useScrollVisibility(blackWhiteImgRef);
 
   return (
     <>
