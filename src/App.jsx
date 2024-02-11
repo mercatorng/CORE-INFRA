@@ -3,9 +3,9 @@ import { Home } from "./pages/home";
 import { SharedLayout } from "./pages/sharedLayout";
 import { BespokePayment } from "./pages/bespokePayment";
 import { InfrastuctureSolutions } from "./pages/infrastuctureSolutions";
-import { SchemeComply360 } from "./pages/SchemeComply360";
+import { SchemeComply360 } from "./pages/schemeComply360";
 import { EngageNotify360 } from "./pages/engageNotify360";
-import { FintechInaBox } from "./pages/FintechInaBox";
+import { FintechInaBox } from "./pages/fintechInaBox";
 import { CoporateDisbursement } from "./pages/coporateDisbursement";
 import { CardAndPinMgt } from "./pages/cardAndPinMgt";
 
