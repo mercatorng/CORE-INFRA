@@ -1,6 +1,47 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 60) => {
+// export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 200) => {
+//   const [isVisible, setIsVisible] = useState(false);
+//   const [hasAnimated, setHasAnimated] = useState(false);
+
+//   const handleScroll = () => {
+//     const element = ref.current;
+
+//     if (element) {
+//       const elementPosition = element.getBoundingClientRect().top;
+//       const scrollPosition = window.scrollY;
+
+//       console.log(elementPosition);
+//       console.log(scrollPosition);
+
+//       const isElementVisible = scrollPosition > elementPosition - threshold;
+//       console.log(isElementVisible);
+
+//       if (isElementVisible && !hasAnimated) {
+//         setIsVisible(true);
+//         setHasAnimated(true);
+//       }
+//     }
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+
+//     if (shouldAnimateOnMount && !hasAnimated) {
+//       setIsVisible(true);
+//       setHasAnimated(true);
+//     }
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, [hasAnimated, shouldAnimateOnMount]);
+
+//   return { isVisible, ref };
+// };
+
+
+export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 300) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -8,10 +49,14 @@ export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold
     const element = ref.current;
 
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const scrollPosition = window.scrollY;
 
+      console.log(elementPosition);
+      console.log(scrollPosition);
+
       const isElementVisible = scrollPosition > elementPosition - threshold;
+      console.log(isElementVisible);
 
       if (isElementVisible && !hasAnimated) {
         setIsVisible(true);
