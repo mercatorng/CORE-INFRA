@@ -46,6 +46,8 @@ export const Footer = () => {
 
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className=" bg-white text-gray-900 pt-16">
       {/* lets talk */}
@@ -149,7 +151,7 @@ export const Footer = () => {
           {/* copyright */}
           <div className=" border-t border-gray-200 my-4"></div>
           <div className=" md:flex md:justify-between items-center">
-            <p>© 2024 Coreinfra™. All rights reserved.</p>
+            <p>© {currentYear} Coreinfra™. All rights reserved. </p>
             {/* social icons */}
             <div>
               <SocialIcon
