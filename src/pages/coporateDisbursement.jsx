@@ -1,16 +1,17 @@
 import { GreenUnderline } from "../components/greenUnderline";
 import { GlobalCTAButton } from "../components/button";
-import { BlackWhiteImgComp } from "../components/blackWhiteImg";
 import { DummyImg } from "./bespokePayment";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
+import { HeroImage } from "../components/heroImage";
+import img1 from "../assets/coporateImg1 .png";
 
 export const CoporateDisbursement = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
-  const blackWhiteImgRef = useRef();
+  const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
     section1Ref,
@@ -21,8 +22,7 @@ export const CoporateDisbursement = () => {
 
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
-  const { isVisible: isVisibleBlackWhiteImg } =
-    useScrollVisibility(blackWhiteImgRef);
+  const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
 
   return (
     <>
@@ -48,9 +48,9 @@ export const CoporateDisbursement = () => {
         </section>
       </AnimatedContent>
       {/* black and white boxes */}
-      <AnimatedContent isVisible={isVisibleBlackWhiteImg}>
-        <div ref={blackWhiteImgRef}>
-          <BlackWhiteImgComp />
+      <AnimatedContent isVisible={isVisibleHeroImg}>
+        <div ref={heroImgRef}>
+          <HeroImage heroImg={img1} altText={"hero"} />
         </div>
       </AnimatedContent>
       {/* section 2 */}

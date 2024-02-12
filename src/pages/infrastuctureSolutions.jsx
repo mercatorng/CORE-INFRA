@@ -1,16 +1,19 @@
 import { GreenUnderline } from "../components/greenUnderline";
 import { GlobalCTAButton } from "../components/button";
-import { BlackWhiteImgComp } from "../components/blackWhiteImg";
-import { DummyImg } from "./bespokePayment";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
+import { HeroImage } from "../components/heroImage";
+import { SectionTwoImages } from "../components/sectionTwoImages";
+import img1 from "../assets/infrastructureImg1.png";
+import img2 from "../assets/infrastructureImg2.png";
+import img3 from "../assets/infrastructureImg3.png";
 
 export const InfrastuctureSolutions = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
-  const blackWhiteImgRef = useRef();
+  const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
     section1Ref,
@@ -21,8 +24,7 @@ export const InfrastuctureSolutions = () => {
 
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
-  const { isVisible: isVisibleBlackWhiteImg } =
-    useScrollVisibility(blackWhiteImgRef);
+  const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
 
   return (
     <>
@@ -46,10 +48,10 @@ export const InfrastuctureSolutions = () => {
           </div>
         </section>
       </AnimatedContent>
-      {/* black and white boxes */}
-      <AnimatedContent isVisible={isVisibleBlackWhiteImg}>
-        <div ref={blackWhiteImgRef}>
-          <BlackWhiteImgComp />
+      {/* hero image */}
+      <AnimatedContent isVisible={isVisibleHeroImg}>
+        <div ref={heroImgRef}>
+          <HeroImage heroImg={img1} altText={"hero"} />
         </div>
       </AnimatedContent>
       {/* section 2 */}
@@ -72,11 +74,18 @@ export const InfrastuctureSolutions = () => {
         </section>
       </AnimatedContent>
       {/* section 3 */}
-      <AnimatedContent isVisible={isVisibleSection3} >
-
-      <section ref={section3Ref} className=" text-black  px-3 md:px-16 lg:px-24">
-        <DummyImg />
-      </section>
+      <AnimatedContent isVisible={isVisibleSection3}>
+        <section
+          ref={section3Ref}
+          className=" text-black  px-3 md:px-16 lg:px-24"
+        >
+          <SectionTwoImages
+            img1={img2}
+            img2={img3}
+            altText={"starlight"}
+            altText2={"radio waves on laptop"}
+          />
+        </section>
       </AnimatedContent>
     </>
   );

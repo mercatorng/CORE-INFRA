@@ -1,16 +1,18 @@
 import { GreenUnderline } from "../components/greenUnderline";
 import { GlobalCTAButton } from "../components/button";
-import { BlackWhiteImgComp } from "../components/blackWhiteImg";
-import { DummyImg } from "./bespokePayment";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
+import { HeroImage } from "../components/heroImage";
+import img1 from "../assets/engageNotifyImg1.png";
+import img2 from "../assets/engageNotifyImg2.png"
+import { SectionTwoImages } from "../components/sectionTwoImages";
 
 export const EngageNotify360 = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
-  const blackWhiteImgRef = useRef();
+  const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
     section1Ref,
@@ -21,9 +23,8 @@ export const EngageNotify360 = () => {
 
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
-  const { isVisible: isVisibleBlackWhiteImg } =
-    useScrollVisibility(blackWhiteImgRef);
-    
+  const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
+
   return (
     <>
       {/* section 1 */}
@@ -48,9 +49,9 @@ export const EngageNotify360 = () => {
         </section>
       </AnimatedContent>
       {/* black and white boxes */}
-      <AnimatedContent isVisible={isVisibleBlackWhiteImg}>
-        <div ref={blackWhiteImgRef}>
-          <BlackWhiteImgComp />
+      <AnimatedContent isVisible={isVisibleHeroImg}>
+        <div ref={heroImgRef}>
+          <HeroImage altText={"hero"} heroImg={img1} />
         </div>
       </AnimatedContent>
       {/* section 2 */}
@@ -77,7 +78,7 @@ export const EngageNotify360 = () => {
           ref={section3Ref}
           className=" text-black  px-3 md:px-16 lg:px-24"
         >
-          <DummyImg />
+          <SectionTwoImages img1={img2} altText={"dashboard"} />
         </section>
       </AnimatedContent>
     </>

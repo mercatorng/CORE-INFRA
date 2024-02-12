@@ -90,7 +90,7 @@ export const Footer = () => {
               </p>
             </div>
             {/* nav link */}
-            <div className=" lg:w-[70%] mt-4  md:flex md:justify-between">
+            <div className=" lg:w-[70%] mt-8  md:flex md:justify-between">
               <div className=" flex flex-col w-fit gap-1">
                 {navLinks.map(({ linkName, linkUrl }) => (
                   <Link

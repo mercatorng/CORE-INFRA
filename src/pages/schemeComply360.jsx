@@ -1,16 +1,20 @@
 import { GreenUnderline } from "../components/greenUnderline";
 import { GlobalCTAButton } from "../components/button";
-import { BlackWhiteImgComp } from "../components/blackWhiteImg";
 import { DummyImg } from "./bespokePayment";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
+import img1 from "../assets/schemeComplyImg1.png"
+import { HeroImage } from "../components/heroImage";
+
+
+
 
 export const SchemeComply360 = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
-  const blackWhiteImgRef = useRef();
+  const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
     section1Ref,
@@ -21,9 +25,8 @@ export const SchemeComply360 = () => {
 
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
-  const { isVisible: isVisibleBlackWhiteImg } =
-    useScrollVisibility(blackWhiteImgRef);
-    
+  const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
+
   return (
     <>
       {/* section 1 */}
@@ -48,9 +51,9 @@ export const SchemeComply360 = () => {
         </section>
       </AnimatedContent>
       {/* black and white boxes */}
-      <AnimatedContent isVisible={isVisibleBlackWhiteImg}>
-        <div ref={blackWhiteImgRef}>
-          <BlackWhiteImgComp />
+      <AnimatedContent isVisible={isVisibleHeroImg}>
+        <div ref={heroImgRef}>
+         <HeroImage altText={"hero"}  heroImg={img1} />
         </div>
       </AnimatedContent>
       {/* section 2 */}
