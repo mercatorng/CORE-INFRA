@@ -53,7 +53,7 @@ export const Navbar = ({ homeUrl }) => {
       </Link>
       {/* menu button */}
       <button onClick={() => setMenu(!showMenu)} className=" md:hidden">
-      <RiMenuLine size={20} className=" text-inherit" />
+        <RiMenuLine size={20} className=" text-inherit" />
       </button>
       {/* nav links */}
 
@@ -75,7 +75,15 @@ export const Navbar = ({ homeUrl }) => {
           />{" "}
         </button>
         {showDropDown && (
-          <SolutionLinks {...{ setDropDown, notificationButtonClassname }} />
+          <SolutionLinks
+            {...{
+              setDropDown,
+              notificationButtonClassname,
+              setMenu,
+              showMenu,
+              windowWidth,
+            }}
+          />
         )}
       </div>
       {/* get in touch for small medium screen above */}
@@ -87,7 +95,13 @@ export const Navbar = ({ homeUrl }) => {
   );
 };
 
-const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
+const SolutionLinks = ({
+  setDropDown,
+  notificationButtonClassname,
+  setMenu,
+  showMenu,
+  windowWidth,
+}) => {
   const data = [
     {
       id: 0,
@@ -147,6 +161,14 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
     dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: pageName });
   }
 
+  function clickLink(title) {
+    changeActivePage(title);
+    setDropDown(false);
+    if (showMenu && windowWidth < 768) {
+      setMenu(false);
+    }
+  }
+
   return (
     <div
       ref={linkContainerRef}
@@ -156,8 +178,7 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
         return (
           <Link
             onClick={() => {
-              changeActivePage(title);
-              setDropDown(false);
+              clickLink(title);
             }}
             key={id}
             to={`/${url}`}
