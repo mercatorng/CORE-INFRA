@@ -6,6 +6,7 @@ import { GlobalCTAButton } from "./button";
 import { useGlobalContext } from "../utils/context";
 import logoBlack from "../assets/coreInfraLogoBlack.svg";
 import menuBtn from "../assets/menuBtn.svg";
+import { RiMenuLine } from "react-icons/ri";
 
 export const Navbar = ({ homeUrl }) => {
   const { windowWidth } = useGlobalContext();
@@ -51,8 +52,8 @@ export const Navbar = ({ homeUrl }) => {
         />
       </Link>
       {/* menu button */}
-      <button onClick={() => setMenu(!showMenu)}>
-        <img src={menuBtn} alt="menu" className="  md:hidden" />
+      <button onClick={() => setMenu(!showMenu)} className=" md:hidden">
+      <RiMenuLine size={20} className=" text-inherit" />
       </button>
       {/* nav links */}
 
@@ -149,7 +150,7 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
   return (
     <div
       ref={linkContainerRef}
-      className=" globalTransition border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
+      className=" globalTransition md:border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
     >
       {data.map(({ id, title, url }) => {
         return (
