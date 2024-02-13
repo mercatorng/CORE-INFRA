@@ -275,27 +275,15 @@ export const Home = () => {
     },
   ];
 
+  // set active page to empty string
   useEffect(() => {
-    // set active page to empty string
     dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: "" });
   }, []);
 
-  // company slider
-  const [activeLogoIndex, setActiveLogoIndex] = useState(0);
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActiveLogoIndex(
-        (prevIndex) => (prevIndex + 1) % companyLogoData.length
-      );
-    }, 3000); // Change slide every 3 seconds (adjust as needed)
-
-    return () => clearInterval(intervalId);
-  }, []);
-  const translateValue = `-${activeLogoIndex * 100}%`;
-
   return (
     <>
-      <section className=" px-3 md:px-16 lg:px-24">
+      <section className=" px-3 md:px-16 lg:px-24  ">
+      <div className=" absolute top-0 left-0 h-full w-full dot-grid-bg"></div>
         <AnimatedContent isVisible={isVisibleSection1}>
           <div ref={section1Ref} className=" mb-12">
             <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit">
