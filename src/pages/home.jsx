@@ -122,72 +122,107 @@ export const Home = () => {
   const section5Buttons = [
     {
       id: 0,
-      title: "Initiation",
+      title: "Issuing",
       content: [
         {
-          headerText: "Analysis Stage",
+          headerText: "Issuing",
         },
-        { point: "Project Initiation" },
-        { point: "Determine Management Objectives" },
-        { point: "Determine team structure with roles and responsibilities" },
-        { point: "Develop baseline project plan" },
-        { point: "Create Communication Plan" },
+        {
+          point:
+            "Streamline card and account issuance: Manage physical, virtual, and prepaid cards efficiently with our centralized platform.",
+        },
+        {
+          point:
+            "Reduce costs and improve operational efficiency: Automate processes and eliminate manual tasks.",
+        },
+        {
+          point:
+            "Enhance security and compliance: Benefit from robust fraud prevention and data encryption features.",
+        },
       ],
     },
     {
       id: 1,
-      title: "Design",
+      title: "Acquiring",
       content: [
         {
-          headerText: "Design Stage",
+          headerText: "Acquiring",
         },
-        { point: "Project Initiation" },
-        { point: "Determine Management Objectives" },
-        { point: "Determine team structure with roles and responsibilities" },
-        { point: "Develop baseline project plan" },
-        { point: "Create Communication Plan" },
+        {
+          point:
+            "Expand your reach and attract new customers: Offer diverse payment options and seamlessly integrate with various channels.",
+        },
+        {
+          point:
+            "Optimize authorization and risk management: Gain real-time insights and prevent fraud with advanced tools.",
+        },
+        {
+          point:
+            "Increase revenue and profitability: Reduce processing costs and maximize transaction value.",
+        },
       ],
     },
     {
       id: 2,
-      title: "Build",
+      title: "Digital Banking",
       content: [
         {
-          headerText: "Build Stage",
+          headerText: "Digital Banking",
         },
-        { point: "Project Initiation" },
-        { point: "Determine Management Objectives" },
-        { point: "Determine team structure with roles and responsibilities" },
-        { point: "Develop baseline project plan" },
-        { point: "Create Communication Plan" },
+        {
+          point:
+            "Deliver a seamless and personalized digital experience: Empower customers with intuitive mobile apps and online banking solutions.",
+        },
+        {
+          point:
+            "Drive engagement and loyalty: Leverage data-driven insights to offer targeted promotions and personalized services.",
+        },
+        {
+          point:
+            "Future-proof your digital offering: Stay ahead of the curve with innovative features and scalability.",
+        },
       ],
     },
     {
       id: 3,
-      title: "Monitor",
+      title: "Financial Inclusion",
       content: [
         {
-          headerText: "Monitor Stage",
+          headerText: "Financial Inclusion",
         },
-        { point: "Project Initiation" },
-        { point: "Determine Management Objectives" },
-        { point: "Determine team structure with roles and responsibilities" },
-        { point: "Develop baseline project plan" },
-        { point: "Create Communication Plan" },
+        {
+          point:
+            "Extend financial services to underserved communities: Offer affordable and accessible payment solutions.",
+        },
+        {
+          point:
+            "Simplify onboarding and compliance processes: Enable easier access to financial products and services.",
+        },
+        {
+          point:
+            "Promote financial literacy and well-being: Provide educational resources and tools to empower users.",
+        },
       ],
     },
     {
       id: 4,
-      title: "Go-Live",
+      title: "Customer Engagement",
       content: [
         {
-          headerText: "Go-Live Stage",
+          headerText: "Customer Engagement:",
         },
-        { point: "Project Initiation" },
-        { point: "Determine Management Objectives" },
-        { point: "Determine team structure with roles and responsibilities" },
-        { point: "Develop baseline project plan" },
-        { point: "Create Communication Plan" },
+        {
+          point:
+            "Turn transactions into opportunities: Leverage data to understand customer behavior and preferences.",
+        },
+        {
+          point:
+            "Deliver personalized and proactive communication: Offer relevant offers, support, and loyalty programs.",
+        },
+        {
+          point:
+            "Build deeper relationships and foster trust: Increase customer satisfaction and retention.",
+        },
       ],
     },
   ];
@@ -502,16 +537,16 @@ export const Home = () => {
           <div ref={section10Ref}>
             <p className=" text-center text-sm"> How we work</p>
             <h2 className=" text-center font-bold text-xl md:text-3xl">
-              Our Project Management Framework
+              Empowering Financial Institutions Across the Spectrum
             </h2>
             <div className=" mt-8 mb-20 ">
               {/* Buttons */}
-              <div className=" flex justify-between gap-1 mb-6 px-2 md:w-[60%] mx-auto">
+              <div className=" grid grid-cols-3 md:grid-cols-5 justify-between mb-6 gap-3 px-2  mx-auto">
                 {section5Buttons.map(({ id, title }) => {
                   return (
                     <button
                       key={id}
-                      className={`globalTransition font-semibold rounded-2xl md:px-3 md:py-2 text-sm p-1 px-2 text-white  ${
+                      className={`globalTransition font-semibold rounded-2xl md:px-3  text-sm p-1 px-2 text-white  ${
                         id === activeButtonID && "bg-ctaGreen "
                       } ${id != activeButtonID && "hover:text-ctaGreen"} `}
                       onClick={() => setActiveButton(id)}
