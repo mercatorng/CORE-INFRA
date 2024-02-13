@@ -14,7 +14,6 @@ export const SharedLayout = () => {
         homeUrl ? "bg-[#050806] text-white" : "bg-white text-gray-950"
       } `}
     >
-      <div className=" absolute top-0 left-0 h-full w-full dot-grid-bg"></div>
       <Navbar {...{ homeUrl }} />
       <Outlet />
       <Footer />

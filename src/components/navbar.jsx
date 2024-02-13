@@ -39,7 +39,7 @@ export const Navbar = ({ homeUrl }) => {
 
   return (
     <nav
-      className={`  flex bg-inherit w-full justify-between items-center shadow-sm pt-2 px-3 mb-16 md:px-16 lg:px-24 ${
+      className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm pt-2 px-3 mb-16 md:px-16 lg:px-24 ${
         sticky ? "fixed top-0 left-0 z-50" : "relative"
       }`}
     >

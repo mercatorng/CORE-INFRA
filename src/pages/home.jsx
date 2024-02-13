@@ -283,7 +283,7 @@ export const Home = () => {
   return (
     <>
       <section className=" px-3 md:px-16 lg:px-24  ">
-      <div className=" absolute top-0 left-0 h-full w-full dot-grid-bg"></div>
+      <div className=" absolute top-0 left-0 h-full w-full dot-grid-bg "></div>
         <AnimatedContent isVisible={isVisibleSection1}>
           <div ref={section1Ref} className=" mb-12">
             <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit">
@@ -332,7 +332,7 @@ export const Home = () => {
           >
             <p className=" mb-4">Trusted Partnership</p>
             <p>A trusted partner you can rely on</p>
-            <div className=" companyContainer overflow-hidden flex md:w-[95%] gap-x-16 md:gap-x-32 mx-auto mt-12  ">
+            <div className=" companyContainer overflow-hidden flex w-[95%] gap-x-16 md:gap-x-32 mx-auto mt-12  ">
               <div className=" animate-scroll  flex   gap-x-16 md:gap-x-32  items-center logosContainer ">
                 {companyLogoData.map(({ img, id, dimension }, index) => (
                   <div key={index} className={`shrink-0  ${dimension} h-fit `}>
