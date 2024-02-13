@@ -4,7 +4,7 @@ import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/engageNotifyImg1.png";
+import img1 from "../assets/engageNotifyImg1.jpg";
 import img2 from "../assets/engageNotifyImg2.png";
 import { SectionTwoImages } from "../components/sectionTwoImages";
 

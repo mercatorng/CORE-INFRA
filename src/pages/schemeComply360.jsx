@@ -4,7 +4,7 @@ import { DummyImg } from "./bespokePayment";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
-import img1 from "../assets/schemeComplyImg1.png"
+import img1 from "../assets/schemeComplyImg1.jpg"
 import { HeroImage } from "../components/heroImage";
 
 

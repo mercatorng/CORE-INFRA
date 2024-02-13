@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { GlobalCTAButton } from "../components/button";
-import heroImg1 from "../assets/heroImg1.png";
+import heroImg1 from "../assets/heroImg1.svg";
 import companyLogo1 from "../assets/featherdev.png";
 import companyLogo2 from "../assets/neizte.png";
 import companyLogo3 from "../assets/globalbank.png";

@@ -5,7 +5,7 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
 import { SectionTwoImages } from "../components/sectionTwoImages";
-import img1 from "../assets/infrastructureImg1.png";
+import img1 from "../assets/infrastructureImg1.jpg";
 import img2 from "../assets/infrastructureImg2.png";
 import img3 from "../assets/infrastructureImg3.png";
 

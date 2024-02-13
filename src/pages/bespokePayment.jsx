@@ -3,7 +3,7 @@ import { GlobalCTAButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
-import img1 from "../assets/bespokeImg1.png";
+import img1 from "../assets/bespokeImg1.jpg";
 import { HeroImage } from "../components/heroImage";
 import { SectionTwoImages } from "../components/sectionTwoImages";
 import img2 from "../assets/bespokeImg2.png";

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/coporateImg1 .png";
+import img1 from "../assets/coporateImg1.jpg";
 
 export const CoporateDisbursement = () => {
   const section1Ref = useRef();

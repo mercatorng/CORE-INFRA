@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/cardMgtImg1.png";
+import img1 from "../assets/bespokeImg1.jpg";
 
 export const CardAndPinMgt = () => {
   const section1Ref = useRef();
