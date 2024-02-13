@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { GlobalCTAButton } from "../components/button";
 import heroImg1 from "../assets/heroImg1.svg";
-import companyLogo1 from "../assets/featherdev.png";
-import companyLogo2 from "../assets/neizte.png";
-import companyLogo3 from "../assets/globalbank.png";
-import companyLogo4 from "../assets/spherule.png";
-import companyLogo5 from "../assets/lightBox.png";
-import companyLogo6 from "../assets/boltShift.png";
+import companyLogo1 from "../assets/jaizBankLogo.png";
+import companyLogo2 from "../assets/providusLogo.png";
+import companyLogo3 from "../assets/titanBankLogo.png";
+import companyLogo4 from "../assets/keystoneLogo.png";
 import weOfferIconImg from "../assets/we-offer-icon.svg";
 import txnMattersImg from "../assets/txn-matters-icon.svg";
 import macbookImg from "../assets/Macbook-Pro-16-mockup.png";
@@ -258,26 +256,22 @@ export const Home = () => {
     {
       id: 0,
       img: companyLogo1,
+      dimension: "w-[120px]",
     },
     {
       id: 1,
       img: companyLogo2,
+      dimension: "w-[150px] ",
     },
     {
       id: 2,
       img: companyLogo3,
+      dimension: "w-[150px]",
     },
     {
       id: 3,
       img: companyLogo4,
-    },
-    {
-      id: 4,
-      img: companyLogo5,
-    },
-    {
-      id: 5,
-      img: companyLogo6,
+      dimension: "w-[150px]",
     },
   ];
 
@@ -286,19 +280,18 @@ export const Home = () => {
     dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: "" });
   }, []);
 
+  // company slider
   const [activeLogoIndex, setActiveLogoIndex] = useState(0);
   useEffect(() => {
-    // const interval = setInterval(() => {
-    //   companyContainer.current.classList.add("translate-x-[100%]");
-    //   setActiveLogoIndex(
-    //     (prevIndex) => (prevIndex + 2) % companyLogoData.length
-    //   );
-    //   setInterval(() => {
-    //     companyContainer.current.classList.add("-translate-x-[100%]");
-    //   }, 4000);
-    // }, 5000); // Adjust the interval as needed
-    // return () => clearInterval(interval);
+    const intervalId = setInterval(() => {
+      setActiveLogoIndex(
+        (prevIndex) => (prevIndex + 1) % companyLogoData.length
+      );
+    }, 3000); // Change slide every 3 seconds (adjust as needed)
+
+    return () => clearInterval(intervalId);
   }, []);
+  const translateValue = `-${activeLogoIndex * 100}%`;
 
   return (
     <>
@@ -351,14 +344,30 @@ export const Home = () => {
           >
             <p className=" mb-4">Trusted Partnership</p>
             <p>A trusted partner you can rely on</p>
-            <div className=" mt-8 relative border overflow-hidden w-fit mx-auto">
-              <p className=" absolute h-full w-full bg-black bg-opacity-70 border z-10"></p>
-              <div className=" flex gap-8 items-center justify-center  mx-auto w-fit border border-red-500">
-                <div
-                  className={` w-[10rem] px-2 border logo-box  transition duration-200 ease-in `}
-                >
-                  <img src={companyLogo1} alt="company" />
-                </div>
+            <div className=" companyContainer overflow-hidden flex md:w-[95%] gap-x-16 md:gap-x-32 mx-auto mt-12  ">
+              <div className=" animate-scroll  flex   gap-x-16 md:gap-x-32  items-center logosContainer ">
+                {companyLogoData.map(({ img, id, dimension }, index) => (
+                  <div key={index} className={`shrink-0  ${dimension} h-fit `}>
+                    <img
+                      src={img}
+                      alt={`Image ${index + 1}`}
+                      className="w-full  "
+                      style={{ filter: "grayscale(100%)" }}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className=" animate-scroll flex  gap-x-16 md:gap-x-32  items-center logosContainer">
+                {companyLogoData.map(({ img, id, dimension }, index) => (
+                  <div key={index + 1} className={`shrink-0  ${dimension} h-fit `}>
+                    <img
+                      src={img}
+                      alt={`Image ${index + 1}`}
+                      className="w-full  "
+                      style={{ filter: "grayscale(100%)" }}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -535,7 +544,7 @@ export const Home = () => {
       <section className=" px-3 md:px-16 py-16 lg:px-24 ">
         <AnimatedContent isVisible={isVisibleSection10}>
           <div ref={section10Ref}>
-            <p className=" text-center text-sm"> How we work</p>
+            <p className=" text-center text-sm mb-2"> Solutions</p>
             <h2 className=" text-center font-bold text-xl md:text-3xl">
               Empowering Financial Institutions Across the Spectrum
             </h2>

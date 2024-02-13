@@ -7,18 +7,23 @@
 }
 
 /* Bank Logo Carousel */
-@keyframes slideOut {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+@keyframes scroll {
+ from {
+  transform: translateX(0)
+ }
+ to {
+  transform: translateX(-100%)
+ }
 }
 
-.logo-box.slide-out {
-  animation: slideOut 1s forwards; /* Adjust the duration as needed */
+.companyContainer:hover .logosContainer {
+  animation-play-state: paused;
 }
+
+.animate-scroll {
+  animation: 8s scroll infinite linear;
+}
+
 
 /* .dot-grid-bg {
   background: url("../src/assets/Dot-grid.png") center/cover no-repeat;
