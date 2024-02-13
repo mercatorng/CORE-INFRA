@@ -70,7 +70,10 @@ export const CardAndPinMgt = () => {
             comprehensive suite of <br /> services enhances the cardholder's
             experience, ensuring a seamless and <br /> secure process
           </p>
-          <GlobalCTAButton text={"Get started"} style={" bg-ctaGreen  mt-6"} />
+          <GlobalCTAButton
+            text={"Request a Demo"}
+            style={" bg-ctaGreen  mt-6"}
+          />
         </section>
       </AnimatedContent>
       {/* section 3 */}

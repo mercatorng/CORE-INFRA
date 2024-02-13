@@ -70,7 +70,7 @@ export const SchemeComply360 = () => {
             <br /> process of generating and submitting Mastercard GCO reports
             and other <br /> scheme specific reports
           </p>
-          <GlobalCTAButton text={"Get started"} style={" bg-ctaGreen  mt-6"} />
+          <GlobalCTAButton text={"Request a Demo"} style={" bg-ctaGreen  mt-6"} />
         </section>
       </AnimatedContent>
       {/* section 3 */}

@@ -5,13 +5,43 @@ import { IoIosArrowDown } from "react-icons/io";
 import { GlobalCTAButton } from "./button";
 import { useGlobalContext } from "../utils/context";
 import logoBlack from "../assets/coreInfraLogoBlack.svg";
+import menuBtn from "../assets/menuBtn.svg";
 
 export const Navbar = ({ homeUrl }) => {
+  const { windowWidth } = useGlobalContext();
   const [showDropDown, setDropDown] = useState(false);
   const notificationButtonClassname = "notificationButton";
+  const [showMenu, setMenu] = useState(false);
+
+  const [sticky, setSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+
+      if (offset > 0) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth > 767) setMenu(true);
+  }, [windowWidth]);
 
   return (
-    <nav className="  border-white flex justify-between items-center pt-2 px-3 mb-16 md:px-16 lg:px-24">
+    <nav
+      className={`  flex bg-inherit w-full justify-between items-center shadow-sm pt-2 px-3 mb-16 md:px-16 lg:px-24 ${
+        sticky ? "fixed top-0 left-0 z-50" : "relative"
+      }`}
+    >
       {/* logo */}
       <Link to={"/"} className=" w-[6rem] md:w-[160px]">
         <img
@@ -20,25 +50,36 @@ export const Navbar = ({ homeUrl }) => {
           className=" w-full h-full object-cover"
         />
       </Link>
+      {/* menu button */}
+      <button onClick={() => setMenu(!showMenu)}>
+        <img src={menuBtn} alt="menu" className="  md:hidden" />
+      </button>
       {/* nav links */}
-      <div className=" flex gap-x-2 relative text-sm md:text-base  md:w-[20%] md:justify-between">
-        <Link>About</Link>
+
+      <div
+        className={`absolute  md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit  shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50 globalTransition ${
+          !showMenu ? "-translate-x-[100%]" : ""
+        }  `}
+      >
+        <Link className=" w-fit">About</Link>
         <button
-          onClick={() => setDropDown(true)}
-          className={`flex gap-x-1 items-center ${notificationButtonClassname}`}
+          onClick={() => setDropDown(!showDropDown)}
+          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname}`}
         >
           {" "}
-          <span>Solutions</span> <IoIosArrowDown size={16} className=" mt-1" />{" "}
+          <span>Solutions</span>{" "}
+          <IoIosArrowDown
+            size={16}
+            className={`mt-1   ${showDropDown ? "-rotate-0" : "-rotate-90"}`}
+          />{" "}
         </button>
         {showDropDown && (
           <SolutionLinks {...{ setDropDown, notificationButtonClassname }} />
         )}
       </div>
-      {/* get in touch */}
+      {/* get in touch for small medium screen above */}
       <GlobalCTAButton
-        style={
-          " text-black bg-green-500 bg-ctaGreen text-sm md:text-base hover:text-white "
-        }
+        style={" text-black bg-ctaGreen w-fit hidden md:block "}
         text={"Get in touch "}
       />
     </nav>
@@ -102,14 +143,13 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
   const { dispatch, activePage } = useGlobalContext();
 
   function changeActivePage(pageName) {
-    sessionStorage.setItem("activePage", pageName);
     dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: pageName });
   }
 
   return (
     <div
       ref={linkContainerRef}
-      className=" globalTransition absolute bg-white z-50 text-black rounded-md shadow-md top-7 -left-[70%]  grid grid-cols-2 gap-4 p-2 w-[320px] md:w-[400px] border text-sm justify-between"
+      className=" globalTransition border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
     >
       {data.map(({ id, title, url }) => {
         return (
@@ -130,6 +170,11 @@ const SolutionLinks = ({ setDropDown, notificationButtonClassname }) => {
           </Link>
         );
       })}
+      {/* get in touch */}
+      <GlobalCTAButton
+        style={" text-black bg-ctaGreen w-fit md:hidden "}
+        text={"Get in touch "}
+      />
     </div>
   );
 };

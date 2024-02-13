@@ -71,7 +71,10 @@ export const CoporateDisbursement = () => {
             disbursement processes, offering a transformative <br /> solution
             for corporate financial operations
           </p>
-          <GlobalCTAButton text={"Get started"} style={" bg-ctaGreen  mt-6"} />
+          <GlobalCTAButton
+            text={"Request a Demo"}
+            style={" bg-ctaGreen  mt-6"}
+          />
         </section>
       </AnimatedContent>
       {/* section 3 */}

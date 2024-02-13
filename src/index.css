@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .globalTransition {
-  @apply ease-in-out duration-300 transition;
+  @apply ease-in-out duration-200 transition;
 }
 
 /* Bank Logo Carousel */

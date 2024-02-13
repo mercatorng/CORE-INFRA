@@ -22,30 +22,13 @@ export const AppProvider = ({ children }) => {
     };
   }, []);
 
-  // show sidebar when screen is greater than 1023
-  useEffect(() => {
-    if (windowWidth > 1023) {
-      setShowUserSidebar(true);
-    } else {
-      setShowUserSidebar(false);
-    }
-  }, [windowWidth]);
-
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
 
-  // check and set active page on page refresh
-  useEffect(() => {
-    dispatch({
-      type: "CHANGE_ACTIVE_PAGE",
-      payload: sessionStorage.getItem("activePage"),
-    });
-  }, []);
-
 
   return (
-    <AppContext.Provider value={{ ...state, dispatch }}>
+    <AppContext.Provider value={{ ...state, dispatch,windowWidth }}>
       {children}
     </AppContext.Provider>
   );

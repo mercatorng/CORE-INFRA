@@ -5,7 +5,7 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
 import img1 from "../assets/engageNotifyImg1.png";
-import img2 from "../assets/engageNotifyImg2.png"
+import img2 from "../assets/engageNotifyImg2.png";
 import { SectionTwoImages } from "../components/sectionTwoImages";
 
 export const EngageNotify360 = () => {
@@ -69,7 +69,10 @@ export const EngageNotify360 = () => {
             failed transactions into <br /> personalized customer engagements,
             ensuring a positive experience even in <br /> challenging moments
           </p>
-          <GlobalCTAButton text={"Get started"} style={" bg-ctaGreen  mt-6"} />
+          <GlobalCTAButton
+            text={"Request a Demo"}
+            style={" bg-ctaGreen  mt-6"}
+          />
         </section>
       </AnimatedContent>
       {/* section 3 */}

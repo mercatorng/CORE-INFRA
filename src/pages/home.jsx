@@ -278,8 +278,8 @@ export const Home = () => {
               </span>
             </h1>
             <p className=" md:text-2xl">
-              Empowering Financial Institutions with Secure, Efficient,
-              and <br /> Insightful Payment Solutions: From Processing to Engagement
+              Empowering Financial Institutions with Secure, Efficient, and{" "}
+              <br /> Insightful Payment Solutions: From Processing to Engagement
             </p>
             {/* buttons */}
             <div className=" flex gap-x-4 mt-12">
@@ -287,10 +287,9 @@ export const Home = () => {
                 to="aboutSection"
                 smooth={true}
                 duration={500}
-                className=" bg-white text-black rounded-md px-2 py-1 font-medium cursor-pointer "
+                className=" bg-white text-black rounded-md px-2 py-1 font-medium cursor-pointer grid place-items-center "
               >
-                {" "}
-                Explore more{" "}
+                Explore more
               </Link>
               <GlobalCTAButton
                 text={"Get in touch"}
@@ -407,18 +406,19 @@ export const Home = () => {
                 Why Choose CoreInfra ?
               </h1>
               <p className="  md:text-2xl">
-                At CoreInfra, we transcend conventional offerings, forging
-                pathways to innovation, reliability, and success. Leveraging our
-                profound domain knowledge and technological expertise. We
-                deliver cutting-edge and distinctive solutions crafted to propel
-                your business into the forefront of the finance and technology
-                landscape, ensuring you stay ahead of the competition
+                We offer a comprehensive suite of payment software solutions
+                designed <br /> to streamline operations, enhance security, and
+                unlock valuable insights. <br /> <br /> See how we help
+                financial institutions like yours to optimize their <br />{" "}
+                issuing process, acquiring process, and customer interactions{" "}
+                <br /> seamlessly, turning every transaction into a strategic
+                advantage.
               </p>
               <p className=" font-bold md:text-xl mt-4 mb-4">
                 Ready to enhance your payment infrastructure?
               </p>
               <GlobalCTAButton
-                text={"Get started"}
+                text={"Request a Demo"}
                 style={" bg-ctaGreen text-black"}
               />
             </div>

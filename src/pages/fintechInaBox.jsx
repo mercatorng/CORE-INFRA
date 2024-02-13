@@ -49,7 +49,7 @@ export const FintechInaBox = () => {
       {/* black and white boxes */}
       <AnimatedContent isVisible={isVisibleHeroImg}>
         <div ref={heroImgRef}>
-        <HeroImage heroImg={img1} altText={"hero"} />
+          <HeroImage heroImg={img1} altText={"hero"} />
         </div>
       </AnimatedContent>
       {/* section 2 */}
@@ -73,7 +73,10 @@ export const FintechInaBox = () => {
             entirely
             <br /> overseen by the bank itself
           </p>
-          <GlobalCTAButton text={"Get started"} style={" bg-ctaGreen  mt-6"} />
+          <GlobalCTAButton
+            text={"Request a Demo"}
+            style={" bg-ctaGreen  mt-6"}
+          />
         </section>
       </AnimatedContent>
       {/* section 3 */}

@@ -59,7 +59,8 @@ export const Footer = () => {
           <div>
             <h1 className=" font-semibold text-lg md:text-4xl">Lets Talk!</h1>
             <p className=" md:text-xl">
-              Every great partnership begins with a conversation
+              Unlock growth and reduce costs. <br /> Schedule a demo of CoreInfra's
+              payment solutions today.
             </p>
           </div>
           {/* learn more */}
@@ -69,7 +70,7 @@ export const Footer = () => {
               style={" bg-white text-gray-900"}
             />
             <GlobalCTAButton
-              text={"Get started"}
+              text={"Request a Demo"}
               style={" bg-ctaGreen text-black"}
             />
           </div>

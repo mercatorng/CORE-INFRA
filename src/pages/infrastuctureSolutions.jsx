@@ -70,7 +70,10 @@ export const InfrastuctureSolutions = () => {
             foundation your business needs for reliable <br /> and efficient
             financial processes
           </p>
-          <GlobalCTAButton text={"Get started"} style={" bg-ctaGreen  mt-6"} />
+          <GlobalCTAButton
+            text={"Request a Demo"}
+            style={" bg-ctaGreen  mt-6"}
+          />
         </section>
       </AnimatedContent>
       {/* section 3 */}

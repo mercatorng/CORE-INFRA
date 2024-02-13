@@ -82,7 +82,7 @@ export const BespokePayment = () => {
               a step <br /> toward enhanced profitability and efficiency
             </p>
             <GlobalCTAButton
-              text={"Get started"}
+              text={"Request a Demo"}
               style={" bg-ctaGreen  mt-6"}
             />
           </div>

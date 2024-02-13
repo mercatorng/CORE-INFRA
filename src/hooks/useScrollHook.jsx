@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 450) => {
+export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 360) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
@@ -11,11 +11,7 @@ export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const scrollPosition = window.scrollY;
 
-      console.log(elementPosition);
-      console.log(scrollPosition);
-
       const isElementVisible = scrollPosition > elementPosition - threshold;
-      console.log(isElementVisible);
 
       if (isElementVisible && !hasAnimated) {
         setIsVisible(true);
