@@ -33,10 +33,6 @@ export const Navbar = ({ homeUrl }) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (windowWidth > 767) setMenu(true);
-  }, [windowWidth]);
-
   return (
     <nav
       className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm pt-2 px-3 mb-16 md:px-16 lg:px-24 ${
