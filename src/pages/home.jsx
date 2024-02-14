@@ -256,22 +256,22 @@ export const Home = () => {
     {
       id: 0,
       img: companyLogo1,
-      dimension: "w-[120px]",
+      dimension: "w-[70px]",
     },
     {
       id: 1,
       img: companyLogo2,
-      dimension: "w-[150px] ",
+      dimension: "w-[90px] ",
     },
     {
       id: 2,
       img: companyLogo3,
-      dimension: "w-[150px]",
+      dimension: "w-[70px]",
     },
     {
       id: 3,
       img: companyLogo4,
-      dimension: "w-[150px]",
+      dimension: "w-[80px]",
     },
   ];
 
@@ -282,8 +282,8 @@ export const Home = () => {
 
   return (
     <>
-      <section className=" px-3 md:px-16 lg:px-24  ">
-      <div className=" absolute top-0 left-0 h-full w-full dot-grid-bg "></div>
+      <section className=" px-3 md:px-16 lg:px-28  ">
+        <div className=" absolute top-0 left-0 h-full w-full dot-grid-bg "></div>
         <AnimatedContent isVisible={isVisibleSection1}>
           <div ref={section1Ref} className=" mb-12">
             <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit">
@@ -347,7 +347,10 @@ export const Home = () => {
               </div>
               <div className=" animate-scroll flex  gap-x-16 md:gap-x-32  items-center logosContainer">
                 {companyLogoData.map(({ img, id, dimension }, index) => (
-                  <div key={index + 1} className={`shrink-0  ${dimension} h-fit `}>
+                  <div
+                    key={index + 1}
+                    className={`shrink-0  ${dimension} h-fit `}
+                  >
                     <img
                       src={img}
                       alt={`Image ${index + 1}`}
@@ -430,7 +433,7 @@ export const Home = () => {
       </section>
       {/*section 3 why choose core infra */}
       <Element name="aboutSection">
-        <section className=" dot-grid-bg relative px-3 md:px-16 py-16 lg:px-24 ">
+        <section className=" dot-grid-bg relative px-3 md:px-16 py-16 lg:px-28 ">
           {/* content */}
           <AnimatedContent isVisible={isVisibleSection6}>
             <div ref={section6Ref} className=" mb-12">
@@ -491,7 +494,7 @@ export const Home = () => {
         </section>
       </Element>
       {/* SECTION 4 */}
-      <section className=" px-3 md:px-16 lg:px-24 py-16 bg-white">
+      <section className=" px-3 md:px-16 lg:px-28 py-16 bg-white">
         <div className=" flex flex-col  gap-12">
           {section4Data.map(
             ({ icon, img, text, linkName, linkUrl, visible, ref }, index) => {
@@ -529,7 +532,7 @@ export const Home = () => {
         </div>
       </section>
       {/* section 5 */}
-      <section className=" px-3 md:px-16 py-16 lg:px-24 ">
+      <section className=" px-3 md:px-16 py-16 lg:px-28 ">
         <AnimatedContent isVisible={isVisibleSection10}>
           <div ref={section10Ref}>
             <p className=" text-center text-sm mb-2"> Solutions</p>
@@ -538,7 +541,7 @@ export const Home = () => {
             </h2>
             <div className=" mt-8 mb-20 ">
               {/* Buttons */}
-              <div className=" grid grid-cols-3 md:grid-cols-5 justify-between mb-6 gap-3 px-2  mx-auto">
+              <div className=" grid grid-cols-3 md:grid-cols-5 justify-between mb-6 gap-3 px-2  mx-auto border md:w-[70%]">
                 {section5Buttons.map(({ id, title }) => {
                   return (
                     <button
@@ -554,7 +557,7 @@ export const Home = () => {
                 })}
               </div>
               {/* content */}
-              <article className=" bg-white rounded-2xl p-3 md:p-6 flex flex-col md:flex-row justify-between md:items-center">
+              <article className=" bg-white rounded-2xl p-3 md:p-12 flex flex-col md:flex-row justify-between md:items-center">
                 {/* points */}
                 <div className=" grid gap-4 mb-6 md:w-[45%]">
                   {activeButtonContent.map(({ headerText, point }) => {
