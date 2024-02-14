@@ -31,7 +31,7 @@ export const InfrastuctureSolutions = () => {
       <AnimatedContent isVisible={isVisibleSection1}>
         <section
           ref={section1Ref}
-          className=" text-black  px-3 md:px-16 lg:px-24"
+          className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
             Robust infrastructure for secure <br />{" "}
@@ -58,7 +58,7 @@ export const InfrastuctureSolutions = () => {
       <AnimatedContent isVisible={isVisibleSection2}>
         <section
           ref={section2Ref}
-          className=" text-black  px-3 md:px-16 lg:px-24 mb-16"
+          className=" text-black  px-3 md:px-16 lg:px-28 mb-16"
         >
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             Infrastructure <br /> Solutions
@@ -80,7 +80,7 @@ export const InfrastuctureSolutions = () => {
       <AnimatedContent isVisible={isVisibleSection3}>
         <section
           ref={section3Ref}
-          className=" text-black  px-3 md:px-16 lg:px-24"
+          className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <SectionTwoImages
             img1={img2}
