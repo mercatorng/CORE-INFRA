@@ -35,7 +35,7 @@ export const Navbar = ({ homeUrl }) => {
 
   return (
     <nav
-      className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm pt-2 px-3 mb-16 md:px-16 lg:px-28 ${
+      className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm py-2  px-3 mb-16 md:px-16 lg:px-28 ${
         sticky ? "fixed top-0 left-0 z-50" : "relative"
       }`}
     >
@@ -55,7 +55,7 @@ export const Navbar = ({ homeUrl }) => {
 
       <div
         className={`absolute  md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit  shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50 globalTransition ${
-          !showMenu ? "-translate-x-[100%]" : ""
+          !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
         <Link className=" w-fit">About</Link>
