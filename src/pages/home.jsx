@@ -493,45 +493,7 @@ export const Home = () => {
           </AnimatedContent>
         </section>
       </Element>
-      {/* SECTION 4 */}
-      <section className=" px-3 md:px-16 lg:px-28 py-16 bg-white">
-        <div className=" flex flex-col  gap-12">
-          {section4Data.map(
-            ({ icon, img, text, linkName, linkUrl, visible, ref }, index) => {
-              return (
-                <AnimatedContent isVisible={visible}>
-                  <div
-                    ref={ref}
-                    key={text}
-                    className=" md:flex md:items-center gap-8 justify-between"
-                  >
-                    <div
-                      className={`mb-4 md:mb-0 mx-auto   ${
-                        index === 1 && "order-1"
-                      } `}
-                    >
-                      <img src={img} alt={linkName} />
-                    </div>
-                    <div className=" text-black grid gap-4 md:w-[60%]">
-                      <div className=" w-fit">
-                        <img src={icon} alt={`${linkName} icon`} />
-                      </div>
-                      <p className="  md:font-medium md:text-2xl">{text}</p>
-                      <Link
-                        to={linkUrl}
-                        className=" flex items-center text-green-500"
-                      >
-                        {linkName} <GoChevronRight className=" mt-1" />{" "}
-                      </Link>
-                    </div>
-                  </div>
-                </AnimatedContent>
-              );
-            }
-          )}
-        </div>
-      </section>
-      {/* section 5 */}
+      {/* section 4 */}
       <section className=" px-3 md:px-16 py-16 lg:px-28 ">
         <AnimatedContent isVisible={isVisibleSection10}>
           <div ref={section10Ref}>
@@ -541,7 +503,7 @@ export const Home = () => {
             </h2>
             <div className=" mt-8 mb-20 ">
               {/* Buttons */}
-              <div className=" grid grid-cols-3 md:grid-cols-5 justify-between mb-6 gap-3 px-2  mx-auto border md:w-[70%]">
+              <div className=" grid grid-cols-3 md:grid-cols-5 justify-between mb-6 gap-3 px-2  mx-auto  md:w-[70%]">
                 {section5Buttons.map(({ id, title }) => {
                   return (
                     <button
@@ -617,6 +579,45 @@ export const Home = () => {
           </article>
         </AnimatedContent>
       </section>
+      {/* SECTION 5 */}
+      <section className=" px-3 md:px-16 lg:px-28 py-16 bg-white">
+        <div className=" flex flex-col  gap-12">
+          {section4Data.map(
+            ({ icon, img, text, linkName, linkUrl, visible, ref }, index) => {
+              return (
+                <AnimatedContent isVisible={visible}>
+                  <div
+                    ref={ref}
+                    key={text}
+                    className=" md:flex md:items-center gap-8 justify-between"
+                  >
+                    <div
+                      className={`mb-4 md:mb-0 mx-auto   ${
+                        index === 1 && "order-1"
+                      } `}
+                    >
+                      <img src={img} alt={linkName} />
+                    </div>
+                    <div className=" text-black grid gap-4 md:w-[60%]">
+                      <div className=" w-fit">
+                        <img src={icon} alt={`${linkName} icon`} />
+                      </div>
+                      <p className="  md:font-medium md:text-2xl">{text}</p>
+                      <Link
+                        to={linkUrl}
+                        className=" flex items-center text-green-500"
+                      >
+                        {linkName} <GoChevronRight className=" mt-1" />{" "}
+                      </Link>
+                    </div>
+                  </div>
+                </AnimatedContent>
+              );
+            }
+          )}
+        </div>
+      </section>
+      
     </>
   );
 };
