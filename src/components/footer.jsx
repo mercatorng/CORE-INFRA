@@ -10,17 +10,21 @@ export const Footer = () => {
   const navLinks = [
     { linkName: "CoreInfra", linkUrl: "/" },
     { linkName: "About Us", linkUrl: "#" },
-    { linkName: "Overview", linkUrl: "#" },
+    { linkName: "Contact Us", linkUrl: "#" },
+    { linkName: "Legal", linkUrl: "#" },
+    { linkName: "Terms", linkUrl: "#" },
+    { linkName: "Privacy", linkUrl: "#" },
+    { linkName: "Licenses", linkUrl: "#" },
   ];
 
   const solutionsData = [
-    { linkName: "Bespoke Payment Software", linkUrl: "#" },
-    { linkName: "Infrastructure Solutions", linkUrl: "#" },
-    { linkName: "Corporate Disbursement Platform", linkUrl: "#" },
-    { linkName: "Card and PIN Management Solutions", linkUrl: "#" },
-    { linkName: "EngageNotify360", linkUrl: "#" },
-    { linkName: "SchemeComply360", linkUrl: "#" },
-    { linkName: "Fintech in a Box", linkUrl: "#" },
+    { linkName: "Bespoke Payment Software", linkUrl: "bespoke-payment-software" },
+    { linkName: "Infrastructure Solutions", linkUrl: "infrastructure-solutions" },
+    { linkName: "Corporate Disbursement Platform", linkUrl: "corporate-disbursement-platform" },
+    { linkName: "Card and PIN Management Solutions", linkUrl: "card-and-pin-management-solutions" },
+    { linkName: "EngageNotify360", linkUrl: "EngageNotify360" },
+    { linkName: "SchemeComply360", linkUrl: "SchemeComply360" },
+    { linkName: "Fintech in a Box", linkUrl: "fintech-in-a-box" },
   ];
   const resourcesData = [
     { linkName: "Blog", linkUrl: "#" },
@@ -38,13 +42,10 @@ export const Footer = () => {
 
   const section1Ref = useRef();
   const section2Ref = useRef();
-  const section3Ref = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(section1Ref);
 
   const { isVisible: isVisibleSection2 } = useScrollVisibility(section2Ref);
-
-  const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
 
   const currentYear = new Date().getFullYear();
 
@@ -59,8 +60,8 @@ export const Footer = () => {
           <div>
             <h1 className=" font-semibold text-lg md:text-4xl">Lets Talk!</h1>
             <p className=" md:text-xl">
-              Unlock growth and reduce costs. <br /> Schedule a demo of CoreInfra's
-              payment solutions today.
+              Unlock growth and reduce costs. <br /> Schedule a demo of
+              CoreInfra's payment solutions today.
             </p>
           </div>
           {/* learn more */}
@@ -93,6 +94,7 @@ export const Footer = () => {
             {/* nav link */}
             <div className=" lg:w-[70%] mt-8  md:flex md:justify-between">
               <div className=" flex flex-col w-fit gap-1">
+                <p className=" font-bold">Company</p>
                 {navLinks.map(({ linkName, linkUrl }) => (
                   <Link
                     key={linkName}
@@ -119,7 +121,7 @@ export const Footer = () => {
                 </div>
               </div>
               {/* resources */}
-              <div className=" mt-4 md:mt-0 ">
+              {/* <div className=" mt-4 md:mt-0 ">
                 <p className=" font-bold">Resources</p>
                 <div className=" flex flex-col w-fit gap-1 ">
                   {resourcesData.map(({ linkName, linkUrl }) => (
@@ -132,9 +134,9 @@ export const Footer = () => {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div> */}
               {/* legal */}
-              <div className=" mt-4 md:mt-0 ">
+              {/* <div className=" mt-4 md:mt-0 ">
                 <div className=" flex flex-col w-fit gap-1 ">
                   {legalData.map(({ linkName, linkUrl }) => (
                     <Link
@@ -146,7 +148,7 @@ export const Footer = () => {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* copyright */}

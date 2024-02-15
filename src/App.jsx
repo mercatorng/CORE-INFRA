@@ -34,7 +34,7 @@ function App() {
             />
             <Route path="/EngageNotify360" element={<EngageNotify360 />} />
             <Route path="/SchemeComply360" element={<SchemeComply360 />} />
-            <Route path="/Fintech in a Box" element={<FintechInaBox />} />
+            <Route path="/fintech-in-a-box" element={<FintechInaBox />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router";
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
-import { useGlobalContext } from "../utils/context";
+import { ScrollToTopOnPageChange } from "../components/scrollToTop";
 
 export const SharedLayout = () => {
   //  checks if url is home
@@ -14,6 +14,7 @@ export const SharedLayout = () => {
         homeUrl ? "bg-[#050806] text-white" : "bg-white text-gray-950"
       } `}
     >
+      <ScrollToTopOnPageChange />
       <Navbar {...{ homeUrl }} />
       <Outlet />
       <Footer />
