@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 360) => {
+export const useScrollVisibility = (ref, shouldAnimateOnMount = false, threshold = 480) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 

@@ -8,6 +8,9 @@ import { EngageNotify360 } from "./pages/engageNotify360";
 import { FintechInaBox } from "./pages/fintechInaBox";
 import { CoporateDisbursement } from "./pages/coporateDisbursement";
 import { CardAndPinMgt } from "./pages/cardAndPinMgt";
+import { FraudMonitoring } from "./pages/FraudMonitoring";
+import { InstantCardIssuance } from "./pages/InstantCardIssuance";
+import { PinDelivery } from "./pages/pinDelivery";
 
 function App() {
   return (
@@ -35,6 +38,12 @@ function App() {
             <Route path="/EngageNotify360" element={<EngageNotify360 />} />
             <Route path="/SchemeComply360" element={<SchemeComply360 />} />
             <Route path="/fintech-in-a-box" element={<FintechInaBox />} />
+            <Route path="/fraud-monitoring" element={<FraudMonitoring />} />
+            <Route
+              path="/instant-card-issuance"
+              element={<InstantCardIssuance />}
+            />
+            <Route path="/pin-delivery" element={<PinDelivery />} />
           </Route>
         </Routes>
       </BrowserRouter>

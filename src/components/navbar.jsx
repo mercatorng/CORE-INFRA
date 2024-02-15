@@ -122,6 +122,9 @@ const SolutionLinks = ({
     { id: 4, title: "EngageNotify360", url: "EngageNotify360" },
     { id: 5, title: "SchemeComply360", url: "SchemeComply360" },
     { id: 6, title: "Fintech in a Box", url: "fintech-in-a-box" },
+    { id: 7, title: "Fraud Monitoring", url: "fraud-monitoring" },
+    { id: 8, title: "Instant Card Issuance", url: "instant-card-issuance" },
+    { id: 9, title: "Pin Delivery", url: "pin-delivery" },
   ];
 
   const linkContainerRef = useRef(null);
