@@ -63,13 +63,27 @@ export const InfrastuctureSolutions = () => {
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             Infrastructure <br /> Solutions
           </h1>
-          <p>
-            Our Infrastructure Solutions set the stage for secure and scalable
-            financial <br /> operations. From seamless middleware integration to
-            comprehensive security <br /> measures, CoreInfra provides the
-            foundation your business needs for reliable <br /> and efficient
-            financial processes
-          </p>
+          <div className=" flex flex-col gap-y-8">
+            <p>
+              Pavilion is a full suite Digital Banking infrastructure that
+              allows financial institutions <br /> to offer an array of new and
+              exciting digital banking services to their customers <br /> across
+              various channels – ATM, POS, WEB, MOBILE, USSD, NFC, QR, KIOSK
+              etc.
+            </p>
+            <p>
+              Leverage your existing investment in Payments Infrastructure and
+              your Card <br /> Management System; Extend your mobile banking
+              offering with fully EMV compliant <br /> digital banking services.
+              Connect Multiple systems to your Switch and FEP to offer an <br />{" "}
+              array of new services targeted at the digital natives.
+            </p>
+            <p>
+              Pavilion empowers Financial institutions and Fintech firms to
+              offer a full bouquet of EMV <br /> Compliant payment services across
+              their Omni-channel platforms.
+            </p>
+          </div>
           <GlobalCTAButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}

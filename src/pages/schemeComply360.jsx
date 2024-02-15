@@ -62,11 +62,46 @@ export const SchemeComply360 = () => {
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             SchemeComply360
           </h1>
-          <p>
-            SchemeComply360 simplifies compliance reporting by automating the{" "}
-            <br /> process of generating and submitting Mastercard GCO reports
-            and other <br /> scheme specific reports
-          </p>
+          <div className=" flex flex-col gap-y-8">
+            <p>
+              To facilitate the clearing process by card schemes such as
+              MasterCard, <br /> network members are expected to provide
+              scheme-compliant reports on <br /> a regular basis, to power the
+              exchange of funds among members. <br /> Failure to provide
+              accurate and timely report could result in fines or <br /> even
+              suspension from the network. On the MasterCard Network, one <br />{" "}
+              such report is the Global Collection Only (GCO) Reporting.
+            </p>
+            <p>
+              The GCO is a program of MasterCard Corporation pursuant to which{" "}
+              <br /> a Customer must provide collection-only reporting of
+              non-Processed <br />
+              Transactions effected with a Card, Access Device, or Account
+              issued <br /> under a Mastercard-assigned BIN.
+            </p>
+            <p>
+              These reports are formatted in a proprietary Integrated Product
+              Message <br /> or IPM format. Because of the complexity of the
+              file and blocking formats <br /> used in Mastercard IPM file
+              formats, sometimes, much of the valuable data <br /> described
+              above is not immediately available for digestion by Mastercard
+              members.
+            </p>
+            <p>
+              SchemeComply360 for GCO Reporting is an easy to use and automated
+              platform <br /> that enables MasterCard members to generate and
+              send MasterCard GCO reports <br /> at the click of a button and
+              stay compliant with their membership obligations thereby <br />{" "}
+              helping to eliminate the cost and penalty fines that is imposed by
+              MasterCard for <br />
+              non-compliance.
+            </p>
+            <p>
+              Compliance report for other schemes are also available as optional
+              add-ons to <br /> SchemeComply360.
+            </p>
+          </div>
+
           <GlobalCTAButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}

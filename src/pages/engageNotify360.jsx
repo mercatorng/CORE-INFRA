@@ -34,12 +34,13 @@ export const EngageNotify360 = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Transforming Transaction <br />
+            Unlocking{" "}
             <span className=" relative inline-block">
-              Setbacks
+              Strategic
               <GreenUnderline />
             </span>{" "}
-            into Opportunities
+            <br />
+            Opportunities in <br /> Transaction Failures.
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
@@ -63,12 +64,39 @@ export const EngageNotify360 = () => {
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             EngageNotify360
           </h1>
-          <p>
-            EngageNotify360 is our solution that turns transaction setbacks into
-            strategic <br /> advantages. This error handling solution transforms
-            failed transactions into <br /> personalized customer engagements,
-            ensuring a positive experience even in <br /> challenging moments
-          </p>
+          <div className=" flex flex-col gap-y-8">
+            <p>
+              Unlocking Strategic Opportunities in Transaction Failures. Failed
+              transactions <br /> are a pervasive challenge that disrupt the
+              seamless flow of operations and pose <br /> a threat to customer
+              satisfaction.
+            </p>
+            <p>
+              We are excited to present EngageNotify360, a transaction based
+              customer engagement <br /> platform designed to turn failed
+              transactions into opportunities for positive interactions <br />{" "}
+              and increased customer satisfaction. <br /> In today's competitive
+              landscape, ensuring a seamless user experience is critical, and{" "}
+              <br /> EngageNotify360 empowers you to address failed transactions
+              strategically, turning <br />
+              them into valuable touchpoints with your customers.
+            </p>
+            <p>
+              EngageNotify360 integrates into existing payment systems and
+              provides interactive resilience, <br /> personalized
+              notifications, detailed error insights, and remedial actions for
+              customers facing <br />
+              transaction errors on any of the banks channels – from card based
+              transactions to account based <br /> transactions on channels such
+              as Mobile Banking, Internet Banking, USSD, etc.
+            </p>
+            <p>
+              EngageNotify360 is a transformative solution that goes beyond
+              simply managing failed transactions. <br /> It allows you to turn
+              them into positive customer interactions, building stronger
+              relationships and <br /> driving long-term business success.
+            </p>
+          </div>
           <GlobalCTAButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}

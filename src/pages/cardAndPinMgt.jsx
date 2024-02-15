@@ -64,12 +64,37 @@ export const CardAndPinMgt = () => {
             <br />
             Management Solutions
           </h1>
-          <p>
-            Experience the future of card management with CoreInfra's innovative{" "}
-            <br /> solutions. From PIN selection to card activation, our
-            comprehensive suite of <br /> services enhances the cardholder's
-            experience, ensuring a seamless and <br /> secure process
-          </p>
+          <div className=" flex flex-col gap-y-8">
+            <p>
+              Pavilion Card and PIN solution is a Module of the Pavilion Suite
+              specially tailored to <br /> allow card issuers offer their
+              customers a robust and versatile solution for managing <br /> all
+              card and PIN related service requests - Card requests, PIN
+              selection & Card activation,
+              <br /> Reissuance, Delivery etc.
+            </p>
+            <p>
+              The module provides a seamless and secure process through which
+              account holders can <br /> initiate and complete all card-related
+              requests via Card-Not-Present channels such as <br /> Mobile
+              Banking app, Internet Banking app, IVR, USSD etc., with realtime
+              access to <br /> status information.
+            </p>
+            <p>
+              Through an exposure to the issuers’ channels via standards based
+              APIs, the solution allows <br /> account holders to seamlessly
+              initiate card requests, select their Personal Identification{" "}
+              <br /> Numbers (PINs), manage the delivery, hotlist cards,
+              activate & deactivate cards, thus <br /> providing an optimal
+              balance between user convenience and robust security measures.
+            </p>
+            <p>
+              This solution employs robust encryption protocols and secure
+              communication channels to <br /> ensure the utmost protection of
+              sensitive information, aligning with industry <br /> standards and
+              compliance requirements.
+            </p>
+          </div>
           <GlobalCTAButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}

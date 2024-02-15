@@ -61,18 +61,49 @@ export const FintechInaBox = () => {
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             Fintech In A Box
           </h1>
-          <p>
-            Our Fintech Issuing Processor(FIP) platform is a comprehensive
-            solution that equips you with the <br /> essentials to collaborate
-            with Fintechs and other secondary Issuers in a co-issuing
-            arrangements. From seamless onboarding, to card request and issuance
-            management to seamless authorization <br /> integrations to the
-            Fintechs via secured open APIs, FIP is your gateway to seamless
-            issuing <br /> collaborations. <br /> <br /> Pavilion FIP is an
-            on-premise solution, deployed within the bank's infrastructure and
-            entirely
-            <br /> overseen by the bank itself
-          </p>
+          <div className=" flex flex-col gap-y-8">
+            <p>
+              The financial technology (Fintech) industry has rapidly grown over
+              the past <br /> decade, disrupting traditional banking models and
+              creating new <br /> opportunities for financial institutions to
+              innovate. <br />
+              As Fintech continues to transform the financial industry, banks
+              must position <br /> themselves as Fintech partners of choice to
+              remain competitive and relevant. <br /> This requires a
+              comprehensive understanding of the Fintech landscape, <br />{" "}
+              identification of potential partnerships, and integration of new{" "}
+              <br /> technologies and processes.
+            </p>
+            <p>
+              Banks that successfully align themselves with Fintech can gain a
+              competitive <br /> edge, improve their customer experience, and
+              increase profitability. <br /> One area of collaboration that
+              holds great potential is card issuing. Fintech <br /> companies
+              are increasingly venturing into the card issuing space, offering{" "}
+              <br /> innovative solutions such as virtual cards, physical cards
+              with innovative <br />
+              and interesting use cases.
+            </p>
+            <p>
+              We are proud to introduce Pavilion Fintech Issuing Processor(
+              Pavilion FIP), <br /> a payments processing middleware that acts
+              as a gateway between the bank <br /> and partner Fintechs.
+              Pavilion FIP enables banks to issue cards to Fintech <br />
+              partners, process transactions from these cards, and offer
+              additional <br /> functionality such as fee sharing(Interchange
+              Reimbursement Fee – IRF) and <br /> dispute resolution.{" "}
+            </p>
+            <p>
+              Pavilion FIP is an on-premise solution, specifically implemented
+              within the bank's <br /> infrastructure and entirely overseen by the bank
+              itself.
+            </p>
+            <p>
+              Pavilion FIP helps bridge the gap and unlocks the full potential
+              of bank-fintech <br /> collaboration, shaping a brighter future for the
+              card issuing industry.
+            </p>
+          </div>
           <GlobalCTAButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}
