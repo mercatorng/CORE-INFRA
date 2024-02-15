@@ -65,7 +65,7 @@ export const CardAndPinMgt = () => {
             Management Solutions
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p>
+            <p className=" md:text-2xl">
               Pavilion Card and PIN solution is a Module of the Pavilion Suite
               specially tailored to <br /> allow card issuers offer their
               customers a robust and versatile solution for managing <br /> all
@@ -73,14 +73,14 @@ export const CardAndPinMgt = () => {
               selection & Card activation,
               <br /> Reissuance, Delivery etc.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               The module provides a seamless and secure process through which
               account holders can <br /> initiate and complete all card-related
               requests via Card-Not-Present channels such as <br /> Mobile
               Banking app, Internet Banking app, IVR, USSD etc., with realtime
               access to <br /> status information.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               Through an exposure to the issuers’ channels via standards based
               APIs, the solution allows <br /> account holders to seamlessly
               initiate card requests, select their Personal Identification{" "}
@@ -88,7 +88,7 @@ export const CardAndPinMgt = () => {
               activate & deactivate cards, thus <br /> providing an optimal
               balance between user convenience and robust security measures.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               This solution employs robust encryption protocols and secure
               communication channels to <br /> ensure the utmost protection of
               sensitive information, aligning with industry <br /> standards and

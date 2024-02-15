@@ -64,24 +64,24 @@ export const InfrastuctureSolutions = () => {
             Infrastructure <br /> Solutions
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p>
+            <p className=" md:text-2xl">
               Pavilion is a full suite Digital Banking infrastructure that
               allows financial institutions <br /> to offer an array of new and
               exciting digital banking services to their customers <br /> across
               various channels – ATM, POS, WEB, MOBILE, USSD, NFC, QR, KIOSK
               etc.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               Leverage your existing investment in Payments Infrastructure and
               your Card <br /> Management System; Extend your mobile banking
               offering with fully EMV compliant <br /> digital banking services.
               Connect Multiple systems to your Switch and FEP to offer an <br />{" "}
               array of new services targeted at the digital natives.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               Pavilion empowers Financial institutions and Fintech firms to
-              offer a full bouquet of EMV <br /> Compliant payment services across
-              their Omni-channel platforms.
+              offer a full bouquet of EMV <br /> Compliant payment services
+              across their Omni-channel platforms.
             </p>
           </div>
           <GlobalCTAButton

@@ -62,7 +62,7 @@ export const FintechInaBox = () => {
             Fintech In A Box
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p>
+            <p className=" md:text-2xl">
               The financial technology (Fintech) industry has rapidly grown over
               the past <br /> decade, disrupting traditional banking models and
               creating new <br /> opportunities for financial institutions to
@@ -74,7 +74,7 @@ export const FintechInaBox = () => {
               identification of potential partnerships, and integration of new{" "}
               <br /> technologies and processes.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               Banks that successfully align themselves with Fintech can gain a
               competitive <br /> edge, improve their customer experience, and
               increase profitability. <br /> One area of collaboration that
@@ -84,7 +84,7 @@ export const FintechInaBox = () => {
               with innovative <br />
               and interesting use cases.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               We are proud to introduce Pavilion Fintech Issuing Processor(
               Pavilion FIP), <br /> a payments processing middleware that acts
               as a gateway between the bank <br /> and partner Fintechs.
@@ -93,15 +93,15 @@ export const FintechInaBox = () => {
               additional <br /> functionality such as fee sharing(Interchange
               Reimbursement Fee – IRF) and <br /> dispute resolution.{" "}
             </p>
-            <p>
+            <p className=" md:text-2xl">
               Pavilion FIP is an on-premise solution, specifically implemented
-              within the bank's <br /> infrastructure and entirely overseen by the bank
-              itself.
+              within the bank's <br /> infrastructure and entirely overseen by
+              the bank itself.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               Pavilion FIP helps bridge the gap and unlocks the full potential
-              of bank-fintech <br /> collaboration, shaping a brighter future for the
-              card issuing industry.
+              of bank-fintech <br /> collaboration, shaping a brighter future
+              for the card issuing industry.
             </p>
           </div>
           <GlobalCTAButton

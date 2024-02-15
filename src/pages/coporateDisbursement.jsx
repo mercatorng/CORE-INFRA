@@ -65,7 +65,7 @@ export const CoporateDisbursement = () => {
             Platform
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p>
+            <p className=" md:text-2xl">
               PayBridge is a corporate disbursement and inflow management
               solution designed to <br /> address the specific needs of
               businesses, especially in the financial services sector such{" "}
@@ -75,7 +75,7 @@ export const CoporateDisbursement = () => {
               seamlessly <br /> integrating and automating both outgoing
               payments (Payouts) and incoming payments (Payin).
             </p>
-            <p>
+            <p className=" md:text-2xl">
               PayBridge leverages an inbuilt virtual account management system
               to connect your <br /> internal ledgers to your bank accounts,
               effectively forming a bridge that allows you to <br /> make
@@ -83,7 +83,7 @@ export const CoporateDisbursement = () => {
               your vendors, <br />
               suppliers, contractors etc.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               PayBridge streamlines and optimizes financial transactions,
               offering several key benefits:
               <ul className=" list-disc list-inside flex flex-col gap-y-3 mt-3">
@@ -125,7 +125,6 @@ export const CoporateDisbursement = () => {
                 </li>
               </ul>
             </p>
-            <p></p>
           </div>
           <GlobalCTAButton
             text={"Request a Demo"}

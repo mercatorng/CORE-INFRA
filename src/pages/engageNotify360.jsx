@@ -65,13 +65,13 @@ export const EngageNotify360 = () => {
             EngageNotify360
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p>
+            <p className=" md:text-2xl">
               Unlocking Strategic Opportunities in Transaction Failures. Failed
               transactions <br /> are a pervasive challenge that disrupt the
               seamless flow of operations and pose <br /> a threat to customer
               satisfaction.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               We are excited to present EngageNotify360, a transaction based
               customer engagement <br /> platform designed to turn failed
               transactions into opportunities for positive interactions <br />{" "}
@@ -81,7 +81,7 @@ export const EngageNotify360 = () => {
               strategically, turning <br />
               them into valuable touchpoints with your customers.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               EngageNotify360 integrates into existing payment systems and
               provides interactive resilience, <br /> personalized
               notifications, detailed error insights, and remedial actions for
@@ -90,7 +90,7 @@ export const EngageNotify360 = () => {
               transactions to account based <br /> transactions on channels such
               as Mobile Banking, Internet Banking, USSD, etc.
             </p>
-            <p>
+            <p className=" md:text-2xl">
               EngageNotify360 is a transformative solution that goes beyond
               simply managing failed transactions. <br /> It allows you to turn
               them into positive customer interactions, building stronger
