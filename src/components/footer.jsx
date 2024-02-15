@@ -11,33 +11,27 @@ export const Footer = () => {
     { linkName: "CoreInfra", linkUrl: "/" },
     { linkName: "About Us", linkUrl: "#" },
     { linkName: "Contact Us", linkUrl: "#" },
-    { linkName: "Legal", linkUrl: "#" },
-    { linkName: "Terms", linkUrl: "#" },
-    { linkName: "Privacy", linkUrl: "#" },
-    { linkName: "Licenses", linkUrl: "#" },
   ];
 
-  const solutionsData = [
-    { linkName: "Bespoke Payment Software", linkUrl: "bespoke-payment-software" },
-    { linkName: "Infrastructure Solutions", linkUrl: "infrastructure-solutions" },
-    { linkName: "Corporate Disbursement Platform", linkUrl: "corporate-disbursement-platform" },
-    { linkName: "Card and PIN Management Solutions", linkUrl: "card-and-pin-management-solutions" },
-    { linkName: "EngageNotify360", linkUrl: "EngageNotify360" },
-    { linkName: "SchemeComply360", linkUrl: "SchemeComply360" },
-    { linkName: "Fintech in a Box", linkUrl: "fintech-in-a-box" },
-  ];
-  const resourcesData = [
-    { linkName: "Blog", linkUrl: "#" },
-    { linkName: "Help Center", linkUrl: "#" },
-    { linkName: "Support", linkUrl: "#" },
-  ];
+  // const solutionsData = [
+  //   { linkName: "Bespoke Payment Software", linkUrl: "bespoke-payment-software" },
+  //   { linkName: "Infrastructure Solutions", linkUrl: "infrastructure-solutions" },
+  //   { linkName: "Corporate Disbursement Platform", linkUrl: "corporate-disbursement-platform" },
+  //   { linkName: "Card and PIN Management Solutions", linkUrl: "card-and-pin-management-solutions" },
+  //   { linkName: "EngageNotify360", linkUrl: "EngageNotify360" },
+  //   { linkName: "SchemeComply360", linkUrl: "SchemeComply360" },
+  //   { linkName: "Fintech in a Box", linkUrl: "fintech-in-a-box" },
+  // ];
+  // const resourcesData = [
+  //   { linkName: "Blog", linkUrl: "#" },
+  //   { linkName: "Help Center", linkUrl: "#" },
+  //   { linkName: "Support", linkUrl: "#" },
+  // ];
 
   const legalData = [
-    { linkName: "Legal", linkUrl: "#" },
     { linkName: "Terms", linkUrl: "#" },
     { linkName: "Privacy", linkUrl: "#" },
     { linkName: "Licenses", linkUrl: "#" },
-    { linkName: "Contact Us", linkUrl: "#" },
   ];
 
   const section1Ref = useRef();
@@ -92,7 +86,7 @@ export const Footer = () => {
               </p>
             </div>
             {/* nav link */}
-            <div className=" lg:w-[70%] mt-8  md:flex md:justify-between">
+            <div className=" lg:w-[70%] mt-8  md:flex md:gap-x-64">
               <div className=" flex flex-col w-fit gap-1">
                 <p className=" font-bold">Company</p>
                 {navLinks.map(({ linkName, linkUrl }) => (
@@ -105,39 +99,10 @@ export const Footer = () => {
                   </Link>
                 ))}
               </div>
-              {/* solutions */}
-              <div className=" mt-4 md:mt-0 ">
-                <p className=" font-bold">Solutions</p>
-                <div className=" flex flex-col w-fit gap-1 ">
-                  {solutionsData.map(({ linkName, linkUrl }) => (
-                    <Link
-                      key={linkName}
-                      className=" hover:text-ctaGreen "
-                      to={linkUrl}
-                    >
-                      {linkName}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              {/* resources */}
-              {/* <div className=" mt-4 md:mt-0 ">
-                <p className=" font-bold">Resources</p>
-                <div className=" flex flex-col w-fit gap-1 ">
-                  {resourcesData.map(({ linkName, linkUrl }) => (
-                    <Link
-                      key={linkName}
-                      className=" hover:text-ctaGreen "
-                      to={linkUrl}
-                    >
-                      {linkName}
-                    </Link>
-                  ))}
-                </div>
-              </div> */}
               {/* legal */}
-              {/* <div className=" mt-4 md:mt-0 ">
+              <div className=" mt-4 md:mt-0 ">
                 <div className=" flex flex-col w-fit gap-1 ">
+                  <p className=" font-bold">Legal</p>
                   {legalData.map(({ linkName, linkUrl }) => (
                     <Link
                       key={linkName}
@@ -148,7 +113,7 @@ export const Footer = () => {
                     </Link>
                   ))}
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
           {/* copyright */}
@@ -171,6 +136,12 @@ export const Footer = () => {
               />
               <SocialIcon
                 url="https://facebook.com"
+                target="_blank"
+                bgColor="transparent"
+                fgColor="gray"
+              />
+              <SocialIcon
+                url="https://instagram.com"
                 target="_blank"
                 bgColor="transparent"
                 fgColor="gray"
