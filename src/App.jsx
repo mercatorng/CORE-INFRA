@@ -8,9 +8,9 @@ import { EngageNotify360 } from "./pages/engageNotify360";
 import { FintechInaBox } from "./pages/fintechInaBox";
 import { CoporateDisbursement } from "./pages/coporateDisbursement";
 import { CardAndPinMgt } from "./pages/cardAndPinMgt";
-import { FraudMonitoring } from "./pages/FraudMonitoring";
-import { InstantCardIssuance } from "./pages/InstantCardIssuance";
+import { FraudMonitoring } from "./pages/fraudMonitoring";
 import { PinDelivery } from "./pages/pinDelivery";
+import { InstantCardIssuance } from "./pages/instantCardIssuance";
 
 function App() {
   return (
