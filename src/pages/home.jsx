@@ -484,7 +484,7 @@ export const Home = () => {
             </h2>
             <div className=" mt-8 mb-20 ">
               {/* Buttons */}
-              <div className=" grid grid-cols-3 md:grid-cols-5 justify-between mb-6 gap-3 px-2  mx-auto  md:w-[70%]">
+              <div className=" flex flex-wrap items-center justify-center mb-6 gap-3 px-2  mx-auto  md:w-[70%]">
                 {section5Buttons.map(({ id, title }) => {
                   return (
                     <button
@@ -511,7 +511,7 @@ export const Home = () => {
                             key={headerText}
                             className=" text-black md:flex gap-4 w-full "
                           >
-                            <div>
+                            <div className=" mb-2 md:m-0">
                               <p className=" font-bold text-xl md:2xl mb-4">
                                 {headerText}
                               </p>

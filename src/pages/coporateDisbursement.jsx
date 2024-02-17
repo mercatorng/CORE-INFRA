@@ -6,6 +6,9 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
 import img1 from "../assets/coporateImg1.jpg";
+import { SectionTwoImages } from "../components/sectionTwoImages";
+import img2 from "../assets/bespokeImg2.png";
+import img3 from "../assets/bespokeImg3.png";
 
 export const CoporateDisbursement = () => {
   const section1Ref = useRef();
@@ -106,22 +109,23 @@ export const CoporateDisbursement = () => {
                     Efficient End-to-End payment flows:
                   </span>{" "}
                   In addition to Payout, PayBridge provides <br /> a convenient
-                  and secure way for funds to flow into the internal financial <br />
+                  and secure way for funds to flow into the internal financial{" "}
+                  <br />
                   system i.e. collections
                 </li>
                 <li>
                   <span className=" font-medium">Regulatory Compliance:</span>
-                  The solution is designed to meet the regulatory <br /> requirements{" "}
-                   and compliance standards relevant to the financial
-                  services <br /> industry. Thereby reducing
+                  The solution is designed to meet the regulatory <br />{" "}
+                  requirements and compliance standards relevant to the
+                  financial services <br /> industry. Thereby reducing
                   compliance-related risks.
                 </li>
                 <li>
                   <span className=" font-medium">Data Security:</span> PayBridge
                   employs advanced data encryption techniques <br /> to secure
-                  sensitive financial information. It prioritizes the
-                  protection of <br /> financial data to prevent unauthorized
-                  access and fraud.
+                  sensitive financial information. It prioritizes the protection
+                  of <br /> financial data to prevent unauthorized access and
+                  fraud.
                 </li>
               </ul>
             </p>
@@ -136,9 +140,14 @@ export const CoporateDisbursement = () => {
       <AnimatedContent isVisible={isVisibleSection3}>
         <section
           ref={section3Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28"
+          className=" text-black  px-3 md:px-16 lg:px-28 "
         >
-          <DummyImg />
+          <SectionTwoImages
+            img1={img2}
+            img2={img3}
+            altText={"laptop"}
+            altText2={"laptop and debit card"}
+          />
         </section>
       </AnimatedContent>
     </>

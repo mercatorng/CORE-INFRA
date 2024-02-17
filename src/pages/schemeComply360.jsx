@@ -6,6 +6,9 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import img1 from "../assets/schemeComplyImg1.jpg";
 import { HeroImage } from "../components/heroImage";
+import { SectionTwoImages } from "../components/sectionTwoImages";
+import img2 from "../assets/bespokeImg2.png";
+import img3 from "../assets/bespokeImg3.png";
 
 export const SchemeComply360 = () => {
   const section1Ref = useRef();
@@ -33,8 +36,7 @@ export const SchemeComply360 = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Simplify Compliance Reporting with
-            <br />
+            Simplify Compliance <br /> Reporting with{" "}
             <span className=" relative inline-block">
               Automation
               <GreenUnderline />
@@ -112,9 +114,14 @@ export const SchemeComply360 = () => {
       <AnimatedContent isVisible={isVisibleSection3}>
         <section
           ref={section3Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28"
+          className=" text-black  px-3 md:px-16 lg:px-28 "
         >
-          <DummyImg />
+          <SectionTwoImages
+            img1={img2}
+            img2={img3}
+            altText={"laptop"}
+            altText2={"laptop and debit card"}
+          />
         </section>
       </AnimatedContent>
     </>

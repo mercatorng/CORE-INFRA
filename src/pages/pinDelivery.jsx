@@ -5,7 +5,9 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
 import img1 from "../assets/engageNotifyImg1.jpg";
-import { DummyImg } from "./bespokePayment";
+import { SectionTwoImages } from "../components/sectionTwoImages";
+import img2 from "../assets/bespokeImg2.png";
+import img3 from "../assets/bespokeImg3.png";
 
 export const PinDelivery = () => {
   const section1Ref = useRef();
@@ -146,9 +148,14 @@ export const PinDelivery = () => {
       <AnimatedContent isVisible={isVisibleSection3}>
         <section
           ref={section3Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28"
+          className=" text-black  px-3 md:px-16 lg:px-28 "
         >
-          <DummyImg />
+          <SectionTwoImages
+            img1={img2}
+            img2={img3}
+            altText={"laptop"}
+            altText2={"laptop and debit card"}
+          />
         </section>
       </AnimatedContent>
     </>

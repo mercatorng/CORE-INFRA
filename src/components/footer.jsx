@@ -123,25 +123,25 @@ export const Footer = () => {
             {/* social icons */}
             <div>
               <SocialIcon
-                url="https://x.com"
+                url="https://x.com/CoreInfraHQ"
                 target="_blank"
                 bgColor="transparent"
                 fgColor="gray"
               />
               <SocialIcon
-                url="https://linkedin.com"
+                url="https://www.linkedin.com/company/coreinfrahq"
                 target="_blank"
                 bgColor="transparent"
                 fgColor="gray"
               />
               <SocialIcon
-                url="https://facebook.com"
+                url="https://facebook.com/coreinfrahq.com"
                 target="_blank"
                 bgColor="transparent"
                 fgColor="gray"
               />
               <SocialIcon
-                url="https://instagram.com"
+                url="https://instagram.com/coreinfrahq"
                 target="_blank"
                 bgColor="transparent"
                 fgColor="gray"
