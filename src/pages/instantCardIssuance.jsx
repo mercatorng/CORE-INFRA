@@ -33,12 +33,11 @@ export const InstantCardIssuance = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Introducing CoreInfra's <br />
+            Empowering More{" "}
             <span className=" relative inline-block">
-              Instant
+              Faster,
               <GreenUnderline />
             </span>{" "}
-            Card Issuing and Management System: Empowering Faster, More
             Efficient Card Services
           </h1>
           {/* buttons */}
@@ -74,15 +73,15 @@ export const InstantCardIssuance = () => {
                 <p className=" font-semibold">Streamlined Workflow:</p>
                 <li>
                   Our integrated workflow solution seamlessly connects <br />
-                  centralized card operations with in-branch and agency <br /> banking
-                  customer services, eliminating the need for <br /> manual processes
-                  and data silos.
+                  centralized card operations with in-branch and agency <br />{" "}
+                  banking customer services, eliminating the need for <br />{" "}
+                  manual processes and data silos.
                 </li>
                 <li>
-                  Branches and agency locations can now process card <br /> issuance
-                  and personalization, handle card service functions <br /> typically
-                  handled by a central card service team, all with <br /> a full audit
-                  trail for complete transparency.
+                  Branches and agency locations can now process card <br />{" "}
+                  issuance and personalization, handle card service functions{" "}
+                  <br /> typically handled by a central card service team, all
+                  with <br /> a full audit trail for complete transparency.
                 </li>
               </div>
 
@@ -90,8 +89,8 @@ export const InstantCardIssuance = () => {
                 <p className=" font-semibold">Enhanced Efficiency:</p>
                 <li>
                   The system enables bulk card production, centralized <br />
-                  distribution of card stock, and PIN selection, saving you <br /> time
-                  and resources.
+                  distribution of card stock, and PIN selection, saving you{" "}
+                  <br /> time and resources.
                 </li>
                 <li>
                   Our full-featured APIs allow you to extend card service <br />
@@ -105,15 +104,17 @@ export const InstantCardIssuance = () => {
                   Improved Customer Satisfaction:
                 </p>
                 <li>
-                  Faster card issuance and activation times lead to happier <br />
+                  Faster card issuance and activation times lead to happier{" "}
+                  <br />
                   customers.
                 </li>
                 <li>
-                  Self-service options through mobile and USSD channels <br /> empower
-                  customers to manage their cards conveniently.
+                  Self-service options through mobile and USSD channels <br />{" "}
+                  empower customers to manage their cards conveniently.
                 </li>
                 <li>
-                  The centralized system ensures consistent service quality <br />
+                  The centralized system ensures consistent service quality{" "}
+                  <br />
                   across all touchpoints.
                 </li>
               </div>
@@ -128,8 +129,9 @@ export const InstantCardIssuance = () => {
               </div>
             </ul>
             <p className=" md:text-2xl">
-              Request a demo today and see how CoreInfra's Instant <br /> Card Issuing
-              and Management System can help you <br /> transform your card services!
+              Request a demo today and see how CoreInfra's Instant <br /> Card
+              Issuing and Management System can help you <br /> transform your
+              card services!
             </p>
           </div>
           <GlobalCTAButton

@@ -33,12 +33,12 @@ export const FraudMonitoring = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Financial fraud is on the rise,
+            Smart{" "}
             <span className=" relative inline-block">
-              costing
+              Fraud
               <GreenUnderline />
             </span>{" "}
-            businesses and <br /> individuals millions annually.
+            Monitoring
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">

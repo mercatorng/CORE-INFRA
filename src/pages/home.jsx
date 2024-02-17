@@ -26,6 +26,11 @@ import { useGlobalContext } from "../utils/context";
 import { GreenUnderline } from "../components/greenUnderline";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
+import acquiringImg from "../assets/acquiringImg.webp";
+import issuingImg from "../assets/issuingImg.webp";
+import financialInclusionImg from "../assets/financialInclusionImg.jpeg";
+import customerEngagementImg from "../assets/customerEngagement.jpg";
+import digitalBankingImg from "../assets/digitalBanking.webp";
 
 export const Home = () => {
   const { dispatch } = useGlobalContext();
@@ -124,17 +129,12 @@ export const Home = () => {
       content: [
         {
           headerText: "Issuing",
-        },
-        {
-          point:
+          img: issuingImg,
+          point1:
             "Streamline card and account issuance: Manage physical, virtual, and prepaid cards efficiently with our centralized platform.",
-        },
-        {
-          point:
+          point2:
             "Reduce costs and improve operational efficiency: Automate processes and eliminate manual tasks.",
-        },
-        {
-          point:
+          point3:
             "Enhance security and compliance: Benefit from robust fraud prevention and data encryption features.",
         },
       ],
@@ -145,17 +145,13 @@ export const Home = () => {
       content: [
         {
           headerText: "Acquiring",
-        },
-        {
-          point:
+          img: acquiringImg,
+          point1:
             "Expand your reach and attract new customers: Offer diverse payment options and seamlessly integrate with various channels.",
-        },
-        {
-          point:
+          point2:
             "Optimize authorization and risk management: Gain real-time insights and prevent fraud with advanced tools.",
-        },
-        {
-          point:
+
+          point3:
             "Increase revenue and profitability: Reduce processing costs and maximize transaction value.",
         },
       ],
@@ -166,17 +162,12 @@ export const Home = () => {
       content: [
         {
           headerText: "Digital Banking",
-        },
-        {
-          point:
+          img: digitalBankingImg,
+          point1:
             "Deliver a seamless and personalized digital experience: Empower customers with intuitive mobile apps and online banking solutions.",
-        },
-        {
-          point:
+          point2:
             "Drive engagement and loyalty: Leverage data-driven insights to offer targeted promotions and personalized services.",
-        },
-        {
-          point:
+          point3:
             "Future-proof your digital offering: Stay ahead of the curve with innovative features and scalability.",
         },
       ],
@@ -187,17 +178,12 @@ export const Home = () => {
       content: [
         {
           headerText: "Financial Inclusion",
-        },
-        {
-          point:
+          img: financialInclusionImg,
+          point1:
             "Extend financial services to underserved communities: Offer affordable and accessible payment solutions.",
-        },
-        {
-          point:
+          point2:
             "Simplify onboarding and compliance processes: Enable easier access to financial products and services.",
-        },
-        {
-          point:
+          point3:
             "Promote financial literacy and well-being: Provide educational resources and tools to empower users.",
         },
       ],
@@ -208,16 +194,11 @@ export const Home = () => {
       content: [
         {
           headerText: "Customer Engagement:",
-        },
-        {
-          point:
+          img: customerEngagementImg,
+          point1:
             "Turn transactions into opportunities: Leverage data to understand customer behavior and preferences.",
-        },
-        {
-          point:
+          point2:
             "Deliver personalized and proactive communication: Offer relevant offers, support, and loyalty programs.",
-        },
-        {
           point:
             "Build deeper relationships and foster trust: Increase customer satisfaction and retention.",
         },
@@ -521,27 +502,52 @@ export const Home = () => {
               {/* content */}
               <article className=" bg-white rounded-2xl p-3 md:p-12 flex flex-col md:flex-row justify-between md:items-center">
                 {/* points */}
-                <div className=" grid gap-4 mb-6 md:w-[45%]">
-                  {activeButtonContent.map(({ headerText, point }) => {
-                    return (
-                      <div key={point} className=" text-black">
-                        <p className=" font-bold text-xl md:2xl">
-                          {headerText}
-                        </p>
-                        {point && (
-                          <p className=" flex gap-3 items-center md:text-xl">
-                            <span className=" shrink-0">
-                              <img src={checkMark} alt="checkmark" />
-                            </span>
-                            {point}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  })}
+                <div>
+                  {activeButtonContent.map(
+                    ({ headerText, point1, point2, point3, img }) => {
+                      return (
+                        <>
+                          <div
+                            key={headerText}
+                            className=" text-black md:flex gap-4 w-full "
+                          >
+                            <div>
+                              <p className=" font-bold text-xl md:2xl mb-4">
+                                {headerText}
+                              </p>
+                              <div className=" grid gap-2">
+                                <p className=" flex gap-3 items-center md:text-xl">
+                                  <span className=" shrink-0">
+                                    <img src={checkMark} alt="checkmark" />
+                                  </span>
+                                  {point1}
+                                </p>
+                                <p className=" flex gap-3 items-center md:text-xl">
+                                  <span className=" shrink-0">
+                                    <img src={checkMark} alt="checkmark" />
+                                  </span>
+                                  {point2}
+                                </p>
+                                {point3 && (
+                                  <p className=" flex gap-3 items-center md:text-xl">
+                                    <span className=" shrink-0">
+                                      <img src={checkMark} alt="checkmark" />
+                                    </span>
+                                    {point3}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                            {/* image */}
+                            <div className=" md:w-[70%] border">
+                              <img src={img} alt="" />
+                            </div>
+                          </div>
+                        </>
+                      );
+                    }
+                  )}
                 </div>
-                {/* image */}
-                <p className=" bg-slate-300 rounded-2xl max-h-[50rem] h-[20rem]  w-full md:max-w-[40%]"></p>
               </article>
             </div>
           </div>
@@ -617,7 +623,6 @@ export const Home = () => {
           )}
         </div>
       </section>
-      
     </>
   );
 };

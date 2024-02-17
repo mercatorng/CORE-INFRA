@@ -57,7 +57,7 @@ export const PinDelivery = () => {
           className=" text-black  px-3 md:px-16 lg:px-28 mb-16"
         >
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
-            Instant Card Issuance
+            Pin Delivery Solution
           </h1>
           <div className=" flex flex-col gap-y-8 md:text-2xl">
             <p>
@@ -120,15 +120,17 @@ export const PinDelivery = () => {
                   on paper PIN mailer production and delivery
                 </li>
                 <li>
-                  Multi-channel support: PINGenie enables issuers to securely <br />
+                  Multi-channel support: PINGenie enables issuers to securely{" "}
+                  <br />
                   issue PIN via multiple delivery channels - SMS, mobile
-                  application, <br /> existing banking website or landline phones (IVR)
+                  application, <br /> existing banking website or landline
+                  phones (IVR)
                 </li>
                 <li>
                   {" "}
-                  Dynamic Technology: PINGenie adopts globally proven <br /> technology
-                  and new digital delivery channels, letting go of <br /> the old
-                  paper-based model
+                  Dynamic Technology: PINGenie adopts globally proven <br />{" "}
+                  technology and new digital delivery channels, letting go of{" "}
+                  <br /> the old paper-based model
                 </li>
               </ul>
             </p>

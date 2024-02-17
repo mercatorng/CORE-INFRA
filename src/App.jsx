@@ -35,8 +35,8 @@ function App() {
               path="/card-and-pin-management-solutions"
               element={<CardAndPinMgt />}
             />
-            <Route path="/EngageNotify360" element={<EngageNotify360 />} />
-            <Route path="/SchemeComply360" element={<SchemeComply360 />} />
+            <Route path="/customer-engagement" element={<EngageNotify360 />} />
+            <Route path="/scheme-reporting" element={<SchemeComply360 />} />
             <Route path="/fintech-in-a-box" element={<FintechInaBox />} />
             <Route path="/fraud-monitoring" element={<FraudMonitoring />} />
             <Route
