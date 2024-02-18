@@ -4,8 +4,7 @@ import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/engageNotifyImg1.jpg";
-import { DummyImg } from "./bespokePayment";
+import img1 from "../assets/cardIssuance.jpg";
 import { SectionTwoImages } from "../components/sectionTwoImages";
 import img2 from "../assets/bespokeImg2.png";
 import img3 from "../assets/bespokeImg3.png";
@@ -52,7 +51,9 @@ export const InstantCardIssuance = () => {
       </AnimatedContent>
       {/* black and white boxes */}
       <AnimatedContent isVisible={isVisibleHeroImg}>
-        <div ref={heroImgRef} className=" bg-black h-[40vh] my-12 "></div>
+        <div ref={heroImgRef}>
+          <HeroImage heroImg={img1} altText={"hero image"} />
+        </div>
       </AnimatedContent>
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
