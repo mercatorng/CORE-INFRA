@@ -40,12 +40,16 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
     document.title = activePageTitle;
   }, [activePageTitle]);
 
-  // onclick about link
-  function clickAboutLink() {
-    setActiveLink("/about");
+  function closeMenuOnSmallScreen() {
     if (showMenu && windowWidth < 768) {
       setMenu(false);
     }
+  }
+
+  // onclick about link
+  function clickAboutLink() {
+    setActiveLink("/about");
+    closeMenuOnSmallScreen();
   }
 
   return (
@@ -55,7 +59,11 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
       }`}
     >
       {/* logo */}
-      <Link to={"/"} className={`w-[6rem] md:w-[160px] `}>
+      <Link
+        onClick={closeMenuOnSmallScreen}
+        to={"/"}
+        className={`w-[6rem] md:w-[160px] `}
+      >
         <img
           src={homeUrl ? logo : logoBlack}
           alt="logo"
@@ -98,12 +106,10 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
             {...{
               setDropDown,
               notificationButtonClassname,
-              setMenu,
-              showMenu,
-              windowWidth,
               setPageTitle,
               setActiveLink,
               activeLink,
+              closeMenuOnSmallScreen,
             }}
           />
         )}
@@ -120,12 +126,10 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
 const SolutionLinks = ({
   setDropDown,
   notificationButtonClassname,
-  setMenu,
-  showMenu,
-  windowWidth,
   setPageTitle,
   setActiveLink,
   activeLink,
+  closeMenuOnSmallScreen
 }) => {
   const linkContainerRef = useRef(null);
 
@@ -222,9 +226,7 @@ const SolutionLinks = ({
     setActiveLink(path);
     setPageTitle(pageTitle);
     sessionStorage.setItem("pageTitle", pageTitle);
-    if (showMenu && windowWidth < 768) {
-      setMenu(false);
-    }
+    closeMenuOnSmallScreen();
   }
 
   return (
