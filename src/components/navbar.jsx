@@ -8,12 +8,13 @@ import logoBlack from "../assets/coreInfraLogoBlack.svg";
 import menuBtn from "../assets/menuBtn.svg";
 import { RiMenuLine } from "react-icons/ri";
 
-export const Navbar = ({ homeUrl }) => {
+export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
   const { windowWidth } = useGlobalContext();
   const [showDropDown, setDropDown] = useState(false);
   const notificationButtonClassname = "notificationButton";
   const [showMenu, setMenu] = useState(false);
 
+  // make nav bar sticky
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +38,6 @@ export const Navbar = ({ homeUrl }) => {
   const [activePageTitle, setPageTitle] = useState("");
   useEffect(() => {
     document.title = activePageTitle;
-    return () => {
-      document.title =
-        "CoreInfra - Modern payments infrastructure for Financial institutions";
-    };
   }, [activePageTitle]);
 
   return (
@@ -50,7 +47,7 @@ export const Navbar = ({ homeUrl }) => {
       }`}
     >
       {/* logo */}
-      <Link to={"/"} className=" w-[6rem] md:w-[160px]">
+      <Link to={"/"} className={`w-[6rem] md:w-[160px] `}>
         <img
           src={homeUrl ? logo : logoBlack}
           alt="logo"
@@ -68,7 +65,17 @@ export const Navbar = ({ homeUrl }) => {
           !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
-        <Link className=" w-fit">About</Link>
+        <Link
+          onClick={(e) => {
+            setActiveLink("/about");
+          }}
+          to={"/about"}
+          className={` w-fit hover:text-ctaGreen  ${
+            activeLink === "/about" ? " text-ctaGreen font-bold " : ""
+          }`}
+        >
+          About
+        </Link>
         <button
           onClick={() => setDropDown(!showDropDown)}
           className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname}`}
@@ -89,6 +96,8 @@ export const Navbar = ({ homeUrl }) => {
               showMenu,
               windowWidth,
               setPageTitle,
+              setActiveLink,
+              activeLink,
             }}
           />
         )}
@@ -109,6 +118,8 @@ const SolutionLinks = ({
   showMenu,
   windowWidth,
   setPageTitle,
+  setActiveLink,
+  activeLink,
 }) => {
   const linkContainerRef = useRef(null);
 
@@ -198,10 +209,6 @@ const SolutionLinks = ({
       document.body.removeEventListener("click", clickOutsideLinksContainer);
     };
   }, []);
-
-  // set active page
-  const location = useLocation();
-  const [activeLink, setActiveLink] = useState(location.pathname);
 
   // on link click
   function clickLink(path, pageTitle) {

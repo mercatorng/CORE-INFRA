@@ -71,18 +71,18 @@ export const FraudMonitoring = () => {
             </p>
             <p className=" md:text-2xl">
               TranzWatch is our AI br powered fraud engine that provides an{" "}
-              important security layer to your <br /> payment systems. Powered
-              by intelligent rules engine and machine learning algorithm, <br />{" "}
+              important security layer to your payment systems. Powered by
+              intelligent rules engine and machine learning algorithm,{" "}
               TranzWatch instantly detects and blocks suspicious transactions
               with industry leading accuracy.
             </p>
             <p className=" md:text-2xl">
               This real-time analysis triggers immediate alerts to both
-              customers and banks, preventing losses <br /> before they happen.
-              Unlike solutions that offers only rules based detection,
-              TranzWatch combination <br /> of rules and machine learning offers
-              peace of mind and unparalleled protection, securing your <br />
-              financial institution and your customers' confidence.
+              customers and banks, preventing losses before they happen. Unlike
+              solutions that offers only rules based detection, TranzWatch
+              combination of rules and machine learning offers peace of mind and
+              unparalleled protection, securing your financial institution and
+              your customers' confidence.
             </p>
             <p className=" md:text-2xl">
               TranzWatch offers a comprehensive security stack that seamlessly{" "}
@@ -92,9 +92,8 @@ export const FraudMonitoring = () => {
             </p>
             <p className=" md:text-2xl">
               This is achieved through its robust Integration and Orchestration{" "}
-              Engine that provides support to a variety <br /> of payment
-              channels and interfaces such as ATM, POS, Mobile Banking, Internet
-              Banking, <br />
+              Engine that provides support to a variety of payment channels and
+              interfaces such as ATM, POS, Mobile Banking, Internet Banking,
               IVR, USSD, and Kiosk
             </p>
           </div>

@@ -9,7 +9,7 @@ import { useScrollVisibility } from "../hooks/useScrollHook";
 export const Footer = () => {
   const navLinks = [
     { linkName: "CoreInfra", linkUrl: "/" },
-    { linkName: "About Us", linkUrl: "#" },
+    { linkName: "About Us", linkUrl: "/about" },
     { linkName: "Contact Us", linkUrl: "#" },
   ];
 

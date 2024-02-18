@@ -63,38 +63,35 @@ export const CardAndPinMgt = () => {
           className=" text-black  px-3 md:px-16 lg:px-28 mb-16"
         >
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
-            Card Management and PIN
-            <br />
-            Management Solutions
+            Card Management and PIN Management Solutions
           </h1>
           <div className=" flex flex-col gap-y-8">
             <p className=" md:text-2xl">
               Pavilion Card and PIN solution is a Module of the Pavilion Suite
-              specially tailored to <br /> allow card issuers offer their
-              customers a robust and versatile solution for managing <br /> all
-              card and PIN related service requests - Card requests, PIN
-              selection & Card activation,
-              <br /> Reissuance, Delivery etc.
+              specially tailored to allow card issuers offer their customers a
+              robust and versatile solution for managing all card and PIN
+              related service requests - Card requests, PIN selection & Card
+              activation, Reissuance, Delivery etc.
             </p>
             <p className=" md:text-2xl">
               The module provides a seamless and secure process through which
-              account holders can <br /> initiate and complete all card-related
-              requests via Card-Not-Present channels such as <br /> Mobile
-              Banking app, Internet Banking app, IVR, USSD etc., with realtime
-              access to <br /> status information.
+              account holders can initiate and complete all card-related
+              requests via Card-Not-Present channels such as Mobile Banking app,
+              Internet Banking app, IVR, USSD etc., with realtime access to
+              status information.
             </p>
             <p className=" md:text-2xl">
               Through an exposure to the issuers’ channels via standards based
-              APIs, the solution allows <br /> account holders to seamlessly
-              initiate card requests, select their Personal Identification{" "}
-              <br /> Numbers (PINs), manage the delivery, hotlist cards,
-              activate & deactivate cards, thus <br /> providing an optimal
-              balance between user convenience and robust security measures.
+              APIs, the solution allows account holders to seamlessly initiate
+              card requests, select their Personal Identification Numbers
+              (PINs), manage the delivery, hotlist cards, activate & deactivate
+              cards, thus providing an optimal balance between user convenience
+              and robust security measures.
             </p>
             <p className=" md:text-2xl">
               This solution employs robust encryption protocols and secure
-              communication channels to <br /> ensure the utmost protection of
-              sensitive information, aligning with industry <br /> standards and
+              communication channels to ensure the utmost protection of
+              sensitive information, aligning with industry standards and
               compliance requirements.
             </p>
           </div>

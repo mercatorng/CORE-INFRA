@@ -67,33 +67,33 @@ export const SchemeComply360 = () => {
           <div className=" flex flex-col gap-y-8">
             <p className=" md:text-2xl">
               To facilitate the clearing process by card schemes such as
-              MasterCard, network members <br /> are expected to provide
+              MasterCard, network members   are expected to provide
               scheme-compliant reports on a regular basis, to power the exchange{" "}
-              <br /> of funds among members. Failure to provide accurate and
-              timely report could result in fines or <br /> even suspension from
+                of funds among members. Failure to provide accurate and
+              timely report could result in fines or   even suspension from
               the network. On the MasterCard Network, one such report is the
-              Global <br /> Collection Only (GCO) Reporting.
+              Global   Collection Only (GCO) Reporting.
             </p>
             <p className=" md:text-2xl">
               The GCO is a program of MasterCard Corporation pursuant to which a
-              Customer must provide <br /> collection-only reporting of
+              Customer must provide   collection-only reporting of
               non-Processed Transactions effected with a Card, Access Device,{" "}
-              <br /> or Account issued under a Mastercard-assigned BIN.
+                or Account issued under a Mastercard-assigned BIN.
             </p>
             <p className=" md:text-2xl">
               These reports are formatted in a proprietary Integrated Product
-              Message or IPM format. Because <br /> of the complexity of the
+              Message or IPM format. Because   of the complexity of the
               file and blocking formats used in Mastercard IPM file
-              formats, sometimes, <br /> much of the valuable data described
+              formats, sometimes,   much of the valuable data described
               above is not immediately available for digestion by Mastercard
               members.
             </p>
             <p className=" md:text-2xl">
               SchemeComply360 for GCO Reporting is an easy to use and automated
-              platform that enables <br /> MasterCard members to generate and
-              send MasterCard GCO reports  at the click of a button and <br />
+              platform that enables   MasterCard members to generate and
+              send MasterCard GCO reports  at the click of a button and  
               stay compliant with their membership obligations thereby {" "}
-              helping to eliminate the cost and penalty <br /> fines that is imposed by
+              helping to eliminate the cost and penalty   fines that is imposed by
               MasterCard for 
               non-compliance.
             </p>

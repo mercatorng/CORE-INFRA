@@ -11,6 +11,7 @@ import { CardAndPinMgt } from "./pages/cardAndPinMgt";
 import { FraudMonitoring } from "./pages/fraudMonitoring";
 import { PinDelivery } from "./pages/pinDelivery";
 import { InstantCardIssuance } from "./pages/instantCardIssuance";
+import { AboutUs } from "./pages/aboutUs";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
               element={<InstantCardIssuance />}
             />
             <Route path="/pin-delivery" element={<PinDelivery />} />
+            <Route path="/about" element={<AboutUs />} />
           </Route>
         </Routes>
       </BrowserRouter>

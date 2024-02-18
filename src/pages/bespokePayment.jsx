@@ -71,15 +71,15 @@ export const BespokePayment = () => {
         >
           <div>
             <h1 className=" text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
-              Payment Software <br /> Development
+              Payment Software Development
             </h1>
             <p className=" md:text-2xl">
               At CoreInfra, we specialize in crafting tailor-made payment
-              software solutions <br /> that empower your business to thrive in
-              today's dynamic financial landscape. <br /> Our team of experts
-              collaborates with you to design a strategy that aligns <br />{" "}
-              seamlessly with your business goals, ensuring every transaction is
-              a step <br /> toward enhanced profitability and efficiency
+              software solutions that empower your business to thrive in today's
+              dynamic financial landscape. Our team of experts collaborates with
+              you to design a strategy that aligns seamlessly with your business
+              goals, ensuring every transaction is a step toward enhanced
+              profitability and efficiency
             </p>
             <GlobalCTAButton
               text={"Request a Demo"}

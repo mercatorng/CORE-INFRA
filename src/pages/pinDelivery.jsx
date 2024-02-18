@@ -35,7 +35,7 @@ export const PinDelivery = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            PINGenie: A Card <br /> PIN(Data) Management <br />
+            PINGenie: A Card <br /> PIN(Data) Management
             <span className=" relative inline-block">
               Solution
               <GreenUnderline />
@@ -64,21 +64,21 @@ export const PinDelivery = () => {
           <div className=" flex flex-col gap-y-8 md:text-2xl">
             <p>
               PINGenie is a comprehensive pin management solution that ensures
-              the security of your PIN <br /> data from the moment it's
-              received, through credential management, all the way to the secure{" "}
-              <br /> delivery of those PINs to cardholders via a proprietary
-              security implementation.
+              the security of your PIN data from the moment it's received,
+              through credential management, all the way to the secure delivery
+              of those PINs to cardholders via a proprietary security
+              implementation.
             </p>
             <p>
               Crafted as a multifaceted service, PINGenie embodies a secure
-              end-to-end process, seamlessly <br /> managing data reception,
-              credential management, and post-delivery data management.
+              end-to-end process, seamlessly managing data reception, credential
+              management, and post-delivery data management.
             </p>
             <p>
               This electronic PIN delivery service not only assures high-level
-              of security but also grants issuers <br /> the unique ability to
-              trace the PIN's journey all the way to the end consumer with full
-              audit <br /> trail capabilities.
+              of security but also grants issuers the unique ability to trace
+              the PIN's journey all the way to the end consumer with full audit
+              trail capabilities.
             </p>
             <p>
               <span className=" font-medium">Features</span>
@@ -103,32 +103,30 @@ export const PinDelivery = () => {
               <span className=" font-medium">Benefits</span>
               <span className=" block mb-2">
                 Away with PIN Mailers! Finally, issuers can do away with the
-                cumbersome logistics’ challenges <br /> with Paper Mailers
+                cumbersome logistics’ challenges with Paper Mailers
               </span>
               <ul className=" list-disc list-inside flex flex-col gap-y-2">
                 <li>
                   Reliable & Fast: Turn-around-Time for card issuance and use is
-                  shorter. Consumers get their <br /> PIN and are able to use
-                  their card sooner! The time to first spend for new accounts is
-                  reduced <br /> and activation rate is improved.{" "}
+                  shorter. Consumers get their PIN and are able to use their
+                  card sooner! The time to first spend for new accounts is
+                  reduced and activation rate is improved.{" "}
                 </li>
                 <li>
                   Efficient & Secure: Issuers are equipped to combine the
-                  efficiency gain of a fully electronic <br /> service with cost
-                  saved on paper PIN mailer production and delivery
+                  efficiency gain of a fully electronic service with cost saved
+                  on paper PIN mailer production and delivery
                 </li>
                 <li>
                   Multi-channel support: PINGenie enables issuers to securely{" "}
-                  <br />
                   issue PIN via multiple delivery channels - SMS, mobile
-                  application, existing banking website or <br /> landline
-                  phones (IVR)
+                  application, existing banking website or landline phones (IVR)
                 </li>
                 <li>
                   {" "}
                   Dynamic Technology: PINGenie adopts globally proven technology
-                  and new digital delivery <br /> channels, letting go of  the
-                  old paper-based model
+                  and new digital delivery channels, letting go of the old
+                  paper-based model
                 </li>
               </ul>
             </p>

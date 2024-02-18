@@ -70,20 +70,19 @@ export const CoporateDisbursement = () => {
           <div className=" flex flex-col gap-y-8">
             <p className=" md:text-2xl">
               PayBridge is a corporate disbursement and inflow management
-              solution designed to <br /> address the specific needs of
-              businesses, especially in the financial services sector such{" "}
-              <br /> as insurance companies, micro-loans and lending companies,
-              micro-finance banks etc. <br /> It serves as a centralized
-              platform that facilitates efficient management of funds by
-              seamlessly <br /> integrating and automating both outgoing
-              payments (Payouts) and incoming payments (Payin).
+              solution designed to address the specific needs of businesses,
+              especially in the financial services sector such as insurance
+              companies, micro-loans and lending companies, micro-finance banks
+              etc. It serves as a centralized platform that facilitates
+              efficient management of funds by seamlessly integrating and
+              automating both outgoing payments (Payouts) and incoming payments
+              (Payin).
             </p>
             <p className=" md:text-2xl">
               PayBridge leverages an inbuilt virtual account management system
-              to connect your <br /> internal ledgers to your bank accounts,
-              effectively forming a bridge that allows you to <br /> make
-              disbursements directly from your internal accounting systems to
-              your vendors, <br />
+              to connect your internal ledgers to your bank accounts,
+              effectively forming a bridge that allows you to make disbursements
+              directly from your internal accounting systems to your vendors,
               suppliers, contractors etc.
             </p>
             <p className=" md:text-2xl">
@@ -94,38 +93,35 @@ export const CoporateDisbursement = () => {
                   <span className=" font-medium">
                     Streamlined Payments Management:
                   </span>{" "}
-                  PayBridge simplifies, standardizes and <br /> automates the
-                  Payout approval workflows, ensuring that payments are made{" "}
-                  <br /> accurately and promptly.
+                  PayBridge simplifies, standardizes and automates the Payout
+                  approval workflows, ensuring that payments are made accurately
+                  and promptly.
                 </li>
                 <li>
                   <span className=" font-medium">Customizable Workflows:</span>{" "}
-                  PayBridge is highly adaptable, allowing <br /> organizations
-                  to configure and customize approval workflows to align <br />{" "}
-                  with their specific internal processes and operations.
+                  PayBridge is highly adaptable, allowing organizations to
+                  configure and customize approval workflows to align with their
+                  specific internal processes and operations.
                 </li>
                 <li>
                   <span className=" font-medium">
                     Efficient End-to-End payment flows:
                   </span>{" "}
-                  In addition to Payout, PayBridge provides <br /> a convenient
-                  and secure way for funds to flow into the internal financial{" "}
-                  <br />
+                  In addition to Payout, PayBridge provides a convenient and
+                  secure way for funds to flow into the internal financial{" "}
                   system i.e. collections
                 </li>
                 <li>
                   <span className=" font-medium">Regulatory Compliance:</span>
-                  The solution is designed to meet the regulatory <br />{" "}
-                  requirements and compliance standards relevant to the
-                  financial services <br /> industry. Thereby reducing
-                  compliance-related risks.
+                  The solution is designed to meet the regulatory requirements
+                  and compliance standards relevant to the financial services
+                  industry. Thereby reducing compliance-related risks.
                 </li>
                 <li>
                   <span className=" font-medium">Data Security:</span> PayBridge
-                  employs advanced data encryption techniques <br /> to secure
+                  employs advanced data encryption techniques to secure
                   sensitive financial information. It prioritizes the protection
-                  of <br /> financial data to prevent unauthorized access and
-                  fraud.
+                  of financial data to prevent unauthorized access and fraud.
                 </li>
               </ul>
             </p>
