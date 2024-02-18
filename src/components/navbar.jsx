@@ -40,6 +40,14 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
     document.title = activePageTitle;
   }, [activePageTitle]);
 
+  // onclick about link
+  function clickAboutLink() {
+    setActiveLink("/about");
+    if (showMenu && windowWidth < 768) {
+      setMenu(false);
+    }
+  }
+
   return (
     <nav
       className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm py-2  px-3 mb-16 md:px-16 lg:px-28 ${
@@ -66,9 +74,7 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         }  `}
       >
         <Link
-          onClick={(e) => {
-            setActiveLink("/about");
-          }}
+          onClick={clickAboutLink}
           to={"/about"}
           className={` w-fit hover:text-ctaGreen  ${
             activeLink === "/about" ? " text-ctaGreen font-bold " : ""
