@@ -67,43 +67,42 @@ export const FintechInaBox = () => {
           <div className=" flex flex-col gap-y-8">
             <p className=" md:text-2xl">
               The financial technology (Fintech) industry has rapidly grown over
-              the past <br /> decade, disrupting traditional banking models and
-              creating new <br /> opportunities for financial institutions to
-              innovate. <br />
+              the past decade, disrupting <br /> traditional banking models and
+              creating new opportunities for financial institutions to innovate.{" "}
+              <br />
               As Fintech continues to transform the financial industry, banks
-              must position <br /> themselves as Fintech partners of choice to
-              remain competitive and relevant. <br /> This requires a
-              comprehensive understanding of the Fintech landscape, <br />{" "}
-              identification of potential partnerships, and integration of new{" "}
-              <br /> technologies and processes.
+              must position themselves as Fintech partners of choice to remain
+              competitive and relevant. This requires a comprehensive
+              understanding <br /> of the Fintech landscape, identification of
+              potential partnerships, and integration of new <br />
+              technologies and processes.
             </p>
             <p className=" md:text-2xl">
               Banks that successfully align themselves with Fintech can gain a
-              competitive <br /> edge, improve their customer experience, and
-              increase profitability. <br /> One area of collaboration that
-              holds great potential is card issuing. Fintech <br /> companies
-              are increasingly venturing into the card issuing space, offering{" "}
+              competitive edge, improve their <br /> customer experience, and
+              increase profitability. One area of collaboration that holds great
+              potential <br /> is card issuing. Fintech companies are
+              increasingly venturing into the card issuing space, offering{" "}
               <br /> innovative solutions such as virtual cards, physical cards
-              with innovative <br />
-              and interesting use cases.
+              with innovative and interesting use cases.
             </p>
             <p className=" md:text-2xl">
               We are proud to introduce Pavilion Fintech Issuing Processor(
-              Pavilion FIP), <br /> a payments processing middleware that acts
-              as a gateway between the bank <br /> and partner Fintechs.
-              Pavilion FIP enables banks to issue cards to Fintech <br />
-              partners, process transactions from these cards, and offer
-              additional <br /> functionality such as fee sharing(Interchange
-              Reimbursement Fee – IRF) and <br /> dispute resolution.{" "}
+              Pavilion FIP), a payments processing middleware that acts as a
+              gateway between the bank and partner Fintechs. Pavilion FIP
+              enables banks <br /> to issue cards to Fintech partners, process
+              transactions from these cards, and offer additional <br />{" "}
+              functionality such as fee sharing(Interchange Reimbursement Fee –
+              IRF) and dispute resolution.{" "}
             </p>
             <p className=" md:text-2xl">
               Pavilion FIP is an on-premise solution, specifically implemented
-              within the bank's <br /> infrastructure and entirely overseen by
+              within the bank's infrastructure and <br /> entirely overseen by
               the bank itself.
             </p>
             <p className=" md:text-2xl">
               Pavilion FIP helps bridge the gap and unlocks the full potential
-              of bank-fintech <br /> collaboration, shaping a brighter future
+              of bank-fintech  collaboration, shaping <br /> a brighter future
               for the card issuing industry.
             </p>
           </div>
@@ -115,7 +114,7 @@ export const FintechInaBox = () => {
       </AnimatedContent>
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
-      <section
+        <section
           ref={section3Ref}
           className=" text-black  px-3 md:px-16 lg:px-28 "
         >
