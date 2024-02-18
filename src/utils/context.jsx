@@ -28,7 +28,7 @@ export const AppProvider = ({ children }) => {
 
 
   return (
-    <AppContext.Provider value={{ ...state, dispatch,windowWidth }}>
+    <AppContext.Provider value={{ ...state, dispatch, windowWidth }}>
       {children}
     </AppContext.Provider>
   );

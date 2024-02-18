@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/coreInfraLogoWhite.svg";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { GlobalCTAButton } from "./button";
 import { useGlobalContext } from "../utils/context";
@@ -32,6 +32,16 @@ export const Navbar = ({ homeUrl }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // change page title
+  const [activePageTitle, setPageTitle] = useState("");
+  useEffect(() => {
+    document.title = activePageTitle;
+    return () => {
+      document.title =
+        "CoreInfra - Modern payments infrastructure for Financial institutions";
+    };
+  }, [activePageTitle]);
 
   return (
     <nav
@@ -78,6 +88,7 @@ export const Navbar = ({ homeUrl }) => {
               setMenu,
               showMenu,
               windowWidth,
+              setPageTitle,
             }}
           />
         )}
@@ -97,37 +108,72 @@ const SolutionLinks = ({
   setMenu,
   showMenu,
   windowWidth,
+  setPageTitle,
 }) => {
+  const linkContainerRef = useRef(null);
+
   const data = [
     {
       id: 0,
       title: "Bespoke Payment Software",
       url: "/bespoke-payment-software",
+      pageTitle: "Elevate your transactions with custom payment software",
     },
     {
       id: 1,
       title: "Infrastructure Solutions",
       url: "/infrastructure-solutions",
+      pageTitle: " Robust infrastructure for secure financial operations",
     },
     {
       id: 2,
       title: "Corporate Disbursement Platform",
       url: "/corporate-disbursement-platform",
+      pageTitle: "Optimize disbursements with our automated platform",
     },
     {
       id: 3,
       title: "Card and PIN Management Solutions",
       url: "/card-and-pin-management-solutions",
+      pageTitle: "Innovative Solutions for Card Management",
     },
-    { id: 4, title: "Customer Engagement", url: "/customer-engagement" },
-    { id: 5, title: "Scheme Reporting", url: "/scheme-reporting" },
-    { id: 6, title: "Fintech in a Box", url: "/fintech-in-a-box" },
-    { id: 7, title: "Fraud Monitoring", url: "/fraud-monitoring" },
-    { id: 8, title: "Instant Card Issuance", url: "/instant-card-issuance" },
-    { id: 9, title: "Pin Delivery", url: "/pin-delivery" },
+    {
+      id: 4,
+      title: "Customer Engagement",
+      url: "/customer-engagement",
+      pageTitle: "Unlocking Strategic Opportunities in Transaction Failures.",
+    },
+    {
+      id: 5,
+      title: "Scheme Reporting",
+      url: "/scheme-reporting",
+      pageTitle: "Simplify Compliance Reporting with Automation",
+    },
+    {
+      id: 6,
+      title: "Fintech in a Box",
+      url: "/fintech-in-a-box",
+      pageTitle: "Seamless collaboration with Fintechs",
+    },
+    {
+      id: 7,
+      title: "Fraud Monitoring",
+      url: "/fraud-monitoring",
+      pageTitle: "Smart Fraud Monitoring",
+    },
+    {
+      id: 8,
+      title: "Instant Card Issuance",
+      url: "/instant-card-issuance",
+      pageTitle: "Empowering More Faster, Efficient Card Services",
+    },
+    {
+      id: 9,
+      title: "Pin Delivery",
+      url: "/pin-delivery",
+      pageTitle: "PINGenie: A Card  PIN(Data) Management Solution",
+    },
   ];
-
-  const linkContainerRef = useRef(null);
 
   function clickOutsideLinksContainer(e) {
     const clickedElement = e.target;
@@ -157,25 +203,27 @@ const SolutionLinks = ({
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
 
-  function clickLink(title) {
+  // on link click
+  function clickLink(path, pageTitle) {
     setDropDown(false);
-    setActiveLink(title);
+    setActiveLink(path);
+    setPageTitle(pageTitle);
+    sessionStorage.setItem("pageTitle", pageTitle);
     if (showMenu && windowWidth < 768) {
       setMenu(false);
     }
   }
-
 
   return (
     <div
       ref={linkContainerRef}
       className=" globalTransition md:border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
     >
-      {data.map(({ id, title, url }) => {
+      {data.map(({ id, title, url, pageTitle }) => {
         return (
           <Link
             onClick={() => {
-              clickLink(title);
+              clickLink(url, pageTitle);
             }}
             key={id}
             to={url}

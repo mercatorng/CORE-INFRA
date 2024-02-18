@@ -261,6 +261,12 @@ export const Home = () => {
     dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: "" });
   }, []);
 
+  // set active page title
+  useEffect(() => {
+    document.title =
+      "CoreInfra - Modern payments infrastructure for Financial institutions";
+  }, []);
+
   return (
     <>
       <section className=" px-3 md:px-16 lg:px-28  ">

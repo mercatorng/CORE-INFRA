@@ -39,8 +39,7 @@ export const EngageNotify360 = () => {
               Strategic
               <GreenUnderline />
             </span>{" "}
-            <br />
-            Opportunities in <br /> Transaction Failures.
+            Opportunities in Transaction Failures.
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
