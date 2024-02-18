@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/coreInfraLogoWhite.svg";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { GlobalCTAButton } from "./button";
 import { useGlobalContext } from "../utils/context";
@@ -102,29 +102,29 @@ const SolutionLinks = ({
     {
       id: 0,
       title: "Bespoke Payment Software",
-      url: "bespoke-payment-software",
+      url: "/bespoke-payment-software",
     },
     {
       id: 1,
       title: "Infrastructure Solutions",
-      url: "infrastructure-solutions",
+      url: "/infrastructure-solutions",
     },
     {
       id: 2,
       title: "Corporate Disbursement Platform",
-      url: "corporate-disbursement-platform",
+      url: "/corporate-disbursement-platform",
     },
     {
       id: 3,
       title: "Card and PIN Management Solutions",
-      url: "card-and-pin-management-solutions",
+      url: "/card-and-pin-management-solutions",
     },
-    { id: 4, title: "Customer Engagement", url: "customer-engagement" },
-    { id: 5, title: "Scheme Reporting", url: "scheme-reporting" },
-    { id: 6, title: "Fintech in a Box", url: "fintech-in-a-box" },
-    { id: 7, title: "Fraud Monitoring", url: "fraud-monitoring" },
-    { id: 8, title: "Instant Card Issuance", url: "instant-card-issuance" },
-    { id: 9, title: "Pin Delivery", url: "pin-delivery" },
+    { id: 4, title: "Customer Engagement", url: "/customer-engagement" },
+    { id: 5, title: "Scheme Reporting", url: "/scheme-reporting" },
+    { id: 6, title: "Fintech in a Box", url: "/fintech-in-a-box" },
+    { id: 7, title: "Fraud Monitoring", url: "/fraud-monitoring" },
+    { id: 8, title: "Instant Card Issuance", url: "/instant-card-issuance" },
+    { id: 9, title: "Pin Delivery", url: "/pin-delivery" },
   ];
 
   const linkContainerRef = useRef(null);
@@ -154,19 +154,17 @@ const SolutionLinks = ({
   }, []);
 
   // set active page
-  const { dispatch, activePage } = useGlobalContext();
-
-  function changeActivePage(pageName) {
-    dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: pageName });
-  }
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname);
 
   function clickLink(title) {
-    changeActivePage(title);
     setDropDown(false);
+    setActiveLink(title);
     if (showMenu && windowWidth < 768) {
       setMenu(false);
     }
   }
+
 
   return (
     <div
@@ -180,9 +178,9 @@ const SolutionLinks = ({
               clickLink(title);
             }}
             key={id}
-            to={`/${url}`}
+            to={url}
             className={` rounded-md pl-2 py-2 globalTransition font-bold ${
-              activePage === title
+              activeLink === url
                 ? "bg-black text-ctaGreen "
                 : "bg-transparent hover:bg-[#DBFFEC]"
             }  `}
