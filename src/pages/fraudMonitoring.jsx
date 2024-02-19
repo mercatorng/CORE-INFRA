@@ -66,37 +66,34 @@ export const FraudMonitoring = () => {
           </h1>
           <div className=" flex flex-col gap-y-8">
             <p className=" md:text-2xl">
-              From Account Take-Overs to sophisticated Card Not Present <br />{" "}
-              Frauds, anyone can be a victim.
+              From Account Take-Overs to sophisticated Card Not Present Frauds,
+              anyone can be a victim.
             </p>
             <p className=" md:text-2xl">
               TranzWatch is our AI br powered fraud engine that provides an{" "}
-              <br /> important security layer to your payment systems. Powered
-              by <br /> intelligent rules engine and machine learning algorithm,{" "}
-              <br /> TranzWatch instantly detects and blocks suspicious
-              transactions <br /> with industry leading accuracy.
+              important security layer to your payment systems. Powered by
+              intelligent rules engine and machine learning algorithm,{" "}
+              TranzWatch instantly detects and blocks suspicious transactions
+              with industry leading accuracy.
             </p>
             <p className=" md:text-2xl">
               This real-time analysis triggers immediate alerts to both
-              customers <br /> and banks, preventing losses before they happen.
-              Unlike solutions <br /> that offers only rules based detection,
-              TranzWatch combination of <br /> rules and machine learning offers
-              peace of mind and unparalleled <br /> protection, securing your
-              financial institution and your <br /> customers' confidence.
+              customers and banks, preventing losses before they happen. Unlike
+              solutions that offers only rules based detection, TranzWatch
+              combination of rules and machine learning offers peace of mind and
+              unparalleled protection, securing your financial institution and
+              your customers' confidence.
             </p>
             <p className=" md:text-2xl">
               TranzWatch offers a comprehensive security stack that seamlessly{" "}
-              <br />
               integrates with your payment infrastructure, serving as the
-              intelligence <br /> layer for all digital banking transactions,
-              encompassing both account <br /> and card-based transactions.
+              intelligence layer for all digital banking transactions,
+              encompassing both account and card-based transactions.
             </p>
             <p className=" md:text-2xl">
               This is achieved through its robust Integration and Orchestration{" "}
-              <br /> Engine that provides support to a variety of payment
-              channels and <br />
-              interfaces such as ATM, POS, Mobile Banking, Internet Banking,{" "}
-              <br />
+              Engine that provides support to a variety of payment channels and
+              interfaces such as ATM, POS, Mobile Banking, Internet Banking,
               IVR, USSD, and Kiosk
             </p>
           </div>
@@ -106,7 +103,6 @@ export const FraudMonitoring = () => {
           />
         </section>
       </AnimatedContent>
-      {/* section 3 */}
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
         <section

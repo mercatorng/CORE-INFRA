@@ -4,7 +4,7 @@ import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/engageNotifyImg1.jpg";
+import img1 from "../assets/pinDelivery.jpg";
 import { SectionTwoImages } from "../components/sectionTwoImages";
 import img2 from "../assets/bespokeImg2.png";
 import img3 from "../assets/bespokeImg3.png";
@@ -35,7 +35,7 @@ export const PinDelivery = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            PINGenie: A Card <br /> PIN(Data) Management <br />
+            PINGenie: A Card <br /> PIN(Data) Management
             <span className=" relative inline-block">
               Solution
               <GreenUnderline />
@@ -50,7 +50,9 @@ export const PinDelivery = () => {
       </AnimatedContent>
       {/* black and white boxes */}
       <AnimatedContent isVisible={isVisibleHeroImg}>
-        <div ref={heroImgRef} className=" bg-black h-[40vh] my-12 "></div>
+        <div ref={heroImgRef}>
+          <HeroImage altText={"bespoke hero"} heroImg={img1} />
+        </div>
       </AnimatedContent>
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
@@ -63,24 +65,22 @@ export const PinDelivery = () => {
           </h1>
           <div className=" flex flex-col gap-y-8 md:text-2xl">
             <p>
-              PINGenie is a comprehensive pin management solution <br /> that
-              ensures the security of your PIN data from the moment <br /> it's
-              received, through credential management, all the way to <br /> the
-              secure delivery of those PINs to cardholders via a <br />{" "}
-              proprietary security implementation.
+              PINGenie is a comprehensive pin management solution that ensures
+              the security of your PIN data from the moment it's received,
+              through credential management, all the way to the secure delivery
+              of those PINs to cardholders via a proprietary security
+              implementation.
             </p>
             <p>
-              Crafted as a multifaceted service, PINGenie embodies a <br />{" "}
-              secure end-to-end process, seamlessly managing data <br />{" "}
-              reception, credential management, and post-delivery data <br />{" "}
-              management.
+              Crafted as a multifaceted service, PINGenie embodies a secure
+              end-to-end process, seamlessly managing data reception, credential
+              management, and post-delivery data management.
             </p>
             <p>
-              This electronic PIN delivery service not only assures high-level{" "}
-              <br />
-              of security but also grants issuers the <br /> unique ability to
-              trace the PIN's journey all the way to the <br /> end consumer
-              with full audit trail capabilities.
+              This electronic PIN delivery service not only assures high-level
+              of security but also grants issuers the unique ability to trace
+              the PIN's journey all the way to the end consumer with full audit
+              trail capabilities.
             </p>
             <p>
               <span className=" font-medium">Features</span>
@@ -95,8 +95,8 @@ export const PinDelivery = () => {
                 <li>Card scheme-agnostic solution</li>
                 <li>Secure integration to perso & card systems</li>
                 <li>
-                  Configurable PIN delivery model across multiple <br />{" "}
-                  communication channels
+                  Configurable PIN delivery model across multiple communication
+                  channels
                 </li>
                 <li>Analytics for informed decision making</li>
               </ul>
@@ -104,35 +104,31 @@ export const PinDelivery = () => {
             <p>
               <span className=" font-medium">Benefits</span>
               <span className=" block mb-2">
-                Away with PIN Mailers! Finally, issuers can do away with the{" "}
-                <br />
+                Away with PIN Mailers! Finally, issuers can do away with the
                 cumbersome logistics’ challenges with Paper Mailers
               </span>
               <ul className=" list-disc list-inside flex flex-col gap-y-2">
                 <li>
-                  Reliable & Fast: Turn-around-Time for card issuance and <br />{" "}
-                  use is shorter. Consumers get their PIN and are able to use{" "}
-                  <br /> their card sooner! The time to first spend for new
-                  accounts <br /> is reduced and activation rate is improved.{" "}
+                  Reliable & Fast: Turn-around-Time for card issuance and use is
+                  shorter. Consumers get their PIN and are able to use their
+                  card sooner! The time to first spend for new accounts is
+                  reduced and activation rate is improved.{" "}
                 </li>
                 <li>
-                  Efficient & Secure: Issuers are equipped to combine <br /> the
-                  efficiency gain of a fully electronic service with cost saved{" "}
-                  <br />
+                  Efficient & Secure: Issuers are equipped to combine the
+                  efficiency gain of a fully electronic service with cost saved
                   on paper PIN mailer production and delivery
                 </li>
                 <li>
                   Multi-channel support: PINGenie enables issuers to securely{" "}
-                  <br />
                   issue PIN via multiple delivery channels - SMS, mobile
-                  application, <br /> existing banking website or landline
-                  phones (IVR)
+                  application, existing banking website or landline phones (IVR)
                 </li>
                 <li>
                   {" "}
-                  Dynamic Technology: PINGenie adopts globally proven <br />{" "}
-                  technology and new digital delivery channels, letting go of{" "}
-                  <br /> the old paper-based model
+                  Dynamic Technology: PINGenie adopts globally proven technology
+                  and new digital delivery channels, letting go of the old
+                  paper-based model
                 </li>
               </ul>
             </p>

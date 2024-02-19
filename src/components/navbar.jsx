@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/coreInfraLogoWhite.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { GlobalCTAButton } from "./button";
 import { useGlobalContext } from "../utils/context";
@@ -8,12 +8,13 @@ import logoBlack from "../assets/coreInfraLogoBlack.svg";
 import menuBtn from "../assets/menuBtn.svg";
 import { RiMenuLine } from "react-icons/ri";
 
-export const Navbar = ({ homeUrl }) => {
+export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
   const { windowWidth } = useGlobalContext();
   const [showDropDown, setDropDown] = useState(false);
   const notificationButtonClassname = "notificationButton";
   const [showMenu, setMenu] = useState(false);
 
+  // make nav bar sticky
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,24 @@ export const Navbar = ({ homeUrl }) => {
     };
   }, []);
 
+  // change page title
+  const [activePageTitle, setPageTitle] = useState("");
+  useEffect(() => {
+    document.title = activePageTitle;
+  }, [activePageTitle]);
+
+  function closeMenuOnSmallScreen() {
+    if (showMenu && windowWidth < 768) {
+      setMenu(false);
+    }
+  }
+
+  // onclick about link
+  function clickAboutLink() {
+    setActiveLink("/about");
+    closeMenuOnSmallScreen();
+  }
+
   return (
     <nav
       className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm py-2  px-3 mb-16 md:px-16 lg:px-28 ${
@@ -40,7 +59,11 @@ export const Navbar = ({ homeUrl }) => {
       }`}
     >
       {/* logo */}
-      <Link to={"/"} className=" w-[6rem] md:w-[160px]">
+      <Link
+        onClick={closeMenuOnSmallScreen}
+        to={"/"}
+        className={`w-[6rem] md:w-[160px] `}
+      >
         <img
           src={homeUrl ? logo : logoBlack}
           alt="logo"
@@ -58,7 +81,15 @@ export const Navbar = ({ homeUrl }) => {
           !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
-        <Link className=" w-fit">About</Link>
+        <Link
+          onClick={clickAboutLink}
+          to={"/about"}
+          className={` w-fit hover:text-ctaGreen  ${
+            activeLink === "/about" ? " text-ctaGreen font-bold " : ""
+          }`}
+        >
+          About
+        </Link>
         <button
           onClick={() => setDropDown(!showDropDown)}
           className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname}`}
@@ -75,9 +106,10 @@ export const Navbar = ({ homeUrl }) => {
             {...{
               setDropDown,
               notificationButtonClassname,
-              setMenu,
-              showMenu,
-              windowWidth,
+              setPageTitle,
+              setActiveLink,
+              activeLink,
+              closeMenuOnSmallScreen,
             }}
           />
         )}
@@ -94,40 +126,75 @@ export const Navbar = ({ homeUrl }) => {
 const SolutionLinks = ({
   setDropDown,
   notificationButtonClassname,
-  setMenu,
-  showMenu,
-  windowWidth,
+  setPageTitle,
+  setActiveLink,
+  activeLink,
+  closeMenuOnSmallScreen
 }) => {
+  const linkContainerRef = useRef(null);
+
   const data = [
     {
       id: 0,
       title: "Bespoke Payment Software",
-      url: "bespoke-payment-software",
+      url: "/bespoke-payment-software",
+      pageTitle: "Elevate your transactions with custom payment software",
     },
     {
       id: 1,
       title: "Infrastructure Solutions",
-      url: "infrastructure-solutions",
+      url: "/infrastructure-solutions",
+      pageTitle: " Robust infrastructure for secure financial operations",
     },
     {
       id: 2,
       title: "Corporate Disbursement Platform",
-      url: "corporate-disbursement-platform",
+      url: "/corporate-disbursement-platform",
+      pageTitle: "Optimize disbursements with our automated platform",
     },
     {
       id: 3,
       title: "Card and PIN Management Solutions",
-      url: "card-and-pin-management-solutions",
+      url: "/card-and-pin-management-solutions",
+      pageTitle: "Innovative Solutions for Card Management",
     },
-    { id: 4, title: "Customer Engagement", url: "customer-engagement" },
-    { id: 5, title: "Scheme Reporting", url: "scheme-reporting" },
-    { id: 6, title: "Fintech in a Box", url: "fintech-in-a-box" },
-    { id: 7, title: "Fraud Monitoring", url: "fraud-monitoring" },
-    { id: 8, title: "Instant Card Issuance", url: "instant-card-issuance" },
-    { id: 9, title: "Pin Delivery", url: "pin-delivery" },
+    {
+      id: 4,
+      title: "Customer Engagement",
+      url: "/customer-engagement",
+      pageTitle: "Unlocking Strategic Opportunities in Transaction Failures.",
+    },
+    {
+      id: 5,
+      title: "Scheme Reporting",
+      url: "/scheme-reporting",
+      pageTitle: "Simplify Compliance Reporting with Automation",
+    },
+    {
+      id: 6,
+      title: "Fintech in a Box",
+      url: "/fintech-in-a-box",
+      pageTitle: "Seamless collaboration with Fintechs",
+    },
+    {
+      id: 7,
+      title: "Fraud Monitoring",
+      url: "/fraud-monitoring",
+      pageTitle: "Smart Fraud Monitoring",
+    },
+    {
+      id: 8,
+      title: "Instant Card Issuance",
+      url: "/instant-card-issuance",
+      pageTitle: "Empowering More Faster, Efficient Card Services",
+    },
+    {
+      id: 9,
+      title: "Pin Delivery",
+      url: "/pin-delivery",
+      pageTitle: "PINGenie: A Card  PIN(Data) Management Solution",
+    },
   ];
-
-  const linkContainerRef = useRef(null);
 
   function clickOutsideLinksContainer(e) {
     const clickedElement = e.target;
@@ -153,19 +220,13 @@ const SolutionLinks = ({
     };
   }, []);
 
-  // set active page
-  const { dispatch, activePage } = useGlobalContext();
-
-  function changeActivePage(pageName) {
-    dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: pageName });
-  }
-
-  function clickLink(title) {
-    changeActivePage(title);
+  // on link click
+  function clickLink(path, pageTitle) {
     setDropDown(false);
-    if (showMenu && windowWidth < 768) {
-      setMenu(false);
-    }
+    setActiveLink(path);
+    setPageTitle(pageTitle);
+    sessionStorage.setItem("pageTitle", pageTitle);
+    closeMenuOnSmallScreen();
   }
 
   return (
@@ -173,16 +234,16 @@ const SolutionLinks = ({
       ref={linkContainerRef}
       className=" globalTransition md:border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
     >
-      {data.map(({ id, title, url }) => {
+      {data.map(({ id, title, url, pageTitle }) => {
         return (
           <Link
             onClick={() => {
-              clickLink(title);
+              clickLink(url, pageTitle);
             }}
             key={id}
-            to={`/${url}`}
+            to={url}
             className={` rounded-md pl-2 py-2 globalTransition font-bold ${
-              activePage === title
+              activeLink === url
                 ? "bg-black text-ctaGreen "
                 : "bg-transparent hover:bg-[#DBFFEC]"
             }  `}

@@ -33,7 +33,6 @@ import customerEngagementImg from "../assets/customerEngagement.jpg";
 import digitalBankingImg from "../assets/digitalBanking.webp";
 
 export const Home = () => {
-  const { dispatch } = useGlobalContext();
   // scroll animation
   const section1Ref = useRef();
   const section2Ref = useRef();
@@ -256,11 +255,6 @@ export const Home = () => {
     },
   ];
 
-  // set active page to empty string
-  useEffect(() => {
-    dispatch({ type: "CHANGE_ACTIVE_PAGE", payload: "" });
-  }, []);
-
   return (
     <>
       <section className=" px-3 md:px-16 lg:px-28  ">
@@ -276,7 +270,7 @@ export const Home = () => {
             </h1>
             <p className=" md:text-2xl">
               Empowering Financial Institutions with Secure, Efficient, and{" "}
-              <br /> Insightful Payment Solutions: From Processing to Engagement
+              Insightful Payment Solutions: From Processing to Engagement
             </p>
             {/* buttons */}
             <div className=" flex gap-x-4 mt-12">
@@ -354,11 +348,9 @@ export const Home = () => {
             </h1>
             <p className=" font-medium  md:text-2xl ">
               CoreInfra helps financial institutions to modernize their core{" "}
-              <br />
               payment infrastructure. With years of experience and passion for{" "}
-              <br />
               innovation, we have delivered many industry first solutions that
-              drive <br /> growth and increase efficiency
+              drive growth and increase efficiency
             </p>
           </div>
         </AnimatedContent>
@@ -423,12 +415,11 @@ export const Home = () => {
               </h1>
               <p className="  md:text-2xl">
                 We offer a comprehensive suite of payment software solutions
-                designed <br /> to streamline operations, enhance security, and
-                unlock valuable insights. <br /> <br /> See how we help
-                financial institutions like yours to optimize their <br />{" "}
-                issuing process, acquiring process, and customer interactions{" "}
-                <br /> seamlessly, turning every transaction into a strategic
-                advantage.
+                designed to streamline operations, enhance security, and unlock
+                valuable insights. See how we help financial institutions like
+                yours to optimize their issuing process, acquiring process, and
+                customer interactions seamlessly, turning every transaction into
+                a strategic advantage.
               </p>
               <p className=" font-bold md:text-xl mt-4 mb-4">
                 Ready to enhance your payment infrastructure?

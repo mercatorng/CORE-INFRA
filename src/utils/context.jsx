@@ -11,7 +11,6 @@ const defaultState = {
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, defaultState);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [showUserSidebar, setShowUserSidebar] = useState(false);
 
   useEffect(() => {
     // Add an event listener to update the window width when it changes
@@ -26,9 +25,10 @@ export const AppProvider = ({ children }) => {
     setWindowWidth(window.innerWidth);
   };
 
-
   return (
-    <AppContext.Provider value={{ ...state, dispatch,windowWidth }}>
+    <AppContext.Provider
+      value={{ ...state, dispatch, windowWidth, }}
+    >
       {children}
     </AppContext.Provider>
   );
