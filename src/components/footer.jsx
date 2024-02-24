@@ -13,21 +13,6 @@ export const Footer = () => {
     { linkName: "Contact Us", linkUrl: "#" },
   ];
 
-  // const solutionsData = [
-  //   { linkName: "Bespoke Payment Software", linkUrl: "bespoke-payment-software" },
-  //   { linkName: "Infrastructure Solutions", linkUrl: "infrastructure-solutions" },
-  //   { linkName: "Corporate Disbursement Platform", linkUrl: "corporate-disbursement-platform" },
-  //   { linkName: "Card and PIN Management Solutions", linkUrl: "card-and-pin-management-solutions" },
-  //   { linkName: "EngageNotify360", linkUrl: "EngageNotify360" },
-  //   { linkName: "SchemeComply360", linkUrl: "SchemeComply360" },
-  //   { linkName: "Fintech in a Box", linkUrl: "fintech-in-a-box" },
-  // ];
-  // const resourcesData = [
-  //   { linkName: "Blog", linkUrl: "#" },
-  //   { linkName: "Help Center", linkUrl: "#" },
-  //   { linkName: "Support", linkUrl: "#" },
-  // ];
-
   const legalData = [
     { linkName: "Terms", linkUrl: "#" },
     { linkName: "Privacy", linkUrl: "#" },
@@ -81,18 +66,16 @@ export const Footer = () => {
             {/* logo */}
             <div className=" lg:mb-auto">
               <img src={coreInfraBlack} alt="logo" />
-              <p className=" ">
-                Transforming transactions, elevating possibilities
-              </p>
+              <p>Transforming transactions, elevating possibilities</p>
             </div>
             {/* nav link */}
-            <div className=" lg:w-[70%] mt-8  md:flex md:gap-x-64">
-              <div className=" flex flex-col w-fit gap-1">
+            <div className=" lg:w-[70%] mt-8  md:flex md:gap-x-64 ">
+              <div className=" flex flex-col w-fit gap-1 shrink-0">
                 <p className=" font-bold">Company</p>
                 {navLinks.map(({ linkName, linkUrl }) => (
                   <Link
                     key={linkName}
-                    className=" hover:text-ctaGreen "
+                    className=" hover:text-ctaGreen"
                     to={linkUrl}
                   >
                     {linkName}
@@ -100,7 +83,7 @@ export const Footer = () => {
                 ))}
               </div>
               {/* legal */}
-              <div className=" mt-4 md:mt-0 ">
+              <div className=" mt-4 md:mt-0">
                 <div className=" flex flex-col w-fit gap-1 ">
                   <p className=" font-bold">Legal</p>
                   {legalData.map(({ linkName, linkUrl }) => (
@@ -113,6 +96,19 @@ export const Footer = () => {
                     </Link>
                   ))}
                 </div>
+              </div>
+              {/* address */}
+              <div className="flex flex-col w-fit gap-1 mt-6 md:mt-0">
+                <p>
+                  CoreInfra Solutions Ltd. 1A Hughes Ave, Yaba 101245, Lagos
+                </p>
+                <a
+                  href="mailto:connect@coreinfrahq.com"
+                  className=" hover:text-ctaGreen inline-block w-fit"
+                >
+                  connect@coreinfrahq.com
+                </a>
+                <p>+234 903 618 9485</p>
               </div>
             </div>
           </div>
