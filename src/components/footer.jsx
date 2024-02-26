@@ -99,9 +99,8 @@ export const Footer = () => {
               </div>
               {/* address */}
               <div className="flex flex-col w-fit gap-1 mt-6 md:mt-0">
-                <p>
-                  CoreInfra Solutions Ltd. 1A Hughes Ave, Yaba 101245, Lagos
-                </p>
+                <p>CoreInfra Solutions Ltd</p>
+                <p>1A Hughes Ave, Yaba 101245, Lagos</p>
                 <a
                   href="mailto:connect@coreinfrahq.com"
                   className=" hover:text-ctaGreen inline-block w-fit"
@@ -115,7 +114,7 @@ export const Footer = () => {
           {/* copyright */}
           <div className=" border-t border-gray-200 my-4"></div>
           <div className=" md:flex md:justify-between items-center">
-            <p>© {currentYear} Coreinfra™. All rights reserved. </p>
+            <p>© {currentYear} CoreInfra™. All rights reserved. </p>
             {/* social icons */}
             <div>
               <SocialIcon
