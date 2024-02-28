@@ -29,7 +29,7 @@ export const CookieConsent = () => {
   return (
     <>
       {showCookies && (
-        <div className="fixed bottom-4 left-4 border font-bold bg-black bg-opacity-80 w-[50%] md:w-[40%] text-white  p-4 shadow-lg rounded-2xl text-sm ">
+        <div className="fixed bottom-4 left-[50%] -translate-x-[50%] border font-bold bg-black bg-opacity-80 w-[50%] md:w-[40%] text-white  p-4 shadow-lg rounded-2xl text-sm ">
           <p className="mb-4">
             CoreInfra uses cookies to enhance your browsing experience and
             analyze the performance and traffic on our website.
