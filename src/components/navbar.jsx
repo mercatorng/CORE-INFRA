@@ -7,6 +7,7 @@ import { useGlobalContext } from "../utils/context";
 import logoBlack from "../assets/coreInfraLogoBlack.svg";
 import menuBtn from "../assets/menuBtn.svg";
 import { RiMenuLine } from "react-icons/ri";
+import { LetsTalkButton } from "./button";
 
 export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
   const { windowWidth } = useGlobalContext();
@@ -92,7 +93,7 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         </Link>
         <button
           onClick={() => setDropDown(!showDropDown)}
-          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname}`}
+          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname} hover:text-ctaGreen`}
         >
           {" "}
           <span>Solutions</span>{" "}
@@ -114,11 +115,8 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
           />
         )}
       </div>
-      {/* get in touch for small medium screen above */}
-      <GlobalCTAButton
-        style={" text-black bg-ctaGreen w-fit hidden md:block "}
-        text={"Get in touch "}
-      />
+      {/* lets talk for small medium screen above */}
+      <LetsTalkButton style={"hidden md:block"} />
     </nav>
   );
 };
@@ -129,7 +127,7 @@ const SolutionLinks = ({
   setPageTitle,
   setActiveLink,
   activeLink,
-  closeMenuOnSmallScreen
+  closeMenuOnSmallScreen,
 }) => {
   const linkContainerRef = useRef(null);
 
@@ -252,11 +250,8 @@ const SolutionLinks = ({
           </Link>
         );
       })}
-      {/* get in touch */}
-      <GlobalCTAButton
-        style={" text-black bg-ctaGreen w-fit md:hidden "}
-        text={"Get in touch "}
-      />
+      {/* lets talk */}
+      <LetsTalkButton style={"md:hidden"} />
     </div>
   );
 };

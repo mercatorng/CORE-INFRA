@@ -1,5 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import { GlobalCTAButton } from "../components/button";
+import { GlobalCTAButton, LetsTalkButton } from "../components/button";
 import { DummyImg } from "./bespokePayment";
 import { useEffect, useRef, useState } from "react";
 import AnimatedContent from "../components/animatedContent";
@@ -45,7 +45,7 @@ export const CardAndPinMgt = () => {
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
             <GlobalCTAButton text={"Explore More"} style={" bg-gray-200   "} />
-            <GlobalCTAButton text={"Get in touch"} style={" bg-ctaGreen   "} />
+           <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>
