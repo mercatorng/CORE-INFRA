@@ -3,6 +3,7 @@ import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
 import { ScrollToTopOnPageChange } from "../components/scrollToTop";
 import { useEffect, useState } from "react";
+import { CookieConsent } from "../components/cookieComponent";
 
 export const SharedLayout = () => {
   //  checks if url is home
@@ -39,6 +40,7 @@ export const SharedLayout = () => {
       <Navbar {...{ homeUrl, activeLink, setActiveLink }} />
       <Outlet />
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
