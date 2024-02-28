@@ -1,5 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import { GlobalCTAButton } from "../components/button";
+import { GlobalCTAButton, LetsTalkButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -44,7 +44,7 @@ export const InfrastuctureSolutions = () => {
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
             <GlobalCTAButton text={"Explore More"} style={" bg-gray-200   "} />
-            <GlobalCTAButton text={"Get in touch"} style={" bg-ctaGreen   "} />
+            <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>

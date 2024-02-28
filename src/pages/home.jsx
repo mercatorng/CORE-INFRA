@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { GlobalCTAButton } from "../components/button";
+import { GlobalCTAButton, LetsTalkButton } from "../components/button";
 import heroImg1 from "../assets/heroImg1.svg";
 import companyLogo1 from "../assets/jaizBankLogo.png";
 import companyLogo2 from "../assets/providusLogo.png";
@@ -282,10 +282,7 @@ export const Home = () => {
               >
                 Explore more
               </Link>
-              <GlobalCTAButton
-                text={"Get in touch"}
-                style={" bg-ctaGreen text-black "}
-              />
+              <LetsTalkButton />
             </div>
           </div>
         </AnimatedContent>
