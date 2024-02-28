@@ -92,7 +92,7 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         </Link>
         <button
           onClick={() => setDropDown(!showDropDown)}
-          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname}`}
+          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname} hover:text-ctaGreen`}
         >
           {" "}
           <span>Solutions</span>{" "}
