@@ -10,7 +10,7 @@ import { SectionTwoImages } from "../components/sectionTwoImages";
 import img2 from "../assets/bespokeImg2.png";
 import img3 from "../assets/bespokeImg3.png";
 
-export const FintechInaBox = () => {
+export const IssuingAsAServicePlatform = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
@@ -62,7 +62,7 @@ export const FintechInaBox = () => {
           className=" text-black  px-3 md:px-16 lg:px-28 mb-16"
         >
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
-            Fintech In A Box
+            Issuing as a Service Platform
           </h1>
           <div className=" flex flex-col gap-y-8">
             <p className=" md:text-2xl">
