@@ -5,13 +5,14 @@ import { BespokePayment } from "./pages/bespokePayment";
 import { InfrastuctureSolutions } from "./pages/infrastuctureSolutions";
 import { SchemeComply360 } from "./pages/schemeComply360";
 import { EngageNotify360 } from "./pages/engageNotify360";
-import { FintechInaBox } from "./pages/fintechInaBox";
+import { IssuingAsAServicePlatform } from "./pages/IssuingAsAServicePlatform";
 import { CoporateDisbursement } from "./pages/coporateDisbursement";
 import { CardAndPinMgt } from "./pages/cardAndPinMgt";
 import { FraudMonitoring } from "./pages/fraudMonitoring";
 import { PinDelivery } from "./pages/pinDelivery";
 import { InstantCardIssuance } from "./pages/instantCardIssuance";
 import { AboutUs } from "./pages/aboutUs";
+import { ContactUs } from "./pages/contactUs";
 
 function App() {
   return (
@@ -38,7 +39,10 @@ function App() {
             />
             <Route path="/customer-engagement" element={<EngageNotify360 />} />
             <Route path="/scheme-reporting" element={<SchemeComply360 />} />
-            <Route path="/fintech-in-a-box" element={<FintechInaBox />} />
+            <Route
+              path="/issuing-as-a-service-platform"
+              element={<IssuingAsAServicePlatform />}
+            />
             <Route path="/fraud-monitoring" element={<FraudMonitoring />} />
             <Route
               path="/instant-card-issuance"
@@ -46,6 +50,7 @@ function App() {
             />
             <Route path="/pin-delivery" element={<PinDelivery />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Route>
         </Routes>
       </BrowserRouter>

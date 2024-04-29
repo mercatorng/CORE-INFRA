@@ -22,7 +22,7 @@ export const SharedLayout = () => {
 
     // set page title to default for home and about page on refresh
     // else grab page title from session storage for persistent active page name
-    if (path === "/" || path === "/about") {
+    if (path === "/" || path === "/about" || path === "/contact-us") {
       document.title =
         "CoreInfra - Modern payments infrastructure for Financial institutions";
     } else {

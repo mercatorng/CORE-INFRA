@@ -48,8 +48,8 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
   }
 
   // onclick about link
-  function clickAboutLink() {
-    setActiveLink("/about");
+  function clickNavigationLink(linkUrl) {
+    setActiveLink(`/${linkUrl}`);
     closeMenuOnSmallScreen();
   }
 
@@ -82,8 +82,9 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
           !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
+        {/* about */}
         <Link
-          onClick={clickAboutLink}
+          onClick={() => clickNavigationLink("about")}
           to={"/about"}
           className={` w-fit hover:text-ctaGreen  ${
             activeLink === "/about" ? " text-ctaGreen font-bold " : ""
@@ -91,6 +92,7 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         >
           About
         </Link>
+        {/* solutions */}
         <button
           onClick={() => setDropDown(!showDropDown)}
           className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname} hover:text-ctaGreen`}
@@ -114,6 +116,16 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
             }}
           />
         )}
+        {/* contact us  */}
+        <Link
+          onClick={() => clickNavigationLink("contact-us")}
+          to={"/contact-us"}
+          className={` w-fit hover:text-ctaGreen  ${
+            activeLink === "/contact-us" ? " text-ctaGreen font-bold " : ""
+          }`}
+        >
+          Contact us
+        </Link>
       </div>
       {/* lets talk for small medium screen above */}
       <LetsTalkButton style={"hidden md:block"} />
@@ -132,6 +144,12 @@ const SolutionLinks = ({
   const linkContainerRef = useRef(null);
 
   const data = [
+    {
+      id: 6,
+      title: " Issuing as a Service Platform",
+      url: "/issuing-as-a-service-platform",
+      pageTitle: "Seamless collaboration with Fintechs",
+    },
     {
       id: 0,
       title: "Bespoke Payment Software",
@@ -168,12 +186,7 @@ const SolutionLinks = ({
       url: "/scheme-reporting",
       pageTitle: "Simplify Compliance Reporting with Automation",
     },
-    {
-      id: 6,
-      title: "Fintech in a Box",
-      url: "/fintech-in-a-box",
-      pageTitle: "Seamless collaboration with Fintechs",
-    },
+
     {
       id: 7,
       title: "Fraud Monitoring",
