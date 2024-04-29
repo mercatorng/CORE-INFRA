@@ -45,8 +45,11 @@ export const ContactUs = () => {
       </AnimatedContent>
       {/* personel */}
       <AnimatedContent isVisible={isVisibleSection2}>
-        <section ref={section2Ref} className="px-3 mt-12  md:px-16 lg:px-28">
-          <div className="md:text-xl flex flex-col gap-y-8">
+        <section
+          ref={section2Ref}
+          className="px-3 mt-20  md:px-16 lg:px-28 mb-20"
+        >
+          <div className="md:text-xl flex flex-col md:flex-row   gap-20 md:gap-x-60 justify-center items-center ">
             {/* ceo */}
             <p className=" flex flex-col gap-y-2">
               <span className=" font-medium">CEO </span>

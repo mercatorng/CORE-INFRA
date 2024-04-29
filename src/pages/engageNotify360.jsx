@@ -1,5 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import { GlobalCTAButton, LetsTalkButton } from "../components/button";
+import { LetsTalkButton, OpenAboutPageButton, RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -43,7 +43,7 @@ export const EngageNotify360 = () => {
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <GlobalCTAButton text={"Explore More"} style={" bg-gray-200   "} />
+            <OpenAboutPageButton text={"Explore More"} style={" bg-gray-200   "} />
             <LetsTalkButton/>
           </div>
         </section>
@@ -93,7 +93,7 @@ export const EngageNotify360 = () => {
               relationships and driving long-term business success.
             </p>
           </div>
-          <GlobalCTAButton
+          <RequestDemoButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}
           />
