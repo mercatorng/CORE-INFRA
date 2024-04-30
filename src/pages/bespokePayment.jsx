@@ -1,5 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import { GlobalCTAButton, LetsTalkButton } from "../components/button";
+import { LetsTalkButton, OpenAboutPageButton, RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -45,7 +45,7 @@ export const BespokePayment = () => {
             </h1>
             {/* buttons */}
             <div className=" flex flex-wrap gap-4">
-              <GlobalCTAButton
+              <OpenAboutPageButton
                 text={"Explore More"}
                 style={" bg-gray-200   "}
               />
@@ -78,7 +78,7 @@ export const BespokePayment = () => {
               goals, ensuring every transaction is a step toward enhanced
               profitability and efficiency
             </p>
-            <GlobalCTAButton
+            <RequestDemoButton
               text={"Request a Demo"}
               style={" bg-ctaGreen  mt-6"}
             />

@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/coreInfraLogoWhite.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
-import { GlobalCTAButton } from "./button";
 import { useGlobalContext } from "../utils/context";
 import logoBlack from "../assets/coreInfraLogoBlack.svg";
-import menuBtn from "../assets/menuBtn.svg";
 import { RiMenuLine } from "react-icons/ri";
 import { LetsTalkButton } from "./button";
+import { useHideOnclickOutsideContainer } from "../hooks/useHideOnclickOutsideContainer";
 
-export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
-  const { windowWidth } = useGlobalContext();
+export const Navbar = ({ homeUrl }) => {
+  const { windowWidth, activeLink, setActiveLink, checkContactUsPath, path } =
+    useGlobalContext();
   const [showDropDown, setDropDown] = useState(false);
   const notificationButtonClassname = "notificationButton";
   const [showMenu, setMenu] = useState(false);
@@ -53,6 +53,21 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
     closeMenuOnSmallScreen();
   }
 
+  //hide menu container on click outside
+  const menuContainerRef = useRef(null);
+  const menuButtonClassname = "menuBtn";
+  useHideOnclickOutsideContainer(
+    menuContainerRef,
+    menuButtonClassname,
+    setMenu
+  );
+
+  //check if a solution sublink is active
+  const checkNonSublinkPath =
+    path === "/about" || path === "/contact-us" || path === "/";
+
+  console.log(checkNonSublinkPath);
+
   return (
     <nav
       className={` z-50 flex bg-inherit w-full justify-between items-center shadow-sm py-2  px-3 mb-16 md:px-16 lg:px-28 ${
@@ -72,13 +87,19 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         />
       </Link>
       {/* menu button */}
-      <button onClick={() => setMenu(!showMenu)} className=" md:hidden">
+      <button
+        onClick={() => {
+          setMenu(!showMenu);
+        }}
+        className={`md:hidden ${menuButtonClassname} `}
+      >
         <RiMenuLine size={20} className=" text-inherit" />
       </button>
       {/* nav links */}
 
       <div
-        className={`absolute  md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit  shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50 globalTransition ${
+        ref={menuContainerRef}
+        className={`absolute md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50 globalTransition ${
           !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
@@ -95,7 +116,9 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         {/* solutions */}
         <button
           onClick={() => setDropDown(!showDropDown)}
-          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname} hover:text-ctaGreen`}
+          className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname} ${
+            !checkNonSublinkPath && "text-ctaGreen"
+          } hover:text-ctaGreen`}
         >
           {" "}
           <span>Solutions</span>{" "}
@@ -110,8 +133,6 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
               setDropDown,
               notificationButtonClassname,
               setPageTitle,
-              setActiveLink,
-              activeLink,
               closeMenuOnSmallScreen,
             }}
           />
@@ -128,7 +149,7 @@ export const Navbar = ({ homeUrl, activeLink, setActiveLink }) => {
         </Link>
       </div>
       {/* lets talk for small medium screen above */}
-      <LetsTalkButton style={"hidden md:block"} />
+      {!checkContactUsPath && <LetsTalkButton style={"hidden md:block"} />}
     </nav>
   );
 };
@@ -137,11 +158,15 @@ const SolutionLinks = ({
   setDropDown,
   notificationButtonClassname,
   setPageTitle,
-  setActiveLink,
-  activeLink,
   closeMenuOnSmallScreen,
 }) => {
+  // hide solution container on click outside
   const linkContainerRef = useRef(null);
+  useHideOnclickOutsideContainer(
+    linkContainerRef,
+    notificationButtonClassname,
+    setDropDown
+  );
 
   const data = [
     {
@@ -207,29 +232,7 @@ const SolutionLinks = ({
     },
   ];
 
-  function clickOutsideLinksContainer(e) {
-    const clickedElement = e.target;
-
-    // Check if the clicked element or its parent has the button class
-    const isButtonClick =
-      clickedElement.classList.contains(notificationButtonClassname) ||
-      clickedElement.closest(`.${notificationButtonClassname}`);
-
-    if (
-      linkContainerRef.current &&
-      !linkContainerRef.current.contains(e.target) &&
-      !isButtonClick
-    ) {
-      setDropDown(false);
-    }
-  }
-
-  useEffect(() => {
-    document.body.addEventListener("click", clickOutsideLinksContainer);
-    return () => {
-      document.body.removeEventListener("click", clickOutsideLinksContainer);
-    };
-  }, []);
+  const { activeLink, setActiveLink, checkContactUsPath } = useGlobalContext();
 
   // on link click
   function clickLink(path, pageTitle) {
@@ -264,7 +267,7 @@ const SolutionLinks = ({
         );
       })}
       {/* lets talk */}
-      <LetsTalkButton style={"md:hidden"} />
+      {!checkContactUsPath && <LetsTalkButton style={"md:hidden"} />}
     </div>
   );
 };

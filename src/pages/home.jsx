@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { GlobalCTAButton, LetsTalkButton } from "../components/button";
+import { useState, useRef } from "react";
+import { LetsTalkButton, RequestDemoButton } from "../components/button";
 import heroImg1 from "../assets/heroImg1.svg";
 import companyLogo1 from "../assets/jaizBankLogo.png";
 import companyLogo2 from "../assets/providusLogo.png";
@@ -22,7 +22,6 @@ import checkMark from "../assets/checkmark.svg";
 import padlockIcon from "../assets/padlock.svg";
 import headPhoneIcon from "../assets/headPhones.svg";
 import { Link, Element, animateScroll as scroll } from "react-scroll";
-import { useGlobalContext } from "../utils/context";
 import { GreenUnderline } from "../components/greenUnderline";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -421,7 +420,7 @@ export const Home = () => {
               <p className=" font-bold md:text-xl mt-4 mb-4">
                 Ready to enhance your payment infrastructure?
               </p>
-              <GlobalCTAButton
+              <RequestDemoButton
                 text={"Request a Demo"}
                 style={" bg-ctaGreen text-black"}
               />
