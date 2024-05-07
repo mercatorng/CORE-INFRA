@@ -68,11 +68,8 @@ export const Home = () => {
     },
     {
       icon: txnMattersImg,
-      headerText: "What We Offer",
-      subText1: "Innovation Leadership",
-      subText2: "Profound Expertise",
-      subText3: "Cutting-Edge Solutions",
-      subText4: "Strategic Partnerships",
+      headerText: "Seamless Integration, Scalable Architecture",
+      text: " Our Digital Banking Infrastructure is designed with a modular and scalable architecture, ensuring seamless integration with your existing systems and enabling future expansion as your digital banking needs evolve. Leverage our open APIs and robust integration capabilities to create a cohesive and consistent digital banking experience across all channels.",
     },
   ];
 
@@ -261,15 +258,18 @@ export const Home = () => {
         <AnimatedContent isVisible={isVisibleSection1}>
           <div ref={section1Ref} className=" mb-12">
             <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit">
-              Transforming transactions, <br /> Elevating{" "}
+              Transforming transactions, <br />
               <span className=" relative inline-block">
-                possibilities
+                Igniting
                 <GreenUnderline />
-              </span>
+              </span>{" "}
+              {""}
+              Innovation in Payments
             </h1>
             <p className=" md:text-2xl">
-              Empowering Financial Institutions with Secure, Efficient, and{" "}
-              Insightful Payment Solutions: From Processing to Engagement
+              Innovative card and payments solutions that transcend the entire
+              payments value chain, bring new products to market faster than
+              your competitors
             </p>
             {/* buttons */}
             <div className=" flex gap-x-4 mt-12">
@@ -335,6 +335,7 @@ export const Home = () => {
           </div>
         </AnimatedContent>
       </section>
+
       {/* section 2 white */}
       <section className=" bg-white pt-12 text-black">
         <AnimatedContent isVisible={isVisibleSection4}>
@@ -400,6 +401,7 @@ export const Home = () => {
           </div>
         </AnimatedContent>
       </section>
+
       {/*section 3 why choose core infra */}
       <Element name="aboutSection">
         <section className=" dot-grid-bg relative px-3 md:px-16 py-16 lg:px-28 ">
