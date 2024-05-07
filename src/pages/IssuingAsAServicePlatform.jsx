@@ -69,20 +69,17 @@ export const IssuingAsAServicePlatform = () => {
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Seamless{" "}
             <span className=" relative inline-block">
-              collaboration
-              <GreenUnderline />
+              Seamless <GreenUnderline />
             </span>{" "}
-            with <br /> Fintechs
+            collaboration with <br /> Fintechs
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <OpenAboutPageButton
-              text={"Explore More"}
-              style={" bg-gray-200   "}
+            <RequestDemoButton
+              text={"Request a Demo"}
+              style={" bg-ctaGreen  mt-6"}
             />
-            <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>

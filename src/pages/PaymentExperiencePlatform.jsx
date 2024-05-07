@@ -75,11 +75,10 @@ export const PaymentExperiencePlatform = () => {
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <OpenAboutPageButton
-              text={"Explore More"}
-              style={" bg-gray-200   "}
+            <RequestDemoButton
+              text={"Request a Demo"}
+              style={" bg-ctaGreen  mt-6"}
             />
-            <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>

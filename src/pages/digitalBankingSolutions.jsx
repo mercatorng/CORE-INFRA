@@ -10,7 +10,6 @@ import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
 import img1 from "../assets/digitalSolutionHero.svg";
 
-
 export const DigitalBankingSolutions = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
@@ -69,11 +68,10 @@ export const DigitalBankingSolutions = () => {
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <OpenAboutPageButton
-              text={"Explore More"}
-              style={" bg-gray-200   "}
+            <RequestDemoButton
+              text={"Request a Demo"}
+              style={" bg-ctaGreen  mt-6"}
             />
-            <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>
