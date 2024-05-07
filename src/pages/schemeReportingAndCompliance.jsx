@@ -9,9 +9,6 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import img1 from "../assets/schemeComplyImg1.jpg";
 import { HeroImage } from "../components/heroImage";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
 
 export const SchemeReportingAndCompliance = () => {
   const section1Ref = useRef();
@@ -109,17 +106,7 @@ export const SchemeReportingAndCompliance = () => {
           />
         </section>
       </AnimatedContent>
-      {/* section 3 */}
-      <AnimatedContent isVisible={isVisibleSection3}>
-        <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 ">
-          <SectionTwoImages
-            img1={img2}
-            img2={img3}
-            altText={"laptop"}
-            altText2={"laptop and debit card"}
-          />
-        </section>
-      </AnimatedContent>
+
     </>
   );
 };

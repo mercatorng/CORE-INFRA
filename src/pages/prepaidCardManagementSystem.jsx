@@ -7,11 +7,8 @@ import {
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
-import img1 from "../assets/prepaidHero.png";
+import img1 from "../assets/prepaidHero.svg";
 import { HeroImage } from "../components/heroImage";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
 
 export const PrepaidCardManagementSystem = () => {
   const section1Ref = useRef();
@@ -101,7 +98,7 @@ export const PrepaidCardManagementSystem = () => {
               built on a modular architecture, providing a comprehensive suite
               of features to streamline prepaid card operations:
             </p>
-            <ul className=" list-decimal grid gap-y-4 md:text-2xl pl-16">
+            <ul className=" list-decimal grid gap-y-4 md:text-2xl pl-8 md:pl-12">
               {section2data.map(({ id, content, title }) => (
                 <li key={id}>
                   <span className=" font-medium">{title}</span> {content}

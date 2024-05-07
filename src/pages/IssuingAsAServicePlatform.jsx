@@ -4,15 +4,11 @@ import {
   OpenAboutPageButton,
   RequestDemoButton,
 } from "../components/button";
-import { DummyImg } from "./bespokePayment";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
-import img1 from "../assets/issuingHero.png";
+import img1 from "../assets/issuingHero.svg";
 import { HeroImage } from "../components/heroImage";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
 
 export const IssuingAsAServicePlatform = () => {
   const section1Ref = useRef();
@@ -90,7 +86,7 @@ export const IssuingAsAServicePlatform = () => {
           </div>
         </section>
       </AnimatedContent>
-      
+
       {/* hero*/}
       <AnimatedContent isVisible={isVisibleHeroImg}>
         <div ref={heroImgRef}>
@@ -134,7 +130,7 @@ export const IssuingAsAServicePlatform = () => {
                 functionalities, enabling banks to support fintech partners with
                 ease:
               </p>
-              <ul className=" list-decimal pl-16 mt-4 md:text-2xl grid gap-y-4">
+              <ul className=" list-decimal  pl-8 md:pl-12 mt-4 md:text-2xl grid gap-y-4">
                 {section3data.map(({ id, content, title }) => (
                   <li key={id}>
                     <span className=" font-medium">{title}</span> {content}
@@ -187,18 +183,6 @@ export const IssuingAsAServicePlatform = () => {
           <RequestDemoButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}
-          />
-        </section>
-      </AnimatedContent>
-
-      {/* section 6 */}
-      <AnimatedContent isVisible={isVisibleSection6}>
-        <section ref={section6Ref} className="   px-3 md:px-16 lg:px-28 ">
-          <SectionTwoImages
-            img1={img2}
-            img2={img3}
-            altText={"laptop"}
-            altText2={"laptop and debit card"}
           />
         </section>
       </AnimatedContent>

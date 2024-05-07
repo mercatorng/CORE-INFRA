@@ -4,15 +4,11 @@ import {
   OpenAboutPageButton,
   RequestDemoButton,
 } from "../components/button";
-import { DummyImg } from "./bespokePayment";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
 import img1 from "../assets/CardPinHero.svg";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
 
 export const CardAndPinSolution = () => {
   const section1Ref = useRef();
@@ -20,7 +16,6 @@ export const CardAndPinSolution = () => {
   const section3Ref = useRef();
   const section4Ref = useRef();
   const section5Ref = useRef();
-  const section6Ref = useRef();
   const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
@@ -33,7 +28,6 @@ export const CardAndPinSolution = () => {
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
   const { isVisible: isVisibleSection4 } = useScrollVisibility(section4Ref);
   const { isVisible: isVisibleSection5 } = useScrollVisibility(section5Ref);
-  const { isVisible: isVisibleSection6 } = useScrollVisibility(section6Ref);
 
   const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
 
@@ -97,7 +91,7 @@ export const CardAndPinSolution = () => {
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
         <section ref={section2Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
-          <div className=" grid gap-y-4 md:text-2xl ">
+          <div className=" grid gap-y-8 md:text-2xl ">
             <p>
               Providing exceptional card services is paramount for card issuers
               seeking to enhance customer satisfaction and loyalty.{" "}
@@ -118,7 +112,7 @@ export const CardAndPinSolution = () => {
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             Seamless and Secure Card Management, Anytime, Anywhere
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl">
+          <div className=" grid gap-y-8 md:text-2xl">
             <p>
               Our solution offers a comprehensive suite of features, enabling
               your customers to initiate and complete a wide range of
@@ -126,7 +120,7 @@ export const CardAndPinSolution = () => {
               channels, such as mobile banking apps, internet banking, IVR, and
               USSD:
             </p>
-            <ul className=" list-disc pl-16 mt-4  grid gap-y-4">
+            <ul className=" list-disc  pl-4 md:pl-12 mt-4  grid gap-y-4">
               {section3data.map(({ id, content, title }) => (
                 <li key={id}>
                   <span className=" font-medium">{title}</span> {content}
@@ -162,7 +156,7 @@ export const CardAndPinSolution = () => {
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             Seamless Integration and Omnichannel Experience
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl">
+          <div className=" grid gap-y-8 md:text-2xl">
             <p>
               Through standards-based APIs, our solution integrates seamlessly
               with your existing card issuance systems and channels, enabling a
@@ -181,18 +175,6 @@ export const CardAndPinSolution = () => {
           <RequestDemoButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}
-          />
-        </section>
-      </AnimatedContent>
-
-      {/* section 6 */}
-      <AnimatedContent isVisible={isVisibleSection6}>
-        <section ref={section6Ref} className="   px-3 md:px-16 lg:px-28 ">
-          <SectionTwoImages
-            img1={img2}
-            img2={img3}
-            altText={"laptop"}
-            altText2={"laptop and debit card"}
           />
         </section>
       </AnimatedContent>

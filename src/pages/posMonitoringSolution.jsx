@@ -9,9 +9,6 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import img1 from "../assets/posmonHero.svg";
 import { HeroImage } from "../components/heroImage";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
 
 export const PosMonitoringSolution = () => {
   const section1Ref = useRef();
@@ -64,12 +61,12 @@ export const PosMonitoringSolution = () => {
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="  px-3 md:px-16 lg:px-28">
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Introducing the{" "}
+            Gain Unparalleled {""}
             <span className=" relative inline-block">
-              Ultimate
+              Visibility
               <GreenUnderline />
             </span>{" "}
-            POS Monitoring Solution: Gain Unparalleled Visibility and Control
+            and Control
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
@@ -138,7 +135,7 @@ export const PosMonitoringSolution = () => {
               Gain unprecedented visibility into your POS operations with our
               intuitive dashboards and reporting modules:
             </p>
-            <ul className=" list-decimal pl-16 mt-4  grid gap-y-4">
+            <ul className=" list-decimal pl-8  md:pl-12 mt-4  grid gap-y-4">
               {section3data.map(({ id, content, title }) => (
                 <li key={id}>
                   <span className=" font-medium">{title}</span> {content}
@@ -151,7 +148,7 @@ export const PosMonitoringSolution = () => {
 
       {/* section 5 */}
       <AnimatedContent isVisible={isVisibleSection5}>
-        <section ref={section5Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
+        <section ref={section5Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             Empower Acquirers and Merchants
           </h1>
@@ -161,7 +158,7 @@ export const PosMonitoringSolution = () => {
               acquirers and merchants, providing tailored dashboards and
               reporting capabilities:
             </p>
-            <ul className="pl-16 mt-4  grid gap-y-4">
+            <ul className="pl-8  md:pl-12 mt-4  grid gap-y-4">
               <li>
                 <span className=" font-medium">-Acquirer Dashboard: </span> Gain
                 a centralized view of your entire terminal network, enabling
@@ -178,33 +175,31 @@ export const PosMonitoringSolution = () => {
           </div>
         </section>
       </AnimatedContent>
-      {/* section 5 */}
-      <AnimatedContent isVisible={isVisibleSection5}>
-        <section ref={section5Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
+
+      {/* section 6 */}
+      <AnimatedContent isVisible={isVisibleSection6}>
+        <section ref={section6Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
-            Empower Acquirers and Merchants
+            Maximize Uptime, Enhance Customer Experiences
           </h1>
           <div className=" grid gap-y-4 md:text-2xl">
             <p>
-              Our solution is designed to meet the unique needs of both
-              acquirers and merchants, providing tailored dashboards and
-              reporting capabilities:
+              By leveraging our POS Monitoring Solution, you can proactively
+              identify and address potential issues before they impact your
+              operations, maximizing terminal uptime and ensuring seamless
+              customer experiences. Our solution not only optimizes your
+              operational efficiency but also enhances customer satisfaction and
+              loyalty, driving long-term business success.
             </p>
-            <ul className="pl-16 mt-4  grid gap-y-4">
-              <li>
-                <span className=" font-medium">-Acquirer Dashboard: </span> Gain
-                a centralized view of your entire terminal network, enabling
-                efficient management, proactive issue resolution, and informed
-                decision-making.
-              </li>
-              <li>
-                <span className=" font-medium">-Merchant Dashboard:</span>{" "}
-                Empower your merchants with real-time insights into their POS
-                operations, transaction data, and terminal performance,
-                fostering transparency and trust.
-              </li>
-            </ul>
+            <p>
+              Experience the power of comprehensive POS monitoring and take
+              control of your terminal fleet today.
+            </p>
           </div>
+          <RequestDemoButton
+            text={"Request a Demo"}
+            style={" bg-ctaGreen  mt-6"}
+          />
         </section>
       </AnimatedContent>
     </>

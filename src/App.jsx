@@ -1,20 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/home";
 import { SharedLayout } from "./pages/sharedLayout";
-import { BespokePayment } from "./pages/bespokePayment";
-import { InfrastuctureSolutions } from "./pages/infrastuctureSolutions";
 import { SchemeReportingAndCompliance } from "./pages/schemeReportingAndCompliance";
 import { PaymentExperiencePlatform } from "./pages/PaymentExperiencePlatform";
 import { IssuingAsAServicePlatform } from "./pages/IssuingAsAServicePlatform";
-import { CoporateDisbursement } from "./pages/coporateDisbursement";
 import { CardAndPinSolution } from "./pages/cardAndPinSolution";
-import { FraudMonitoring } from "./pages/fraudMonitoring";
-import { PinDelivery } from "./pages/pinDelivery";
 import { InstantCardSolution } from "./pages/instantCardSolution";
 import { AboutUs } from "./pages/aboutUs";
 import { ContactUs } from "./pages/contactUs";
 import { PrepaidCardManagementSystem } from "./pages/prepaidCardManagementSystem";
 import { PosMonitoringSolution } from "./pages/posMonitoringSolution";
+import { DigitalBankingSolutions } from "./pages/digitalBankingSolutions";
 
 function App() {
   return (
@@ -24,16 +20,8 @@ function App() {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
             <Route
-              path="/bespoke-payment-software"
-              element={<BespokePayment />}
-            />
-            <Route
-              path="/infrastructure-solutions"
-              element={<InfrastuctureSolutions />}
-            />
-            <Route
-              path="/corporate-disbursement-platform"
-              element={<CoporateDisbursement />}
+              path="/digital-banking-solutions"
+              element={<DigitalBankingSolutions />}
             />
             <Route
               path="/card-and-pin-solution"
@@ -51,7 +39,6 @@ function App() {
               path="/issuing-as-a-service-platform"
               element={<IssuingAsAServicePlatform />}
             />
-            <Route path="/fraud-monitoring" element={<FraudMonitoring />} />
             <Route
               path="/instant-card-solution"
               element={<InstantCardSolution />}
@@ -65,7 +52,6 @@ function App() {
               element={<PosMonitoringSolution />}
             />
 
-            <Route path="/pin-delivery" element={<PinDelivery />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
           </Route>

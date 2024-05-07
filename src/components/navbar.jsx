@@ -211,39 +211,14 @@ const SolutionLinks = ({
       id: 11,
       title: "POS Monitoring Solution",
       url: "/pos-monitoring-solution",
-      pageTitle:
-        "Introducing the Ultimate POS Monitoring Solution: Gain Unparalleled Visibility and Control",
-    },
-    {
-      id: 0,
-      title: "Bespoke Payment Software",
-      url: "/bespoke-payment-software",
-      pageTitle: "Elevate your transactions with custom payment software",
+      pageTitle: "Gain Unparalleled Visibility and Control",
     },
     {
       id: 1,
-      title: "Infrastructure Solutions",
-      url: "/infrastructure-solutions",
-      pageTitle: " Robust infrastructure for secure financial operations",
-    },
-    {
-      id: 2,
-      title: "Corporate Disbursement Platform",
-      url: "/corporate-disbursement-platform",
-      pageTitle: "Optimize disbursements with our automated platform",
-    },
-
-    {
-      id: 7,
-      title: "Fraud Monitoring",
-      url: "/fraud-monitoring",
-      pageTitle: "Smart Fraud Monitoring",
-    },
-    {
-      id: 9,
-      title: "Pin Delivery",
-      url: "/pin-delivery",
-      pageTitle: "PINGenie: A Card  PIN(Data) Management Solution",
+      title: "Digital Banking Solutions",
+      url: "/digital-banking-solutions",
+      pageTitle:
+        " Unleash the Power of Digital Banking with Our Comprehensive Infrastructure",
     },
   ];
 

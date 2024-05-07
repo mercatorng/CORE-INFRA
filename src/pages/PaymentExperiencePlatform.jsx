@@ -117,7 +117,7 @@ export const PaymentExperiencePlatform = () => {
               systems, providing a comprehensive suite of features to address
               transaction failures proactively and strategically:
             </p>
-            <ul className=" list-decimal pl-16 mt-4 md:text-2xl grid gap-y-4">
+            <ul className=" list-decimal pl-8 md:pl-12 mt-4 md:text-2xl grid gap-y-4">
               {section3data.map(({ id, content, title }) => (
                 <li key={id}>
                   <span className=" font-medium">{title}</span> {content}
