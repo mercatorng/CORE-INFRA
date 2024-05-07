@@ -176,6 +176,45 @@ const SolutionLinks = ({
       pageTitle: "Seamless collaboration with Fintechs",
     },
     {
+      id: 10,
+      title: "Prepaid Card Management System",
+      url: "/prepaid-card-management-system",
+      pageTitle: "Innovative Prepaid Card Solutions for Banks",
+    },
+    {
+      id: 8,
+      title: "Instant Card Solution",
+      url: "/instant-card-solution",
+      pageTitle: "Empowering More Faster, Efficient Card Services",
+    },
+    {
+      id: 4,
+      title: "Payment Experience Platform",
+      url: "/payment-experience-platform",
+      pageTitle:
+        "Transforming Transaction Failures into Strategic Opportunities.",
+    },
+    {
+      id: 3,
+      title: "Card and PIN Solution",
+      url: "/card-and-pin-solution",
+      pageTitle:
+        "Elevate Your Card Services with Our Comprehensive Card and PIN Solution",
+    },
+    {
+      id: 5,
+      title: "Scheme Reporting and Compliance",
+      url: "/scheme-reporting-and-compliance",
+      pageTitle: "Simplify Compliance Reporting with Automation",
+    },
+    {
+      id: 11,
+      title: "POS Monitoring Solution",
+      url: "/pos-monitoring-solution",
+      pageTitle:
+        "Introducing the Ultimate POS Monitoring Solution: Gain Unparalleled Visibility and Control",
+    },
+    {
       id: 0,
       title: "Bespoke Payment Software",
       url: "/bespoke-payment-software",
@@ -193,36 +232,12 @@ const SolutionLinks = ({
       url: "/corporate-disbursement-platform",
       pageTitle: "Optimize disbursements with our automated platform",
     },
-    {
-      id: 3,
-      title: "Card and PIN Management Solutions",
-      url: "/card-and-pin-management-solutions",
-      pageTitle: "Innovative Solutions for Card Management",
-    },
-    {
-      id: 4,
-      title: "Customer Engagement",
-      url: "/customer-engagement",
-      pageTitle: "Unlocking Strategic Opportunities in Transaction Failures.",
-    },
-    {
-      id: 5,
-      title: "Scheme Reporting",
-      url: "/scheme-reporting",
-      pageTitle: "Simplify Compliance Reporting with Automation",
-    },
 
     {
       id: 7,
       title: "Fraud Monitoring",
       url: "/fraud-monitoring",
       pageTitle: "Smart Fraud Monitoring",
-    },
-    {
-      id: 8,
-      title: "Instant Card Issuance",
-      url: "/instant-card-issuance",
-      pageTitle: "Empowering More Faster, Efficient Card Services",
     },
     {
       id: 9,

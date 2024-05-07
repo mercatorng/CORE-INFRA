@@ -3,16 +3,18 @@ import { Home } from "./pages/home";
 import { SharedLayout } from "./pages/sharedLayout";
 import { BespokePayment } from "./pages/bespokePayment";
 import { InfrastuctureSolutions } from "./pages/infrastuctureSolutions";
-import { SchemeComply360 } from "./pages/schemeComply360";
-import { EngageNotify360 } from "./pages/engageNotify360";
+import { SchemeReportingAndCompliance } from "./pages/schemeReportingAndCompliance";
+import { PaymentExperiencePlatform } from "./pages/PaymentExperiencePlatform";
 import { IssuingAsAServicePlatform } from "./pages/IssuingAsAServicePlatform";
 import { CoporateDisbursement } from "./pages/coporateDisbursement";
-import { CardAndPinMgt } from "./pages/cardAndPinMgt";
+import { CardAndPinSolution } from "./pages/cardAndPinSolution";
 import { FraudMonitoring } from "./pages/fraudMonitoring";
 import { PinDelivery } from "./pages/pinDelivery";
-import { InstantCardIssuance } from "./pages/instantCardIssuance";
+import { InstantCardSolution } from "./pages/instantCardSolution";
 import { AboutUs } from "./pages/aboutUs";
 import { ContactUs } from "./pages/contactUs";
+import { PrepaidCardManagementSystem } from "./pages/prepaidCardManagementSystem";
+import { PosMonitoringSolution } from "./pages/posMonitoringSolution";
 
 function App() {
   return (
@@ -34,20 +36,35 @@ function App() {
               element={<CoporateDisbursement />}
             />
             <Route
-              path="/card-and-pin-management-solutions"
-              element={<CardAndPinMgt />}
+              path="/card-and-pin-solution"
+              element={<CardAndPinSolution />}
             />
-            <Route path="/customer-engagement" element={<EngageNotify360 />} />
-            <Route path="/scheme-reporting" element={<SchemeComply360 />} />
+            <Route
+              path="/payment-experience-platform"
+              element={<PaymentExperiencePlatform />}
+            />
+            <Route
+              path="/scheme-reporting-and-compliance"
+              element={<SchemeReportingAndCompliance />}
+            />
             <Route
               path="/issuing-as-a-service-platform"
               element={<IssuingAsAServicePlatform />}
             />
             <Route path="/fraud-monitoring" element={<FraudMonitoring />} />
             <Route
-              path="/instant-card-issuance"
-              element={<InstantCardIssuance />}
+              path="/instant-card-solution"
+              element={<InstantCardSolution />}
             />
+            <Route
+              path="/prepaid-card-management-system"
+              element={<PrepaidCardManagementSystem />}
+            />
+            <Route
+              path="/pos-monitoring-solution"
+              element={<PosMonitoringSolution />}
+            />
+
             <Route path="/pin-delivery" element={<PinDelivery />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />

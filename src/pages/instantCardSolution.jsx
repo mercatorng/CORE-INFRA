@@ -1,15 +1,19 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {  LetsTalkButton, OpenAboutPageButton, RequestDemoButton } from "../components/button";
+import {
+  LetsTalkButton,
+  OpenAboutPageButton,
+  RequestDemoButton,
+} from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/cardIssuance.jpg";
+import img1 from "../assets/instantCardHero.png";
 import { SectionTwoImages } from "../components/sectionTwoImages";
 import img2 from "../assets/bespokeImg2.png";
 import img3 from "../assets/bespokeImg3.png";
 
-export const InstantCardIssuance = () => {
+export const InstantCardSolution = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
@@ -44,15 +48,18 @@ export const InstantCardIssuance = () => {
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <OpenAboutPageButton text={"Explore More"} style={" bg-gray-200   "} />
-            <LetsTalkButton/>
+            <OpenAboutPageButton
+              text={"Explore More"}
+              style={" bg-gray-200   "}
+            />
+            <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>
       {/* black and white boxes */}
       <AnimatedContent isVisible={isVisibleHeroImg}>
         <div ref={heroImgRef}>
-          <HeroImage heroImg={img1} altText={"hero image"} />
+          <HeroImage heroImg={img1} altText={"instant card solution hero"} />
         </div>
       </AnimatedContent>
       {/* section 2 */}
