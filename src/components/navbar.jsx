@@ -148,8 +148,12 @@ export const Navbar = ({ homeUrl }) => {
           Contact us
         </Link>
       </div>
-      {/* lets talk for small medium screen above */}
-      {!checkContactUsPath && <LetsTalkButton style={"hidden md:block"} />}
+      {/* lets talk for  medium screen above */}
+      {!checkContactUsPath ? (
+        <LetsTalkButton style={"hidden md:block"} />
+      ) : (
+        <p></p>
+      )}
     </nav>
   );
 };
@@ -257,7 +261,7 @@ const SolutionLinks = ({
         );
       })}
       {/* lets talk */}
-      {!checkContactUsPath && <LetsTalkButton style={"md:hidden"} />}
+      {!checkContactUsPath ? <LetsTalkButton style={"md:hidden"} /> : <p></p>}
     </div>
   );
 };

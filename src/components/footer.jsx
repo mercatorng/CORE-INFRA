@@ -83,7 +83,7 @@ export const Footer = () => {
                 {/* logo */}
                 <div className=" lg:mb-auto">
                   <img src={coreInfraBlack} alt="logo" />
-                  <p>Transforming transactions, elevating possibilities</p>
+                  <p>Igniting Innovation in Payments</p>
                 </div>
                 {/* nav link */}
                 <div className=" lg:w-[70%] mt-8  md:flex md:justify-between ">

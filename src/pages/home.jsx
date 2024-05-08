@@ -16,12 +16,16 @@ import handShakeImg from "../assets/handshakeImg.png";
 import twoBlackPeople from "../assets/two-black-people.png";
 import greenHandshakeIcon from "../assets/handShakeGreen.svg";
 import peopleIcon from "../assets/peopleIcon.svg";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GoChevronRight } from "react-icons/go";
 import checkMark from "../assets/checkmark.svg";
 import padlockIcon from "../assets/padlock.svg";
 import headPhoneIcon from "../assets/headPhones.svg";
-import { Link, Element, animateScroll as scroll } from "react-scroll";
+import {
+  Link as ScrollToLink,
+  Element,
+  animateScroll as scroll,
+} from "react-scroll";
 import { GreenUnderline } from "../components/greenUnderline";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -69,7 +73,8 @@ export const Home = () => {
     {
       icon: txnMattersImg,
       headerText: "Seamless Integration, Scalable Architecture",
-      text: " Our Digital Banking Infrastructure is designed with a modular and scalable architecture, ensuring seamless integration with your existing systems and enabling future expansion as your digital banking needs evolve. Leverage our open APIs and robust integration capabilities to create a cohesive and consistent digital banking experience across all channels.",
+      text: " Seamless integration & scalable architecture power Core-Infra's innovative payment solutions. Leverage your existing systems while scaling to meet evolving needs. Robust APIs enable a unified experience across channels - mobile, web, ATMs.",
+      text2: "Stay ahead with future-proof scalability...",
     },
   ];
 
@@ -96,7 +101,7 @@ export const Home = () => {
     },
   ];
 
-  const section4Data = [
+  const section5Data = [
     {
       ref: section8Ref,
       visible: isVisibleSection8,
@@ -104,7 +109,7 @@ export const Home = () => {
       icon: greenHandshakeIcon,
       text: "As a strategic partner in the payments space, CoreInfra goes beyond being just another traditional solution supplier. We use our extensive knowledge of Payment Software Development to help you negotiate the complexities of today's financial environment and grow your business.",
       linkName: "Explore CoreInfra",
-      linkUrl: "#",
+      linkUrl: "/issuing-as-a-service-platform",
     },
     {
       ref: section9Ref,
@@ -113,7 +118,7 @@ export const Home = () => {
       icon: peopleIcon,
       text: "We collaborate with your team to develop a personalized plan that is precisely aligned with your company's goals. This customized strategy drives increased profitability for your business by releasing the true power of payments.",
       linkName: "Explore CoreInfra",
-      linkUrl: "#",
+      linkUrl: "/issuing-as-a-service-platform",
     },
   ];
 
@@ -258,29 +263,27 @@ export const Home = () => {
         <AnimatedContent isVisible={isVisibleSection1}>
           <div ref={section1Ref} className=" mb-12">
             <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit">
-              Transforming transactions, <br />
+              Igniting Innovation in{" "}
               <span className=" relative inline-block">
-                Igniting
+                Payments
                 <GreenUnderline />
               </span>{" "}
-              {""}
-              Innovation in Payments
             </h1>
             <p className=" md:text-2xl">
-              Innovative card and payments solutions that transcend the entire
-              payments value chain, bring new products to market faster than
-              your competitors
+              Bring new products to market faster than your competitors by
+              leveraging our innovative card and payment solutions that cut
+              across the entire payments value chain
             </p>
             {/* buttons */}
             <div className=" flex gap-x-4 mt-12">
-              <Link
+              <ScrollToLink
                 to="aboutSection"
                 smooth={true}
                 duration={500}
                 className=" bg-white text-black rounded-md px-2 py-1 font-medium cursor-pointer grid place-items-center "
               >
                 Explore more
-              </Link>
+              </ScrollToLink>
               <LetsTalkButton />
             </div>
           </div>
@@ -358,42 +361,29 @@ export const Home = () => {
             className=" flex flex-col lg:flex-row gap-8   pb-8 md:py-16"
           >
             <div className=" lg:pr-8 flex flex-col gap-y-8 lg:w-[50%]">
-              {section2Data.map(
-                ({
-                  icon,
-                  text,
-                  headerText,
-                  subText1,
-                  subText2,
-                  subText3,
-                  subText4,
-                }) => {
-                  return (
-                    <div
-                      key={headerText}
-                      className="pl-3 md:px-16 lg:pl-24 lg:pr-0"
-                    >
-                      <img src={icon} alt="message icon" className=" mb-4" />
-                      <h2 className=" font-bold text-lg md:text-2xl">
-                        {headerText}
-                      </h2>
-                      {text && (
-                        <p className="  md:text-2xl w-[80vw] md:w-[70%] lg:w-full">
-                          {text}
-                        </p>
-                      )}
-                      {subText1 && (
-                        <ul className=" list-disc list-inside  md:text-2xl ">
-                          <li>{subText1}</li>
-                          <li>{subText2}</li>
-                          <li>{subText3}</li>
-                          <li>{subText4}</li>
-                        </ul>
-                      )}
-                    </div>
-                  );
-                }
-              )}
+              {section2Data.map(({ icon, text, headerText, text2 }) => {
+                return (
+                  <div
+                    key={headerText}
+                    className="pl-3 md:px-16 lg:pl-24 lg:pr-0"
+                  >
+                    <img src={icon} alt="message icon" className=" mb-4" />
+                    <h2 className=" font-bold text-lg md:text-2xl">
+                      {headerText}
+                    </h2>
+                    {text && (
+                      <p className="  md:text-2xl w-[80vw] md:w-[70%] lg:w-full">
+                        {text}
+                      </p>
+                    )}
+                    {text2 && (
+                      <p className=" mt-3  md:text-2xl w-[80vw] md:w-[70%] lg:w-full">
+                        {text2}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
             <div className=" bg-gray-200 rounded-l-3xl py-8 md:grid md:place-items-center ml-3 md:ml-16 lg:ml-0">
               <img src={macbookImg} alt="mackbook" />
@@ -463,6 +453,7 @@ export const Home = () => {
           </AnimatedContent>
         </section>
       </Element>
+
       {/* section 4 */}
       <section className=" px-3 md:px-16 py-16 lg:px-28 ">
         <AnimatedContent isVisible={isVisibleSection10}>
@@ -541,6 +532,7 @@ export const Home = () => {
             </div>
           </div>
         </AnimatedContent>
+
         {/* Service and Security Guaranteed */}
         <AnimatedContent isVisible={isVisibleSection11}>
           <article ref={section11Ref}>
@@ -574,10 +566,11 @@ export const Home = () => {
           </article>
         </AnimatedContent>
       </section>
+
       {/* SECTION 5 */}
       <section className=" px-3 md:px-16 lg:px-28 py-16 bg-white">
         <div className=" flex flex-col  gap-12">
-          {section4Data.map(
+          {section5Data.map(
             ({ icon, img, text, linkName, linkUrl, visible, ref }, index) => {
               return (
                 <AnimatedContent isVisible={visible}>
