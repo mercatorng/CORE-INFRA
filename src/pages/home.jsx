@@ -34,6 +34,7 @@ import issuingImg from "../assets/issuingImg.webp";
 import financialInclusionImg from "../assets/financialInclusionImg.jpeg";
 import customerEngagementImg from "../assets/customerEngagement.jpg";
 import digitalBankingImg from "../assets/digitalBanking.webp";
+import modernPaymentImg from "../assets/modernPaymentImg.svg";
 
 export const Home = () => {
   // scroll animation
@@ -365,7 +366,7 @@ export const Home = () => {
                 return (
                   <div
                     key={headerText}
-                    className="pl-3 md:px-16 lg:pl-24 lg:pr-0"
+                    className="px-3 md:px-16 lg:pl-24 lg:pr-0"
                   >
                     <img src={icon} alt="message icon" className=" mb-4" />
                     <h2 className=" font-bold text-lg md:text-2xl">
@@ -385,8 +386,12 @@ export const Home = () => {
                 );
               })}
             </div>
-            <div className=" bg-gray-200 rounded-l-3xl py-8 md:grid md:place-items-center ml-3 md:ml-16 lg:ml-0">
-              <img src={macbookImg} alt="mackbook" />
+            <div className="  md:w-[40%] md:mx-auto h-[300px] lg:h-full  ">
+              <img
+                src={modernPaymentImg}
+                alt="devices"
+                className=" object-contain w-full h-full"
+              />
             </div>
           </div>
         </AnimatedContent>
