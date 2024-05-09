@@ -74,7 +74,7 @@ export const Home = () => {
     {
       icon: txnMattersImg,
       headerText: "Seamless Integration, Scalable Architecture",
-      text: " Seamless integration & scalable architecture power Core-Infra's innovative payment solutions. Leverage your existing systems while scaling to meet evolving needs. Robust APIs enable a unified experience across channels - mobile, web, ATMs.",
+      text: "Leverage your existing systems while scaling to meet evolving needs. Robust APIs enable a unified experience across channels - mobile, web, ATMs.",
       text2: "Stay ahead with future-proof scalability...",
     },
   ];
@@ -82,23 +82,23 @@ export const Home = () => {
   const whyChooseCoreInfraData = [
     {
       icon: innovationIcon,
-      headerText: "Innovation Leadership",
-      text: "We lead the way in innovation, constantly pushing boundaries to provide you with pioneering solutions that keep you at the forefront of your industry",
+      headerText: "Pioneering Solutions",
+      text: "CoreInfra is at the forefront, pioneering cutting-edge payment solutions tailored to the unique needs of the African market, fostering local innovation and driving the industry forward.",
     },
     {
       icon: expertiseIcon,
-      headerText: "Profound Expertise",
-      text: "Benefit from our deep domain knowledge and extensive technological expertise. Our team is equipped with the skills to navigate complex challenges and deliver tailored solutions.",
+      headerText: "Rapid Deployment",
+      text: "Our scalable platform empowers financial institutions to bring innovative payment products to market faster than their competitors.",
     },
     {
       icon: cuttingEdgeIcon,
-      headerText: "Cutting-Edge Solutions",
-      text: "Stay ahead of the competition with our cutting-edge and differentiated solutions. We prioritize staying abreast of the latest technologies to ensure your business remains at the pinnacle of success",
+      headerText: "Seamless Integration",
+      text: "Our standards based API enables seamless integration with multiple systems via well defined endpoints, enabling you to focus on driving business growth and innovation",
     },
     {
       icon: partnershipIcon,
-      headerText: "Strategic Partnerships",
-      text: "Partnering with CoreInfra means aligning with a strategic ally. We are committed to being more than just a solution provider; we are your long-term partner in achieving and surpassing your business goals",
+      headerText: "Localized Expertise",
+      text: "With a deep understanding of the African financial landscape, Our solution is built with local context and nuances, unlocking new opportunities for growth and customer-centric experiences.",
     },
   ];
 
@@ -402,9 +402,12 @@ export const Home = () => {
         <section className=" dot-grid-bg relative px-3 md:px-16 py-16 lg:px-28 ">
           {/* content */}
           <AnimatedContent isVisible={isVisibleSection6}>
-            <div ref={section6Ref} className=" mb-12">
-              <h1 className=" text-2xl md:text-5xl font-bold mb-4">
+            <div ref={section6Ref} className=" mb-16">
+              {/* <h1 className=" text-2xl md:text-5xl font-bold mb-4">
                 Why Choose CoreInfra ?
+              </h1> */}
+              <h1 className=" text-2xl md:text-5xl font-bold mb-4">
+                Payment Innovation Leaders
               </h1>
               <p className="  md:text-2xl">
                 We offer a comprehensive suite of payment software solutions
@@ -415,7 +418,7 @@ export const Home = () => {
                 a strategic advantage.
               </p>
               <p className=" font-bold md:text-xl mt-4 mb-4">
-                Ready to enhance your payment infrastructure?
+                Elevate Your Payment Infrastructure Today
               </p>
               <RequestDemoButton
                 text={"Request a Demo"}
@@ -433,23 +436,25 @@ export const Home = () => {
                   return (
                     <div
                       key={headerText}
-                      className={` p-4 grid gap-2 rounded-3xl text-[#2F405E] ${
+                      className={` p-4 flex flex-col gap-2 rounded-3xl text-[#2F405E]  ${
                         index === 1 || index === 2
                           ? " bg-[#F8F8F8] "
                           : "bg-[#F9F3ED]"
                       }`}
                     >
-                      <div className=" h-[32px] w-[32px] p-2 bg-white rounded-full shadow-lg">
-                        <img
-                          src={icon}
-                          alt={headerText}
-                          className=" w-full h-full object-cover"
-                        />
+                      <div className="  mb-2">
+                        <div className=" h-[32px] w-[32px] p-2 bg-white rounded-full shadow-lg mb-3">
+                          <img
+                            src={icon}
+                            alt={headerText}
+                            className=" w-full h-full object-cover"
+                          />
+                        </div>
+                        <h2 className=" font-bold text-lg md:text-2xl">
+                          {headerText}
+                        </h2>
                       </div>
-                      <h2 className=" font-bold text-lg md:text-2xl">
-                        {headerText}
-                      </h2>
-                      <p className=" font-semibold md:text-lg">{text}</p>
+                      <p className=" font-semibold md:text-lg ">{text}</p>
                     </div>
                   );
                 }
@@ -463,7 +468,7 @@ export const Home = () => {
       <section className=" px-3 md:px-16 py-16 lg:px-28 ">
         <AnimatedContent isVisible={isVisibleSection10}>
           <div ref={section10Ref}>
-            <p className=" text-center text-sm mb-2"> Solutions</p>
+            {/* <p className=" text-center text-sm mb-2"> Solutions</p> */}
             <h2 className=" text-center font-bold text-xl md:text-3xl">
               Empowering Financial Institutions Across the Spectrum
             </h2>
