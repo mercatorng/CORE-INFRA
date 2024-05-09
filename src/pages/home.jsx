@@ -359,7 +359,7 @@ export const Home = () => {
         <AnimatedContent isVisible={isVisibleSection5}>
           <div
             ref={section5Ref}
-            className=" flex flex-col lg:flex-row gap-8   pb-8 md:py-16"
+            className=" flex flex-col lg:flex-row gap-8  items-center  pb-8 md:py-16"
           >
             <div className=" lg:pr-8 flex flex-col gap-y-8 lg:w-[50%]">
               {section2Data.map(({ icon, text, headerText, text2 }) => {
