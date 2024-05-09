@@ -29,8 +29,8 @@ export const ContactUs = () => {
               partnership etc please contact us at
             </p>
             <p></p>
-            <Link className=" hover:text-ctaGreen" to="tel:+2348057108625">
-              Tel: +234 805 710 8625
+            <Link className=" hover:text-ctaGreen" to="tel:+2349036189485">
+              Tel: +234 903 618 9485
             </Link>
             <Link
               to="mailto:connect@coreinfrahq.com"

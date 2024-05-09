@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  @apply text-black
+}
+
 .globalTransition {
   @apply ease-in-out duration-200 transition;
 }

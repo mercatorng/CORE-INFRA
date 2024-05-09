@@ -1,15 +1,16 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {  LetsTalkButton, OpenAboutPageButton, RequestDemoButton } from "../components/button";
+import {
+  LetsTalkButton,
+  OpenAboutPageButton,
+  RequestDemoButton,
+} from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { HeroImage } from "../components/heroImage";
-import img1 from "../assets/cardIssuance.jpg";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
+import img1 from "../assets/instantCardHero.svg";
 
-export const InstantCardIssuance = () => {
+export const InstantCardSolution = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
@@ -44,15 +45,17 @@ export const InstantCardIssuance = () => {
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <OpenAboutPageButton text={"Explore More"} style={" bg-gray-200   "} />
-            <LetsTalkButton/>
+            <RequestDemoButton
+              text={"Request a Demo"}
+              style={" bg-ctaGreen  mt-6"}
+            />
           </div>
         </section>
       </AnimatedContent>
       {/* black and white boxes */}
       <AnimatedContent isVisible={isVisibleHeroImg}>
         <div ref={heroImgRef}>
-          <HeroImage heroImg={img1} altText={"hero image"} />
+          <HeroImage heroImg={img1} altText={"instant card solution hero"} />
         </div>
       </AnimatedContent>
       {/* section 2 */}
@@ -141,20 +144,6 @@ export const InstantCardIssuance = () => {
         </section>
       </AnimatedContent>
       {/* section 3 */}
-      {/* section 3 */}
-      <AnimatedContent isVisible={isVisibleSection3}>
-        <section
-          ref={section3Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28 "
-        >
-          <SectionTwoImages
-            img1={img2}
-            img2={img3}
-            altText={"laptop"}
-            altText2={"laptop and debit card"}
-          />
-        </section>
-      </AnimatedContent>
     </>
   );
 };

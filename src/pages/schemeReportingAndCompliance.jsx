@@ -9,11 +9,8 @@ import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import img1 from "../assets/schemeComplyImg1.jpg";
 import { HeroImage } from "../components/heroImage";
-import { SectionTwoImages } from "../components/sectionTwoImages";
-import img2 from "../assets/bespokeImg2.png";
-import img3 from "../assets/bespokeImg3.png";
 
-export const SchemeComply360 = () => {
+export const SchemeReportingAndCompliance = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
   const section3Ref = useRef();
@@ -34,29 +31,25 @@ export const SchemeComply360 = () => {
     <>
       {/* section 1 */}
       <AnimatedContent isVisible={isVisibleSection1}>
-        <section
-          ref={section1Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28"
-        >
+        <section ref={section1Ref} className="   px-3 md:px-16 lg:px-28">
           <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
-            Simplify Compliance <br /> Reporting with{" "}
             <span className=" relative inline-block">
-              Automation
+              Simplify
               <GreenUnderline />
             </span>{" "}
+            Compliance <br /> Reporting with Automation
           </h1>
           {/* buttons */}
           <div className=" flex flex-wrap gap-4">
-            <OpenAboutPageButton
-              text={"Explore More"}
-              style={" bg-gray-200   "}
+            <RequestDemoButton
+              text={"Request a Demo"}
+              style={" bg-ctaGreen  mt-6"}
             />
-
-            <LetsTalkButton />
           </div>
         </section>
       </AnimatedContent>
-      {/* black and white boxes */}
+
+      {/*hero */}
       <AnimatedContent isVisible={isVisibleHeroImg}>
         <div ref={heroImgRef}>
           <HeroImage altText={"hero"} heroImg={img1} />
@@ -64,10 +57,7 @@ export const SchemeComply360 = () => {
       </AnimatedContent>
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
-        <section
-          ref={section2Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28 mb-16"
-        >
+        <section ref={section2Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
           <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
             SchemeComply360
           </h1>
@@ -111,20 +101,6 @@ export const SchemeComply360 = () => {
           <RequestDemoButton
             text={"Request a Demo"}
             style={" bg-ctaGreen  mt-6"}
-          />
-        </section>
-      </AnimatedContent>
-      {/* section 3 */}
-      <AnimatedContent isVisible={isVisibleSection3}>
-        <section
-          ref={section3Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28 "
-        >
-          <SectionTwoImages
-            img1={img2}
-            img2={img3}
-            altText={"laptop"}
-            altText2={"laptop and debit card"}
           />
         </section>
       </AnimatedContent>

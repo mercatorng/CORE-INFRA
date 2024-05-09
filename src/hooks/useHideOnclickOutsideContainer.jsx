@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 export function useHideOnclickOutsideContainer(
-  linkContainerRef,
+  containerRef,
   containerClassname,
   hideContainer
 ) {
@@ -15,8 +15,8 @@ export function useHideOnclickOutsideContainer(
         clickedElement.closest(`.${containerClassname}`);
 
       if (
-        linkContainerRef.current &&
-        !linkContainerRef.current.contains(e.target) &&
+      containerRef.current &&
+        !containerRef.current.contains(e.target) &&
         !isButtonClick
       ) {
         hideContainer(false);
@@ -28,5 +28,5 @@ export function useHideOnclickOutsideContainer(
     return () => {
       document.removeEventListener("click", hideOnclickOutsideContainer);
     };
-  }, [linkContainerRef, containerClassname, hideContainer]);
+  }, [containerRef, containerClassname, hideContainer]);
 }
