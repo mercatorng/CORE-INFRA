@@ -2,8 +2,9 @@ import { useEffect } from "react";
 
 export function useHideOnclickOutsideContainer(
   containerRef,
-  containerClassname,
-  hideContainer
+  showContainerBtnClassname,
+  hideContainerFunction,
+  condition = true // Default to true if condition is not provided
 ) {
   useEffect(() => {
     function hideOnclickOutsideContainer(e) {
@@ -11,15 +12,17 @@ export function useHideOnclickOutsideContainer(
 
       // Check if the clicked element or its parent has the button class
       const isButtonClick =
-        clickedElement.classList.contains(containerClassname) ||
-        clickedElement.closest(`.${containerClassname}`);
+        clickedElement.classList.contains(showContainerBtnClassname) ||
+        clickedElement.closest(`.${showContainerBtnClassname}`);
 
       if (
-      containerRef.current &&
+        containerRef.current &&
         !containerRef.current.contains(e.target) &&
         !isButtonClick
       ) {
-        hideContainer(false);
+        if (condition) {
+          hideContainerFunction(false);
+        }
       }
     }
 
@@ -28,5 +31,10 @@ export function useHideOnclickOutsideContainer(
     return () => {
       document.removeEventListener("click", hideOnclickOutsideContainer);
     };
-  }, [containerRef, containerClassname, hideContainer]);
+  }, [
+    containerRef,
+    showContainerBtnClassname,
+    hideContainerFunction,
+    condition,
+  ]);
 }
