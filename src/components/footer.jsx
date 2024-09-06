@@ -74,7 +74,7 @@ export const Footer = () => {
             </div>
           </AnimatedContent>
           {/* footer content */}
-          <div className=" pb-4 globalTransition bg-[#FDFDFD] pt-8 px-3 md:px-16 lg:px-28 text-sm md:text-base">
+          <div className=" pb-4 bg-[#FDFDFD] pt-8 px-3 md:px-16 lg:px-28 text-sm md:text-base">
             <AnimatedContent isVisible={isVisibleSection2}>
               <div
                 ref={section2Ref}

@@ -479,7 +479,7 @@ export const Home = () => {
                   return (
                     <button
                       key={id}
-                      className={`globalTransition font-semibold rounded-2xl md:px-3  text-sm p-1 px-2 text-white  ${
+                      className={` font-semibold rounded-2xl md:px-3  text-sm p-1 px-2 text-white  ${
                         id === activeButtonID && "bg-ctaGreen "
                       } ${id != activeButtonID && "hover:text-ctaGreen"} `}
                       onClick={() => setActiveButton(id)}
