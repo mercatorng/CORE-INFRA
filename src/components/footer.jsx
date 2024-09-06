@@ -74,7 +74,7 @@ export const Footer = () => {
             </div>
           </AnimatedContent>
           {/* footer content */}
-          <div className=" pb-4 globalTransition bg-[#FDFDFD] pt-8 px-3 md:px-16 lg:px-28 text-sm md:text-base">
+          <div className=" pb-4  bg-[#FDFDFD] pt-8 px-3 md:px-16 lg:px-28 text-sm md:text-base">
             <AnimatedContent isVisible={isVisibleSection2}>
               <div
                 ref={section2Ref}
@@ -92,7 +92,7 @@ export const Footer = () => {
                     {navLinks.map(({ linkName, linkUrl }) => (
                       <Link
                         key={linkName}
-                        className=" hover:text-ctaGreen"
+                        className=" hover:text-ctaGreen globalTransition"
                         to={linkUrl}
                       >
                         {linkName}
@@ -106,7 +106,7 @@ export const Footer = () => {
                       {legalData.map(({ linkName, linkUrl }) => (
                         <Link
                           key={linkName}
-                          className=" hover:text-ctaGreen "
+                          className=" hover:text-ctaGreen globalTransition "
                           to={linkUrl}
                         >
                           {linkName}

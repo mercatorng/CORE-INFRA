@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  @apply text-black
+body {
+  @apply text-black;
 }
 
 .globalTransition {
-  @apply ease-in-out duration-200 transition-all;
+  @apply transition-all duration-500 ease-out;
 }
 
 /* Bank Logo Carousel */
 @keyframes scroll {
- from {
-  transform: translateX(0)
- }
- to {
-  transform: translateX(-100%)
- }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .companyContainer:hover .logosContainer {
@@ -27,7 +27,6 @@ body{
 .animate-scroll {
   animation: 8s scroll infinite linear;
 }
-
 
 .dot-grid-bg {
   background: url("../src/assets/dotGrid.png") center/cover no-repeat;

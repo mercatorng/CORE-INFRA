@@ -99,7 +99,7 @@ export const Navbar = ({ homeUrl }) => {
 
       <div
         ref={menuContainerRef}
-        className={`absolute md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50 globalTransition ${
+        className={`absolute md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50  ${
           !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
@@ -107,7 +107,7 @@ export const Navbar = ({ homeUrl }) => {
         <Link
           onClick={() => clickNavigationLink("about")}
           to={"/about"}
-          className={` w-fit hover:text-ctaGreen  ${
+          className={` w-fit hover:text-ctaGreen globalTransition  ${
             activeLink === "/about" ? " text-ctaGreen font-bold " : ""
           }`}
         >
@@ -118,7 +118,7 @@ export const Navbar = ({ homeUrl }) => {
           onClick={() => setDropDown(!showDropDown)}
           className={`flex gap-x-1 items-center justify-between ${notificationButtonClassname} ${
             !checkNonSublinkPath && "text-ctaGreen"
-          } hover:text-ctaGreen`}
+          } hover:text-ctaGreen globalTransition`}
         >
           {" "}
           <span>Solutions</span>{" "}
@@ -141,7 +141,7 @@ export const Navbar = ({ homeUrl }) => {
         <Link
           onClick={() => clickNavigationLink("contact-us")}
           to={"/contact-us"}
-          className={` w-fit hover:text-ctaGreen  ${
+          className={` w-fit hover:text-ctaGreen globalTransition  ${
             activeLink === "/contact-us" ? " text-ctaGreen font-bold " : ""
           }`}
         >
@@ -240,7 +240,7 @@ const SolutionLinks = ({
   return (
     <div
       ref={linkContainerRef}
-      className=" globalTransition md:border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
+      className=" md:border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
     >
       {data.map(({ id, title, url, pageTitle }) => {
         return (
@@ -250,10 +250,10 @@ const SolutionLinks = ({
             }}
             key={id}
             to={url}
-            className={` rounded-md pl-2 py-2 globalTransition font-bold ${
+            className={` rounded-md pl-2 py-2 font-bold globalTransition ${
               activeLink === url
                 ? "bg-black text-ctaGreen "
-                : "bg-transparent hover:bg-[#DBFFEC]"
+                : "bg-transparent hover:bg-[#DBFFEC] "
             }  `}
           >
             {title}
