@@ -35,7 +35,7 @@ export const RequestDemoButton = ({ text, style }) => {
   );
 };
 
-export const LetsTalkButton = ({ style }) => {
+export const GetInTouchBTN = ({ style }) => {
   const { setActiveLink } = useGlobalContext();
   const navigate = useNavigate();
 
@@ -45,11 +45,11 @@ export const LetsTalkButton = ({ style }) => {
         setActiveLink("/contact-us");
         navigate("/contact-us");
       }}
-      className={`rounded-md px-3 py-2 font-medium shadow-sm  text-black bg-ctaGreen w-fit ${
+      className={` font-instrument rounded-xl px-5 py-[14px] border border-ctaGreen500 shadow-sm   text-white text-[13px] font-semibold bg-ctaGreen bg-gradient-to-tr from-ctaGreen to-ctaGreen600 w-fit ${
         style && style
       } `}
     >
-      Let's Talk
+      Get in touch
     </button>
   );
 };

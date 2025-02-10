@@ -1,9 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {
-  LetsTalkButton,
-  OpenAboutPageButton,
-  RequestDemoButton,
-} from "../components/button";
+import { RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -65,7 +61,7 @@ export const PaymentExperiencePlatform = () => {
       {/* section 1 */}
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="  px-3 md:px-16 lg:px-28">
-          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+          <h1 className=" text-2xl md:text-4xl lg:text-5xl relative z-20 font-bold mb-8   w-fit ">
             Transforming Transaction{" "}
             <span className=" relative inline-block">
               Failures
@@ -92,8 +88,11 @@ export const PaymentExperiencePlatform = () => {
 
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
-        <section ref={section2Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <p className=" md:text-2xl">
+        <section
+          ref={section2Ref}
+          className=" md:text-lg   px-3 md:px-16 lg:px-28 mb-16"
+        >
+          <p>
             Failed payments can disrupt operations and erode customer
             satisfaction. However, these seemingly negative experiences can be
             transformed into strategic opportunities with the right approach.
@@ -106,17 +105,20 @@ export const PaymentExperiencePlatform = () => {
 
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
-        <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+        <section
+          ref={section3Ref}
+          className="  md:text-lg px-3 md:px-16 lg:px-28 mb-16"
+        >
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             EngageNotify360: Redefining the Payment Experience
           </h1>
           <div>
-            <p className=" md:text-2xl">
+            <p>
               EngageNotify360 seamlessly integrates with your existing payment
               systems, providing a comprehensive suite of features to address
               transaction failures proactively and strategically:
             </p>
-            <ul className=" list-decimal pl-8 md:pl-12 mt-4 md:text-2xl grid gap-y-4">
+            <ul className=" list-decimal pl-8 md:pl-12 mt-4 grid gap-y-4">
               {section3data.map(({ id, content, title }) => (
                 <li key={id}>
                   <span className=" font-medium">{title}</span> {content}
@@ -136,11 +138,14 @@ export const PaymentExperiencePlatform = () => {
 
       {/* section 5 */}
       <AnimatedContent isVisible={isVisibleSection5}>
-        <section ref={section5Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+        <section
+          ref={section5Ref}
+          className="md:text-lg   px-3 md:px-16 lg:px-28 mb-16"
+        >
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Turning Challenges into Opportunities
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl ">
+          <div className=" grid gap-y-4">
             <p>
               By embracing EngageNotify360, you can transform transaction
               failures from frustrating experiences into strategic opportunities

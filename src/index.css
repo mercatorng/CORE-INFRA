@@ -6,11 +6,13 @@ body {
   @apply text-black;
 }
 
+p {
+  @apply md:text-lg;
+}
+
 .globalTransition {
   @apply transition-all duration-500 ease-out;
 }
-
-
 
 /* Bank Logo Carousel */
 @keyframes scroll {
@@ -28,8 +30,18 @@ body {
 
 .animate-scroll {
   animation: 8s scroll infinite linear;
+  will-change: transform;
 }
 
-.dot-grid-bg {
-  background: url("../src/assets/dotGrid.png") center/cover no-repeat;
+.shadow-overlay {
+  background: url("../src/assets/homePage/heroShadowOverlay.png") center/cover
+    no-repeat;
+}
+.abstract-bg {
+  background: url("../src/assets/homePage/Abstract-Background.png") center/cover
+    no-repeat;
+}
+
+.bg-vignette {
+  background: radial-gradient(ellipse, #002a13 65%, #0e0e0e 100%);
 }
