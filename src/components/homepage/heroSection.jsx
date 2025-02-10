@@ -83,27 +83,14 @@ export const HeroSection = () => {
       <AnimatedContent isVisible={companyScrollContainer}>
         <div
           ref={companyScrollRef}
-          className=" flex flex-col text-center md:text-xl mb-12 relative z-50 "
+          className=" flex flex-col text-center md:text-xl mb-12 relative z-50 overflow-hidden "
         >
           <p className=" mb-4 font-cabinet text-[#333333] font-bold text-[15px]">
             Our Trusted Partners
           </p>
-          <div className=" overflow-hidden lg:w-[50%] mx-auto">
-            <div className=" companyContainer  flex   gap-x-8    ">
+          <div className=" overflow-hidden  md:w-[416px] mx-auto">
+            <div className=" companyContainer  flex   gap-x-8  ">
               <div className=" animate-scroll flex  gap-x-8 items-center logosContainer ">
-                {companyLogoData.map(({ img, id, dimension }) => (
-                  <div key={id} className={`shrink-0  ${dimension} h-fit `}>
-                    <img
-                      src={img}
-                      alt={`Image ${id}`}
-                      className={`w-full ${
-                        id == 3 ? "bg-black p-2" : "bg-transparent"
-                      } `}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className=" animate-scroll flex  gap-x-8   items-center logosContainer">
                 {companyLogoData.map(({ img, id, dimension }) => (
                   <div key={id} className={`shrink-0  ${dimension} h-fit `}>
                     <img
