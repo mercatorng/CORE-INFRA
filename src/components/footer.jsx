@@ -52,7 +52,10 @@ export const Footer = () => {
               <h1 className=" font-semibold text-lg   lg:text-3xl">
                 Power Your Financial Future
               </h1>
-              <Link to={"/contact-us"} className=" w-fit inline-block border border-[#D0D5DD] bg-white text-[#344054] font-medium rounded-lg px-4 py-2 shadow-sm ">
+              <Link
+                to={"/contact-us"}
+                className=" w-fit inline-block border border-[#D0D5DD] bg-white text-[#344054] font-medium rounded-lg px-4 py-2 shadow-sm "
+              >
                 Book a Demo
               </Link>
             </div>
@@ -64,7 +67,7 @@ export const Footer = () => {
           </div>
         </AnimatedContent>
         {/* footer content */}
-        <div className=" pb-4  bg-[#FDFDFD] pt-8  md:px-16  text-sm md:text-base">
+        <div className=" pb-4  bg-[#FDFDFD] pt-8 px-3  md:px-16  text-sm md:text-base">
           <AnimatedContent isVisible={isVisibleSection2}>
             <div
               ref={section2Ref}
