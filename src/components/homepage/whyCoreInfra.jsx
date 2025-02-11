@@ -4,9 +4,12 @@ import AnimatedContent from "../animatedContent";
 
 export const WhyCoreInfra = () => {
   const headerContentRef = useRef(null);
-
   const { isVisible: headerContentContainer } =
     useScrollVisibility(headerContentRef);
+
+  const contentContainerRef = useRef(null);
+  const { isVisible: contentContainer } =
+    useScrollVisibility(contentContainerRef);
 
   const benefitsData = [
     {
@@ -164,44 +167,46 @@ export const WhyCoreInfra = () => {
         </div>
       </AnimatedContent>
       {/* services */}
-      <div className="flex   gap-4  h-fit">
-        {/* Custom Progress Bar */}
-        <div
-          className="w-[2px] shrink-0 rounded-md   bg-white relative"
-          style={{ height: `${calculateTotalHeight()}px` }}
-        >
+      <AnimatedContent isVisible={contentContainer}>
+        <div ref={contentContainerRef} className="flex   gap-4  h-fit">
+          {/* Custom Progress Bar */}
           <div
-            className="w-[4px] rounded-md bg-[#04B757] absolute top-0 -left-[50%] -translate-x-[50%] transition-all duration-500 ease-out"
-            style={{
-              height: `${height}px`,
-              transform: `translateY(${offset}px)`,
-            }}
-          />
-        </div>
-        <div className="scroll-container h-fit " ref={containerRef}>
-          {benefitsData.map(({ header, points }, index) => (
+            className="w-[2px] shrink-0 rounded-md   bg-white relative"
+            style={{ height: `${calculateTotalHeight()}px` }}
+          >
             <div
-              key={index}
-              className="pb-6"
-              ref={(el) => (itemRefs.current[index] = el)}
-            >
-              {/* Always show the header */}
-              <h2 className="font-bold text-xl lg:text-3xl mb-2">{header}</h2>
-              <ul
-                className={` list-disc list-inside pl-2 transition-all duration-500 ease-out  ${
-                  activeIndex === index
-                    ? "opacity-100 translate-y-0 max-h-[400px]"
-                    : "opacity-0 translate-y-4 max-h-0 "
-                }`}
+              className="w-[4px] rounded-md bg-[#04B757] absolute top-0 -left-[50%] -translate-x-[50%] transition-all duration-500 ease-out"
+              style={{
+                height: `${height}px`,
+                transform: `translateY(${offset}px)`,
+              }}
+            />
+          </div>
+          <div className="scroll-container h-fit " ref={containerRef}>
+            {benefitsData.map(({ header, points }, index) => (
+              <div
+                key={index}
+                className="pb-6"
+                ref={(el) => (itemRefs.current[index] = el)}
               >
-                {points.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                {/* Always show the header */}
+                <h2 className="font-bold text-xl lg:text-3xl mb-2">{header}</h2>
+                <ul
+                  className={` list-disc list-inside pl-2 transition-all duration-500 ease-out  ${
+                    activeIndex === index
+                      ? "opacity-100 translate-y-0 max-h-[400px]"
+                      : "opacity-0 translate-y-4 max-h-0 "
+                  }`}
+                >
+                  {points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </AnimatedContent>
     </section>
   );
 };
