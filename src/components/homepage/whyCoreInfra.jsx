@@ -42,6 +42,8 @@ export const WhyCoreInfra = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const itemRefs = useRef([]);
+  const containerRef = useRef(null); // Ref for the scroll container
+  const touchStartY = useRef(0);
 
   // Debounce function to limit scroll events
   const debounce = (func, delay) => {
@@ -55,13 +57,13 @@ export const WhyCoreInfra = () => {
   };
 
   // Handle scroll events
-  const handleScroll = debounce((e) => {
+  const handleScroll = debounce((deltaY) => {
     if (isScrolling) return; // Lock scroll until transition is complete
 
-    if (e.deltaY > 0) {
+    if (deltaY > 0) {
       // Scroll down
       setActiveIndex((prev) => Math.min(prev + 1, benefitsData.length - 1));
-    } else if (e.deltaY < 0) {
+    } else if (deltaY < 0) {
       // Scroll up
       setActiveIndex((prev) => Math.max(prev - 1, 0));
     }
@@ -71,6 +73,26 @@ export const WhyCoreInfra = () => {
       setIsScrolling(false);
     }, 480); // Adjust this timeout to match transition duration
   }, 100);
+
+  // Handle wheel event (desktop)
+  const handleWheel = (e) => {
+    handleScroll(e.deltaY);
+  };
+
+  // Handle touch events (mobile)
+  const handleTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY; // Record touch start position
+  };
+
+  const handleTouchMove = (e) => {
+    const touchEndY = e.touches[0].clientY; // Record touch end position
+    const deltaY = touchStartY.current - touchEndY; // Calculate swipe direction
+
+    if (Math.abs(deltaY) > 10) {
+      // Only trigger if the swipe is significant
+      handleScroll(deltaY);
+    }
+  };
 
   // Calculate the height and position of the colored part
   function calculateProgressBar() {
@@ -108,15 +130,24 @@ export const WhyCoreInfra = () => {
     return totalHeight - 24; // Subtract 24px for the last item's padding
   };
 
-  // Add scroll event listener
+  // Add event listeners
   useEffect(() => {
-    const container = document.querySelector(".scroll-container");
-    container.addEventListener("wheel", handleScroll);
+    const container = containerRef.current;
+
+    // Desktop: Add wheel event listener
+    container.addEventListener("wheel", handleWheel);
+
+    // Mobile: Add touch event listeners
+    container.addEventListener("touchstart", handleTouchStart);
+    container.addEventListener("touchmove", handleTouchMove);
 
     return () => {
-      container.removeEventListener("wheel", handleScroll);
+      // Cleanup event listeners
+      container.removeEventListener("wheel", handleWheel);
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [handleScroll]);
+  }, [handleWheel, handleTouchStart, handleTouchMove]);
 
   return (
     <section className="bg-vignette relative z-50 p-8  mx-8 lg:p-16 lg:mx-16 text-white">
@@ -147,7 +178,7 @@ export const WhyCoreInfra = () => {
             }}
           />
         </div>
-        <div className="scroll-container h-fit ">
+        <div className="scroll-container h-fit " ref={containerRef}>
           {benefitsData.map(({ header, points }, index) => (
             <div
               key={index}
