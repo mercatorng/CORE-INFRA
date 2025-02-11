@@ -45,3 +45,11 @@ p {
 .bg-vignette {
   background: radial-gradient(ellipse, #002a13 65%, #0e0e0e 100%);
 }
+
+/* Custom Scrollbar Styles */
+.scroll-container::-webkit-scrollbar {
+  scrollbar-width: none;
+}
+.scroll-container {
+  scrollbar-width: none;
+}

@@ -8,15 +8,6 @@ export const WhyCoreInfra = () => {
   const { isVisible: headerContentContainer } =
     useScrollVisibility(headerContentRef);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleScroll = (e) => {
-    const { scrollTop } = e.target;
-    const itemHeight = e.target.scrollHeight / benefitsData.length;
-    const newIndex = Math.floor(scrollTop / itemHeight);
-    setActiveIndex(newIndex);
-  };
-
   const benefitsData = [
     {
       header: "Tech Advantage",
@@ -48,10 +39,89 @@ export const WhyCoreInfra = () => {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const itemRefs = useRef([]);
+
+  // Debounce function to limit scroll events
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
+  // Handle scroll events
+  const handleScroll = debounce((e) => {
+    if (isScrolling) return; // Lock scroll until transition is complete
+
+    if (e.deltaY > 0) {
+      // Scroll down
+      setActiveIndex((prev) => Math.min(prev + 1, benefitsData.length - 1));
+    } else if (e.deltaY < 0) {
+      // Scroll up
+      setActiveIndex((prev) => Math.max(prev - 1, 0));
+    }
+
+    setIsScrolling(true);
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 480); // Adjust this timeout to match transition duration
+  }, 100);
+
+  // Calculate the height and position of the colored part
+  function calculateProgressBar() {
+    let totalHeight = 0;
+    let activeItemHeight = 0;
+
+    // Sum the heights of all items up to the active index
+    for (let i = 0; i < activeIndex; i++) {
+      if (itemRefs.current[i]) {
+        totalHeight += itemRefs.current[i].clientHeight;
+      }
+    }
+
+    // Get the height of the active item
+    if (itemRefs.current[activeIndex]) {
+      activeItemHeight = itemRefs.current[activeIndex].clientHeight;
+    }
+
+    return {
+      height: activeItemHeight - 24,
+      offset: totalHeight,
+    };
+  }
+
+  const { height, offset } = calculateProgressBar();
+
+  // Calculate the total height of the content (excluding the last item's padding)
+  const calculateTotalHeight = () => {
+    let totalHeight = 0;
+    itemRefs.current.forEach((item, index) => {
+      if (item) {
+        totalHeight += item.clientHeight;
+      }
+    });
+    return totalHeight - 24; // Subtract 24px for the last item's padding
+  };
+
+  // Add scroll event listener
+  useEffect(() => {
+    const container = document.querySelector(".scroll-container");
+    container.addEventListener("wheel", handleScroll);
+
+    return () => {
+      container.removeEventListener("wheel", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
-    <section className=" bg-vignette relative z-50 p-8  mx-8 lg:p-16 lg:mx-16 text-white">
+    <section className="bg-vignette relative z-50 p-8  mx-8 lg:p-16 lg:mx-16 text-white">
       <AnimatedContent isVisible={headerContentContainer}>
-        <div ref={headerContentRef} className=" mb-12 ">
+        <div ref={headerContentRef} className=" mb-20 ">
           <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold mb-6">
             Why CoreInfra?
           </h1>
@@ -63,23 +133,40 @@ export const WhyCoreInfra = () => {
         </div>
       </AnimatedContent>
       {/* services */}
-      <div
-        className="h-96 overflow-y-auto border border-gray-200 p-4"
-        onScroll={handleScroll}
-      >
-        <div className="space-y-4">
-          {benefitsData.map((benefit, index) => (
-            <div key={index} className="p-4 bg-gray-50 rounded-lg">
-              <h3 className="font-semibold text-lg">{benefit.header}</h3>
-              {activeIndex === index && (
-                <ul className="mt-2 space-y-2">
-                  {benefit.points.map((point, i) => (
-                    <li key={i} className="text-gray-600">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              )}
+      <div className="flex   gap-4  h-fit">
+        {/* Custom Progress Bar */}
+        <div
+          className="w-[2px] shrink-0 rounded-md   bg-white relative"
+          style={{ height: `${calculateTotalHeight()}px` }}
+        >
+          <div
+            className="w-[4px] rounded-md bg-[#04B757] absolute top-0 -left-[50%] -translate-x-[50%] transition-all duration-500 ease-out"
+            style={{
+              height: `${height}px`,
+              transform: `translateY(${offset}px)`,
+            }}
+          />
+        </div>
+        <div className="scroll-container h-fit ">
+          {benefitsData.map(({ header, points }, index) => (
+            <div
+              key={index}
+              className="pb-6"
+              ref={(el) => (itemRefs.current[index] = el)}
+            >
+              {/* Always show the header */}
+              <h2 className="font-bold text-xl lg:text-3xl mb-2">{header}</h2>
+              <ul
+                className={` list-disc list-inside pl-2 transition-all duration-500 ease-out  ${
+                  activeIndex === index
+                    ? "opacity-100 translate-y-0 max-h-[400px]"
+                    : "opacity-0 translate-y-4 max-h-0 "
+                }`}
+              >
+                {points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
