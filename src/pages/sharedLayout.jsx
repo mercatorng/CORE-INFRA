@@ -19,14 +19,12 @@ export const SharedLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div
-      className={` ${
-        homeUrl ? "bg-[#050806] text-white" : "bg-white text-gray-950"
-      } `}
-    >
+    <div className=" flex flex-col min-h-screen">
       <ScrollToTopOnPageChange />
       <Navbar {...{ homeUrl }} />
-      <Outlet />
+      <div className=" flex-grow">
+        <Outlet />
+      </div>
       <Footer />
       <CookieConsent />
     </div>

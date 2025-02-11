@@ -1,7 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
 import {
-  LetsTalkButton,
-  OpenAboutPageButton,
   RequestDemoButton,
 } from "../components/button";
 import { useRef } from "react";
@@ -57,7 +55,7 @@ export const PrepaidCardManagementSystem = () => {
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="  px-3 md:px-16 lg:px-28 ">
           <div>
-            <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+            <h1 className=" text-2xl md:text-4xl lg:text-5xl relative z-20 font-bold mb-8   w-fit ">
               Innovative{" "}
               <span className=" relative inline-block">
                 Prepaid
@@ -85,19 +83,22 @@ export const PrepaidCardManagementSystem = () => {
 
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
-        <section ref={section2Ref} className="  px-3 md:px-16 lg:px-28  mb-16">
+        <section
+          ref={section2Ref}
+          className=" md:text-lg px-3 md:px-16 lg:px-28  mb-16"
+        >
           <div>
-            <p className=" md:text-2xl">
+            <p>
               Introducing our cutting-edge prepaid card management system,
               designed to empower banks with the flexibility and control they
               need to stay ahead in the rapidly evolving prepaid card landscape.
             </p>
-            <p className=" md:text-2xl my-8">
+            <p className="  my-8">
               Modular Architecture, Comprehensive Functionality. Our system is
               built on a modular architecture, providing a comprehensive suite
               of features to streamline prepaid card operations:
             </p>
-            <ul className=" list-decimal grid gap-y-4 md:text-2xl pl-8 md:pl-12">
+            <ul className=" list-decimal grid gap-y-4 pl-8 md:pl-12">
               {section2data.map(({ id, content, title }) => (
                 <li key={id}>
                   <span className=" font-medium">{title}</span> {content}
@@ -110,12 +111,12 @@ export const PrepaidCardManagementSystem = () => {
 
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
-        <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 ">
+        <section ref={section3Ref} className=" md:text-lg  px-3 md:px-16 lg:px-28 ">
           <div className=" mb-16">
-            <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+            <h1 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4">
               Tailored to Your Needs, Future-Proof Solutions
             </h1>
-            <p className=" md:text-2xl">
+            <p>
               Our prepaid card management system is designed to adapt to your
               bank's unique requirements and emerging use cases. Whether you're
               launching innovative prepaid card programs for payroll, corporate
@@ -129,12 +130,12 @@ export const PrepaidCardManagementSystem = () => {
 
       {/* section 4 */}
       <AnimatedContent isVisible={isVisibleSection4}>
-        <section ref={section4Ref} className=" px-3 md:px-16 lg:px-28">
+        <section ref={section4Ref} className=" md:text-lg px-3 md:px-16 lg:px-28">
           <div>
-            <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+            <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
               Driving Innovation, Unlocking Growth Opportunities
             </h1>
-            <p className=" md:text-2xl mb-3">
+            <p className=" mb-3">
               Empower your bank to stay ahead of the curve with innovative
               prepaid card solutions that cater to the ever-changing demands of
               your customers. Our system enables you to launch new products
@@ -142,7 +143,7 @@ export const PrepaidCardManagementSystem = () => {
               your prepaid card offerings, ultimately driving growth and
               customer satisfaction.
             </p>
-            <p className=" mt-8 md:text-2xl">
+            <p className=" mt-8">
               Partner with us today and unlock the full potential of prepaid
               card solutions tailored to your bank's unique requirements and
               market dynamics.

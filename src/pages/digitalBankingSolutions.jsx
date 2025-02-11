@@ -1,9 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {
-  LetsTalkButton,
-  OpenAboutPageButton,
-  RequestDemoButton,
-} from "../components/button";
+import { RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -16,7 +12,6 @@ export const DigitalBankingSolutions = () => {
   const section3Ref = useRef();
   const section4Ref = useRef();
   const section5Ref = useRef();
-  const section6Ref = useRef();
   const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
@@ -29,7 +24,6 @@ export const DigitalBankingSolutions = () => {
   const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
   const { isVisible: isVisibleSection4 } = useScrollVisibility(section4Ref);
   const { isVisible: isVisibleSection5 } = useScrollVisibility(section5Ref);
-  const { isVisible: isVisibleSection6 } = useScrollVisibility(section6Ref);
 
   const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
 
@@ -58,7 +52,7 @@ export const DigitalBankingSolutions = () => {
     <>
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="   px-3 md:px-16 lg:px-28">
-          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+          <h1 className=" text-2xl md:text-4xl lg:text-5xl relative z-20 font-bold mb-8   w-fit ">
             Unleash the Power of{" "}
             <span className=" relative inline-block">
               Digital
@@ -86,7 +80,7 @@ export const DigitalBankingSolutions = () => {
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
         <section ref={section2Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
-          <div className=" flex flex-col gap-y-8 md:text-2xl">
+          <div className=" flex flex-col gap-y-8 ">
             <p>
               In the era of digital transformation, financial institutions must
               adapt to the evolving needs and preferences of their customers.
@@ -107,10 +101,10 @@ export const DigitalBankingSolutions = () => {
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
         <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className=" font-bold text-xl md:text-2xl lg:text-4xl mb-4">
             Leverage Your Existing Investments, Extend Your Reach
           </h1>
-          <div className=" grid gap-y-8 md:text-2xl">
+          <div>
             <p>
               Our solution seamlessly integrates with your existing payments
               infrastructure and card management systems, allowing you to
@@ -127,10 +121,10 @@ export const DigitalBankingSolutions = () => {
       {/* section 4 */}
       <AnimatedContent isVisible={isVisibleSection4}>
         <section ref={section4Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Omnichannel Digital Banking Solutions
           </h1>
-          <div className=" grid gap-y-8 md:text-2xl">
+          <div className=" grid gap-y-8">
             <p>
               Embrace the future of banking with our comprehensive suite of
               omnichannel digital banking solutions:
@@ -149,10 +143,10 @@ export const DigitalBankingSolutions = () => {
       {/* section  */}
       <AnimatedContent isVisible={isVisibleSection5}>
         <section ref={section5Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Seamless Integration, Scalable Architecture
           </h1>
-          <div className=" grid gap-y-8 md:text-2xl">
+          <div className=" grid gap-y-8">
             <p>
               Our Digital Banking Infrastructure is designed with a modular and
               scalable architecture, ensuring seamless integration with your

@@ -1,9 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {
-  LetsTalkButton,
-  OpenAboutPageButton,
-  RequestDemoButton,
-} from "../components/button";
+import { RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -60,7 +56,7 @@ export const PosMonitoringSolution = () => {
       {/* section 1 */}
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="  px-3 md:px-16 lg:px-28">
-          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+          <h1 className=" text-2xl md:text-4xl lg:text-5xl relative z-20 font-bold mb-8  w-fit ">
             Gain Unparalleled {""}
             <span className=" relative inline-block">
               Visibility
@@ -88,7 +84,7 @@ export const PosMonitoringSolution = () => {
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
         <section ref={section2Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
-          <div className=" grid gap-y-4 md:text-2xl ">
+          <div className=" grid gap-y-4  ">
             <p>
               In retail and payments acquiring, ensuring the smooth operation of
               your point-of-sale (POS) terminals is crucial for delivering
@@ -107,10 +103,10 @@ export const PosMonitoringSolution = () => {
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
         <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Seamless Integration, Agnostic Monitoring
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl">
+          <div className=" grid gap-y-4">
             <p>
               Our solution seamlessly connects to your POS terminals, enabling
               real-time monitoring and reporting of transaction status, terminal
@@ -126,10 +122,10 @@ export const PosMonitoringSolution = () => {
       {/* section 4 */}
       <AnimatedContent isVisible={isVisibleSection4}>
         <section ref={section4Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className=" font-bold text-xl md:text-2xl lg:text-4xl mb-4">
             Real-Time Visibility and Actionable Insights
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl">
+          <div className=" grid gap-y-4 ">
             <p>
               Gain unprecedented visibility into your POS operations with our
               intuitive dashboards and reporting modules:
@@ -148,10 +144,10 @@ export const PosMonitoringSolution = () => {
       {/* section 5 */}
       <AnimatedContent isVisible={isVisibleSection5}>
         <section ref={section5Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className=" font-bold  text-xl md:text-2xl lg:text-4xl mb-4">
             Empower Acquirers and Merchants
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl">
+          <div className=" grid gap-y-4">
             <p>
               Our solution is designed to meet the unique needs of both
               acquirers and merchants, providing tailored dashboards and
@@ -178,7 +174,7 @@ export const PosMonitoringSolution = () => {
       {/* section 6 */}
       <AnimatedContent isVisible={isVisibleSection6}>
         <section ref={section6Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className=" font-bold text-xl md:text-2xl lg:text-4xl mb-4">
             Maximize Uptime, Enhance Customer Experiences
           </h1>
           <div className=" grid gap-y-4 md:text-2xl">

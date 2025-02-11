@@ -1,9 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {
-  LetsTalkButton,
-  OpenAboutPageButton,
-  RequestDemoButton,
-} from "../components/button";
+import { RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -16,7 +12,6 @@ export const IssuingAsAServicePlatform = () => {
   const section3Ref = useRef();
   const section4Ref = useRef();
   const section5Ref = useRef();
-  const section6Ref = useRef();
   const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
@@ -30,7 +25,6 @@ export const IssuingAsAServicePlatform = () => {
 
   const { isVisible: isVisibleSection4 } = useScrollVisibility(section4Ref);
   const { isVisible: isVisibleSection5 } = useScrollVisibility(section5Ref);
-  const { isVisible: isVisibleSection6 } = useScrollVisibility(section6Ref);
 
   const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
 
@@ -68,7 +62,7 @@ export const IssuingAsAServicePlatform = () => {
           ref={section1Ref}
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
-          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+          <h1 className=" relative z-20 font-bold mb-8 w-fit text-2xl md:text-4xl lg:text-5xl ">
             <span className=" relative inline-block">
               Seamless <GreenUnderline />
             </span>{" "}
@@ -93,19 +87,19 @@ export const IssuingAsAServicePlatform = () => {
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
         <section ref={section2Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="font-bold text-xl md:text-2xl lg:text-4xl mb-4">
             Unlock the Power of Bank-Fintech Partnerships with Our Issuing as a
             Service Platform
           </h1>
-          <div className=" flex flex-col gap-y-8">
-            <p className=" md:text-2xl">
+          <div className=" flex flex-col gap-y-8 md:text-lg">
+            <p>
               Banks all over the world are realizing the benefits of partnership
               with Fintechs for various services. By leveraging the innovative
               solutions and disruptive technologies offered by fintechs, banks
               can enhance their product offerings, streamline operations, and
               deliver superior customer experiences.
             </p>
-            <p className=" md:text-2xl">
+            <p>
               Introducing our cutting-edge Issuing as a Service Platform,
               designed to empower banks with the capability to seamlessly host
               and provide end-to-end issuing services to fintech partners.
@@ -118,16 +112,16 @@ export const IssuingAsAServicePlatform = () => {
       <AnimatedContent isVisible={isVisibleSection3}>
         <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
           <div>
-            <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+            <h1 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4">
               End-to-End Issuing Capabilities, Unmatched Flexibility
             </h1>
             <div>
-              <p className=" md:text-2xl">
+              <p className=" md:text-lg">
                 Our platform offers a comprehensive suite of issuing
                 functionalities, enabling banks to support fintech partners with
                 ease:
               </p>
-              <ul className=" list-decimal  pl-8 md:pl-12 mt-4 md:text-2xl grid gap-y-4">
+              <ul className=" list-decimal  pl-8 md:pl-12 mt-4 md:text-lg grid gap-y-4">
                 {section3data.map(({ id, content, title }) => (
                   <li key={id}>
                     <span className=" font-medium">{title}</span> {content}
@@ -142,11 +136,11 @@ export const IssuingAsAServicePlatform = () => {
       {/* section 4 */}
       <AnimatedContent isVisible={isVisibleSection4}>
         <section ref={section4Ref} className="   px-3 md:px-16 lg:px-28  mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Seamless Integration, Secure and Compliant
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p className=" md:text-2xl">
+            <p className=" md:text-lg">
               Our Issuing as a Service Platform is designed for seamless
               integration within your bank's existing infrastructure, ensuring
               complete control and oversight. With robust security measures and
@@ -161,18 +155,18 @@ export const IssuingAsAServicePlatform = () => {
       {/* section 5 */}
       <AnimatedContent isVisible={isVisibleSection5}>
         <section ref={section5Ref} className="   px-3 md:px-16 lg:px-28 mb-16 ">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4">
             Empower Fintech Partnerships, Drive Innovation
           </h1>
-          <div className=" flex flex-col gap-y-8">
-            <p className=" md:text-2xl">
+          <div className=" flex flex-col gap-y-8 md:text-lg">
+            <p>
               By leveraging our Issuing as a Service Platform, your bank can
               position itself as the preferred partner for fintechs seeking
               issuing capabilities. Foster innovation, unlock new revenue
               streams, and stay ahead of the competition by collaborating with
               the dynamic fintech ecosystem.
             </p>
-            <p className=" md:text-2xl">
+            <p>
               Unlock the full potential of bank-fintech partnerships and shape
               the future of the financial industry.
             </p>

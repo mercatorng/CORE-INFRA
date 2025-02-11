@@ -1,9 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {
-  LetsTalkButton,
-  OpenAboutPageButton,
-  RequestDemoButton,
-} from "../components/button";
+import { RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -63,7 +59,7 @@ export const CardAndPinSolution = () => {
       {/* section 1 */}
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="   px-3 md:px-16 lg:px-28">
-          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+          <h1 className=" relative z-20 font-bold mb-8 text-2xl md:text-4xl lg:text-5xl w-fit ">
             <span className=" relative inline-block">
               Elevate
               <GreenUnderline />
@@ -89,8 +85,8 @@ export const CardAndPinSolution = () => {
 
       {/* section 2 */}
       <AnimatedContent isVisible={isVisibleSection2}>
-        <section ref={section2Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
-          <div className=" grid gap-y-8 md:text-2xl ">
+        <section ref={section2Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
+          <div className=" grid gap-y-8 ">
             <p>
               Providing exceptional card services is paramount for card issuers
               seeking to enhance customer satisfaction and loyalty.{" "}
@@ -108,10 +104,10 @@ export const CardAndPinSolution = () => {
       {/* section 3 */}
       <AnimatedContent isVisible={isVisibleSection3}>
         <section ref={section3Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Seamless and Secure Card Management, Anytime, Anywhere
           </h1>
-          <div className=" grid gap-y-8 md:text-2xl">
+          <div className=" grid gap-y-8">
             <p>
               Our solution offers a comprehensive suite of features, enabling
               your customers to initiate and complete a wide range of
@@ -132,11 +128,11 @@ export const CardAndPinSolution = () => {
 
       {/* section4 */}
       <AnimatedContent isVisible={isVisibleSection4}>
-        <section ref={section4Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+        <section ref={section4Ref} className="  px-3 md:px-16 lg:px-28 mb-16">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Unparalleled Security and Compliance
           </h1>
-          <div className=" grid gap-y-4 md:text-2xl">
+          <div className=" grid gap-y-4">
             <p>
               Prioritizing the protection of sensitive information, our Card and
               PIN Solution employs robust encryption protocols and secure
@@ -152,10 +148,10 @@ export const CardAndPinSolution = () => {
       {/* section5 */}
       <AnimatedContent isVisible={isVisibleSection5}>
         <section ref={section5Ref} className="   px-3 md:px-16 lg:px-28 mb-16">
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Seamless Integration and Omnichannel Experience
           </h1>
-          <div className=" grid gap-y-8 md:text-2xl">
+          <div className=" grid gap-y-8">
             <p>
               Through standards-based APIs, our solution integrates seamlessly
               with your existing card issuance systems and channels, enabling a

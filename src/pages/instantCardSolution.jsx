@@ -1,9 +1,5 @@
 import { GreenUnderline } from "../components/greenUnderline";
-import {
-  LetsTalkButton,
-  OpenAboutPageButton,
-  RequestDemoButton,
-} from "../components/button";
+import { RequestDemoButton } from "../components/button";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
 import { useScrollVisibility } from "../hooks/useScrollHook";
@@ -13,7 +9,6 @@ import img1 from "../assets/instantCardHero.svg";
 export const InstantCardSolution = () => {
   const section1Ref = useRef();
   const section2Ref = useRef();
-  const section3Ref = useRef();
   const heroImgRef = useRef();
 
   const { isVisible: isVisibleSection1 } = useScrollVisibility(
@@ -23,9 +18,42 @@ export const InstantCardSolution = () => {
 
   const { isVisible: isVisibleSection2 } = useScrollVisibility(section2Ref);
 
-  const { isVisible: isVisibleSection3 } = useScrollVisibility(section3Ref);
-
   const { isVisible: isVisibleHeroImg } = useScrollVisibility(heroImgRef);
+
+  const features = [
+    {
+      title: "Streamlined Workflow",
+      points: [
+        "Our integrated workflow solution seamlessly connects centralized card operations with in-branch and agency banking customer services, eliminating the need for manual processes and data silos.",
+        "Branches and agency locations can now process card issuance and personalization, handle card service functions typically handled by a central card service team, all with a full audit trail for complete transparency.",
+      ],
+    },
+    {
+      title: "Enhanced Efficiency",
+      points: [
+        "The system enables bulk card production, centralized distribution of card stock, and PIN selection, saving you time and resources.",
+        "Our full-featured APIs allow you to extend card service features to other customer touch points, such as mobile banking and USSD, for a truly omnichannel experience.",
+      ],
+    },
+    {
+      title: "Improved Customer Satisfaction",
+      points: [
+        "Faster card issuance and activation times lead to happier customers.",
+        "Self-service options through mobile and USSD channels empower customers to manage their cards conveniently.",
+        "The centralized system ensures consistent service quality across all touchpoints.",
+      ],
+    },
+    {
+      title: "Benefits",
+      points: [
+        "Increased efficiency and productivity",
+        "Reduced costs",
+        "Improved customer satisfaction",
+        "Faster time-to-market for new card products",
+        "Enhanced security and compliance",
+      ],
+    },
+  ];
 
   return (
     <>
@@ -35,7 +63,7 @@ export const InstantCardSolution = () => {
           ref={section1Ref}
           className=" text-black  px-3 md:px-16 lg:px-28"
         >
-          <h1 className=" text-3xl relative z-20 font-bold mb-8 md:text-5xl lg:text-7xl  w-fit ">
+          <h1 className=" text-2xl md:text-4xl lg:text-5xl relative z-20 font-bold mb-8   w-fit ">
             Empowering More{" "}
             <span className=" relative inline-block">
               Faster,
@@ -62,79 +90,31 @@ export const InstantCardSolution = () => {
       <AnimatedContent isVisible={isVisibleSection2}>
         <section
           ref={section2Ref}
-          className=" text-black  px-3 md:px-16 lg:px-28 mb-16"
+          className=" md:text-lg text-black  px-3 md:px-16 lg:px-28 mb-16"
         >
-          <h1 className="text-2xl font-bold md:text-3xl lg:text-5xl mb-4">
+          <h1 className=" text-xl md:text-2xl lg:text-4xl font-bold  mb-4">
             Instant Card Issuance
           </h1>
           <div className=" flex flex-col gap-y-8">
-            <p className=" md:text-2xl">
+            <p>
               In today's competitive financial landscape, card issuers need to
               be agile and responsive to meet the ever-changing needs of their
               customers. CoreInfra's Instant Card Issuing and Management System
               is a powerful solution that empowers you to do just that.
             </p>
-            <ul className=" list-disc list-inside md:text-2xl flex flex-col gap-y-4">
-              <div className=" flex flex-col gap-y-2">
-                <p className=" font-semibold">Streamlined Workflow:</p>
-                <li>
-                  Our integrated workflow solution seamlessly connects
-                  centralized card operations with in-branch and agency banking
-                  customer services, eliminating the need for manual processes
-                  and data silos.
-                </li>
-                <li>
-                  Branches and agency locations can now process card issuance
-                  and personalization, handle card service functions typically
-                  handled by a central card service team, all with a full audit
-                  trail for complete transparency.
-                </li>
-              </div>
-
-              <div className=" flex flex-col gap-y-2">
-                <p className=" font-semibold">Enhanced Efficiency:</p>
-                <li>
-                  The system enables bulk card production, centralized
-                  distribution of card stock, and PIN selection, saving you time
-                  and resources.
-                </li>
-                <li>
-                  Our full-featured APIs allow you to extend card service
-                  features to other customer touch points, such as mobile
-                  banking and USSD, for a truly omnichannel experience.
-                </li>
-              </div>
-
-              <div className=" flex flex-col gap-y-2">
-                <p className=" font-semibold">
-                  Improved Customer Satisfaction:
-                </p>
-                <li>
-                  Faster card issuance and activation times lead to happier
-                  customers.
-                </li>
-                <li>
-                  Self-service options through mobile and USSD channels empower
-                  customers to manage their cards conveniently.
-                </li>
-                <li>
-                  The centralized system ensures consistent service quality
-                  across all touchpoints.
-                </li>
-              </div>
-
-              <div className=" flex flex-col gap-y-2">
-                <p className=" font-semibold">Benefits:</p>
-                <li>Increased efficiency and productivity</li>
-                <li>Reduced costs</li>
-                <li>Improved customer satisfaction</li>
-                <li>Faster time-to-market for new card products</li>
-                <li>Enhanced security and compliance</li>
-              </div>
+            <ul className="list-disc list-inside flex flex-col gap-y-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex flex-col gap-y-2">
+                  <p className="font-semibold">{feature.title}:</p>
+                  {feature.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </div>
+              ))}
             </ul>
-            <p className=" md:text-2xl">
+            <p >
               Request a demo today and see how CoreInfra's Instant Card Issuing
-              and Management System can help you transform your card services!
+              and Management System can help you <br /> transform your card services!
             </p>
           </div>
           <RequestDemoButton

@@ -11,7 +11,7 @@ const AnimatedContent = ({ isVisible, children }) => {
       opacity: isVisible ? 1 : 0,
       transform: isVisible ? "translateY(0)" : "translateY(15px)",
     },
-    config: { tension: 80, friction: 20 },
+    config: { tension: 170, friction: 26 }, // Smoother settings
   });
 
   return <animated.div style={props}>{children}</animated.div>;

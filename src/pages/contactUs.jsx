@@ -18,11 +18,11 @@ export const ContactUs = () => {
     <>
       <AnimatedContent isVisible={isVisibleSection1}>
         <section ref={section1Ref} className="px-3   md:px-16 lg:px-28">
-          <h1 className=" font-bold text-3xl z-10 relative md:text-5xl lg:text-7xl mb-8 w-fit ">
+          <h1 className=" font-bold text-2xl md:text-4xl lg:text-5xl z-10 relative  mb-8 w-fit ">
             Let's Talk!
             <GreenUnderline />
           </h1>
-          <div className=" grid place-items-center gap-y-8 md:text-2xl ">
+          <div className=" md:text-lg grid place-items-center gap-y-8  ">
             <p className=" ">
               We are all about partnership. Every great partnership begins with
               a conversation. For enquiry of any kind, including sales,
@@ -49,7 +49,7 @@ export const ContactUs = () => {
           ref={section2Ref}
           className="px-3 mt-20  md:px-16 lg:px-28 mb-20"
         >
-          <div className="md:text-xl flex flex-col md:flex-row   gap-20 md:gap-x-60 justify-center items-center ">
+          <div className=" flex flex-col md:flex-row   gap-20 md:gap-x-60 justify-center items-center ">
             {/* ceo */}
             <p className=" flex flex-col gap-y-2">
               <span className=" font-medium">CEO </span>
