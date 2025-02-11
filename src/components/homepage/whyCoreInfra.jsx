@@ -153,9 +153,9 @@ export const WhyCoreInfra = () => {
   }, [handleWheel, handleTouchStart, handleTouchMove]);
 
   return (
-    <section className="bg-vignette relative z-50 p-8  mx-8 lg:p-16 lg:mx-16 text-white">
+    <section className="bg-vignette relative z-50 pl-8 py-8  mx-8 lg:pl-16 lg:py-16 lg:mx-16 text-white">
       <AnimatedContent isVisible={headerContentContainer}>
-        <div ref={headerContentRef} className=" mb-20 ">
+        <div ref={headerContentRef} className=" mb-20 pr-8 lg:pr-16 ">
           <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold mb-6">
             Why CoreInfra?
           </h1>
@@ -168,7 +168,7 @@ export const WhyCoreInfra = () => {
       </AnimatedContent>
       {/* services */}
       <AnimatedContent isVisible={contentContainer}>
-        <div ref={contentContainerRef} className="flex   gap-4  h-fit">
+        <div ref={contentContainerRef} className="flex   gap-4  h-fit ">
           {/* Custom Progress Bar */}
           <div
             className="w-[2px] shrink-0 rounded-md   bg-white relative"
@@ -182,7 +182,7 @@ export const WhyCoreInfra = () => {
               }}
             />
           </div>
-          <div className="scroll-container h-fit " ref={containerRef}>
+          <div className="scroll-container h-fit w-full pr-8 lg:pr-16 " ref={containerRef}>
             {benefitsData.map(({ header, points }, index) => (
               <div
                 key={index}

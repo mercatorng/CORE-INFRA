@@ -2,8 +2,9 @@ import { useRef } from "react";
 import { useScrollVisibility } from "../../hooks/useScrollHook";
 import AnimatedContent from "../animatedContent";
 import issuingImg from "../../assets/homePage/issuingImg.svg";
-import acquiringImg from "../../assets/homePage/acquiringImg.svg";
-import digitalBankingImg from "../../assets/homePage/digitalBankingImg.svg";
+import acquiringImg from "../../assets/homePage/acquiring-channels.svg";
+import digitalBankingImg from "../../assets/homePage/animated-banking-infra.svg";
+import bespokeSystemsImg from "../../assets/homePage/bespoke-systems.jpg";
 import { Link } from "react-router-dom";
 
 export const ComprehensiveSolution = () => {
@@ -77,6 +78,7 @@ export const ComprehensiveSolution = () => {
         "Modular design to adapt to evolving requirements",
         "Seamless integration with existing infrastructure",
       ],
+      image: bespokeSystemsImg,
       refTitle: bespokeRef,
       containerTitle: bespokeContainer,
     },
@@ -144,12 +146,12 @@ export const ComprehensiveSolution = () => {
                   </Link>
                 </div>
                 {/* image */}
-                <div className="   ">
-                  {index !== 3 ? (
-                    <img src={image} alt={detail} />
-                  ) : (
-                    <div className=" h-[300px] w-[300px] max-w-[400px]   "></div>
-                  )}
+                <div className=" md:w-[60%]  mt-4 md:m-0 ">
+                  <img
+                    src={image}
+                    alt={detail}
+                    className=" w-full h-full object-cover"
+                  />
                 </div>
               </article>
             </AnimatedContent>

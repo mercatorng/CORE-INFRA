@@ -13,6 +13,55 @@ export const AboutUs = () => {
   const section2Ref = useRef();
   const { isVisible: isVisibleSection2 } = useScrollVisibility(section2Ref);
 
+  const infraData = [
+    {
+      title: "Issuing Infrastructure",
+      name: "CardInfra™",
+      description:
+        "CardInfra™ is the ultimate solution for seamless digital and physical card issuance:",
+      points: [
+        "Real-time processing for instant card issuance",
+        "Advanced fraud detection and risk management",
+        "API-first architecture for easy integration",
+        "Full program management for your card ecosystem",
+      ],
+    },
+    {
+      title: "Acquiring Infrastructure",
+      name: "TerminalInfra™",
+      description:
+        "TerminalInfra™ is the ultimate solution for acquirers, offering:",
+      points: [
+        "Comprehensive POS, ATM, and Web acquiring capabilities",
+        "Advanced transaction monitoring systems for real-time oversight",
+        "Seamless integration with merchant and banking networks",
+        "Scalable systems to support diverse acquiring needs",
+      ],
+    },
+    {
+      title: "Digital Banking Infrastructure",
+      description:
+        "Build modern, scalable digital banking platforms for every device:",
+      points: [
+        "Comprehensive digital banking solutions for retail and business customers",
+        "Scalable cloud-based systems for rapid growth",
+        "Multichannel banking experiences across mobile, web, and more",
+        "Flexible APIs for custom integrations",
+      ],
+    },
+    {
+      title: "Bespoke Systems",
+      description:
+        "Automate banking and payment workflows with tailored systems designed for your unique operational needs:",
+      points: [
+        "Custom-built solutions to address specific challenges",
+        "Enhanced efficiency with intelligent automation tools",
+        "Modular design to adapt to evolving requirements",
+        "Seamless integration with existing infrastructure",
+      ],
+    },
+  ];
+
   return (
     <>
       <AnimatedContent isVisible={isVisibleSection1}>
@@ -23,54 +72,35 @@ export const AboutUs = () => {
           </h1>
           <div className=" flex flex-col gap-y-4">
             <p>
-              At CoreInfra, we are building modern core payments infrastructure
-              for Financial Institutions. We understand the challenges as well
-              as the opportunities that exist in the ever-evolving Financial
-              services sector.
+              At CoreInfra, we are building the Core Infrastructure that powers
+              modern finance. From card management to payment processing,
+              CoreInfra delivers the essential systems that keep financial
+              services running. <br /> Think of us as the engine room of financial
+              services—providing the critical infrastructure that powers
+              everything else.
             </p>
+            <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold ">
+              Comprehensive Solutions Across <br /> Fintech Verticals
+            </h1>
             <p>
-              We leverage our deep domain and technology expertise to provide
-              Financial institutions with cutting-edge and differentiated
-              technology solutions to their esteemed customers.
+              CoreInfra provides an extensive suite of infrastructure solutions
+              to power banking and payments. Whether it’s issuing, acquiring,
+              digital banking, or bespoke systems, our solutions are designed to
+              automate and streamline financial operations:
             </p>
-            <p>
-              With years of experience and passion for innovation, we have
-              delivered many industry-first solutions that drive growth and
-              increased efficiency.
-            </p>
-          </div>
-        </section>
-      </AnimatedContent>
-      <AnimatedContent isVisible={isVisibleSection2}>
-        <section ref={section2Ref} className="px-3 mt-16  md:px-16 lg:px-28">
-          <h2 className=" font-bold text-xl md:text-2xl lg:text-4xl mb-3">
-            Our Core Values ; CORE
-          </h2>
-          <div className=" flex flex-col gap-y-8">
-            <p>
-              <span className="font-bold">C</span>ollaboration: We believe in
-              the power of collaboration, fostering strong partnerships
-              internally and externally. Together, we achieve more, driving
-              innovation and excellence in every transaction.
-            </p>
-            <p>
-              <span className="font-bold">O</span>ptimism: Embracing optimism,
-              we approach challenges as opportunities for growth. We believe in
-              the potential of every transaction to bring positive change,
-              inspiring confidence and creativity.
-            </p>
-            <p>
-              <span className="font-bold">R</span>eliability: At the core of our
-              values is reliability. We are committed to providing dependable
-              solutions, ensuring that every transaction is secure, efficient,
-              and trustworthy.
-            </p>
-            <p>
-              <span className="font-bold">E</span>xcellence: We strive for
-              excellence in everything we do. From crafting innovative solutions
-              to delivering exceptional services, our commitment to excellence
-              defines our approach to transforming transactions.
-            </p>
+            <div className="pl-4 space-y-6">
+              {infraData.map((infra, index) => (
+                <div key={index}>
+                  <h2 className="text-lg font-bold mb-2">{infra.title}</h2>
+                  <p className=" mb-2">{infra.description}</p>
+                  <ul className="list-disc list-inside ">
+                    {infra.points.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </AnimatedContent>

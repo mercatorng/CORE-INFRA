@@ -6,10 +6,6 @@ body {
   @apply text-black;
 }
 
-p {
-  @apply md:text-lg;
-}
-
 .globalTransition {
   @apply transition-all duration-500 ease-out;
 }
@@ -20,7 +16,7 @@ p {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-70%);
   }
 }
 
@@ -52,4 +48,18 @@ p {
 }
 .scroll-container {
   scrollbar-width: none;
+}
+
+.solutionPage p {
+  @apply md:text-lg;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  z-index: 1000; /* Ensure the navbar stays on top of other content */
 }

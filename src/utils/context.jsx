@@ -15,20 +15,6 @@ export const AppProvider = ({ children }) => {
   const path = window.location.pathname;
   const [activeLink, setActiveLink] = useState(window.location.pathname);
 
-  // set persistent page title for solution pages on refresh
-  const pageTitle = sessionStorage.getItem("pageTitle");
-
-  useEffect(() => {
-    // set page title to default title for home about and contact page on refresh
-    // else grab page title from session storage for persistent page title
-    if (path === "/" || path === "/about" || path === "/contact-us") {
-      document.title =
-        "CoreInfra - Modern payments infrastructure for Financial institutions";
-    } else {
-      document.title = pageTitle;
-    }
-  }, [path]);
-
   useEffect(() => {
     // Add an event listener to update the window width when it changes
     window.addEventListener("resize", handleResize);
