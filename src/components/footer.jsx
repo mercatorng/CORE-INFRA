@@ -10,9 +10,26 @@ import { useGlobalContext } from "../utils/context";
 
 export const Footer = () => {
   const navLinks = [
-    { linkName: "CoreInfra", linkUrl: "/" },
     { linkName: "About Us", linkUrl: "/about" },
-    { linkName: "Contact Us", linkUrl: "#" },
+    { linkName: "Overview", linkUrl: "/" },
+    { linkName: "Contact Us", linkUrl: "/contact-us" },
+  ];
+  const solutionsData = [
+    { linkName: "Issuing Infrastructure", linkUrl: "/issuing-infrastructure" },
+    {
+      linkName: "Acquiring Infrastructure",
+      linkUrl: "/acquiring-infrastructure",
+    },
+    {
+      linkName: "Digital Banking Infrastructure",
+      linkUrl: "/digital-banking-infrastructure",
+    },
+    { linkName: "Bespoke Systems", linkUrl: "/bespoke-systems" },
+  ];
+  const resourcesData = [
+    { linkName: "Blog", linkUrl: "#" },
+    { linkName: "Help Center", linkUrl: "#" },
+    { linkName: "Support", linkUrl: "#" },
   ];
 
   const legalData = [
@@ -67,7 +84,7 @@ export const Footer = () => {
           </div>
         </AnimatedContent>
         {/* footer content */}
-        <div className=" pb-4  bg-[#FDFDFD] pt-8 px-3  md:px-16  text-sm md:text-base">
+        <div className=" pb-4  bg-[#FDFDFD] pt-8 px-3  md:px-16  text-sm text-[#475467] font-satoshi">
           <AnimatedContent isVisible={isVisibleSection2}>
             <div
               ref={section2Ref}
@@ -76,12 +93,12 @@ export const Footer = () => {
               {/* logo */}
               <div className=" lg:mb-auto">
                 <img src={coreInfraBlack} alt="logo" />
-                <p>Igniting Innovation in Payments</p>
+                <p className=" text-xs">The Core of Financial Technology</p>
               </div>
               {/* nav link */}
-              <div className=" lg:w-[70%] mt-8  md:flex md:justify-between ">
+              <div className=" lg:w-[70%] mt-8 md:mt-0  md:flex md:justify-between ">
                 <div className=" flex flex-col w-fit gap-1 shrink-0">
-                  <p className=" font-bold">Company</p>
+                  <p className=" font-bold text-[#000000]">CoreInfra</p>
                   {navLinks.map(({ linkName, linkUrl }) => (
                     <Link
                       key={linkName}
@@ -92,10 +109,40 @@ export const Footer = () => {
                     </Link>
                   ))}
                 </div>
+                {/* solution */}
+                <div className=" mt-4 md:mt-0">
+                  <div className=" flex flex-col w-fit gap-1 ">
+                    <p className=" font-bold text-[#000000]">Solutions</p>
+                    {solutionsData.map(({ linkName, linkUrl }) => (
+                      <Link
+                        key={linkName}
+                        className=" hover:text-ctaGreen globalTransition "
+                        to={linkUrl}
+                      >
+                        {linkName}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                {/* resources */}
+                <div className=" mt-4 md:mt-0">
+                  <div className=" flex flex-col w-fit gap-1 ">
+                    <p className=" font-bold text-[#000000]">Resources</p>
+                    {resourcesData.map(({ linkName, linkUrl }) => (
+                      <Link
+                        key={linkName}
+                        className=" hover:text-ctaGreen globalTransition "
+                        to={linkUrl}
+                      >
+                        {linkName}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
                 {/* legal */}
                 <div className=" mt-4 md:mt-0">
                   <div className=" flex flex-col w-fit gap-1 ">
-                    <p className=" font-bold">Legal</p>
+                    <p className=" font-bold text-[#000000]">Legal</p>
                     {legalData.map(({ linkName, linkUrl }) => (
                       <Link
                         key={linkName}
@@ -107,24 +154,14 @@ export const Footer = () => {
                     ))}
                   </div>
                 </div>
-                {/* address */}
-                <div className="flex flex-col w-fit gap-1 mt-6 md:mt-0">
-                  <p>CoreInfra Solutions Ltd</p>
-                  <p>1A Hughes Ave, Yaba 101245, Lagos</p>
-                  <a
-                    href="mailto:connect@coreinfrahq.com"
-                    className=" hover:text-ctaGreen inline-block w-fit"
-                  >
-                    connect@coreinfrahq.com
-                  </a>
-                  <p>+234 903 618 9485</p>
-                </div>
               </div>
             </div>
             {/* copyright */}
             <div className=" border-t border-gray-200 my-4"></div>
             <div className=" md:flex md:justify-between items-center">
-              <p>© {currentYear} CoreInfra™. All rights reserved. </p>
+              <p className=" text-[#667085] font-bold">
+                © {currentYear} CoreInfra™. All rights reserved.{" "}
+              </p>
               {/* social icons */}
               <div>
                 <SocialIcon
@@ -132,25 +169,28 @@ export const Footer = () => {
                   target="_blank"
                   bgColor="transparent"
                   fgColor="gray"
+                  style={{ height: 30, width: 30 }}
                 />
                 <SocialIcon
                   url="https://www.linkedin.com/company/coreinfrahq"
                   target="_blank"
                   bgColor="transparent"
                   fgColor="gray"
+                  style={{ height: 30, width: 30 }}
                 />
                 <SocialIcon
                   url="https://facebook.com/coreinfrahq.com"
                   target="_blank"
                   bgColor="transparent"
                   fgColor="gray"
+                  style={{ height: 30, width: 30 }}
                 />
-                <SocialIcon
+                {/* <SocialIcon
                   url="https://instagram.com/coreinfrahq"
                   target="_blank"
                   bgColor="transparent"
                   fgColor="gray"
-                />
+                /> */}
               </div>
             </div>
           </AnimatedContent>

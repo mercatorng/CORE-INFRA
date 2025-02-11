@@ -6,9 +6,6 @@ body {
   @apply text-black;
 }
 
-p {
-  @apply md:text-lg;
-}
 
 .globalTransition {
   @apply transition-all duration-500 ease-out;
@@ -52,4 +49,9 @@ p {
 }
 .scroll-container {
   scrollbar-width: none;
+}
+
+
+.solutionPage p {
+  @apply md:text-lg;
 }
