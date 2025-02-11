@@ -66,7 +66,6 @@ export const HeroSection = () => {
             <GetInTouchBTN />
             <Link
               to="/about"
-              smooth={true}
               duration={500}
               className=" font-instrument bg-[#F9FAFB] text-[#1A1A1A] text-[13px] border border-[#E1E4EB] rounded-xl px-5 py-[14px] font-medium cursor-pointer grid place-items-center "
             >

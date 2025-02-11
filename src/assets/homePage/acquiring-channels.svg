@@ -1,0 +1,82 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Gradients and Animations -->
+        <linearGradient id="flow">
+            <stop offset="0%" stop-color="#10b981">
+                <animate attributeName="offset" values="0;1" dur="2s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#d1fae5">
+                <animate attributeName="offset" values="0;1" dur="2s" repeatCount="indefinite"/>
+            </stop>
+        </linearGradient>
+        
+        <!-- Screen Gradient -->
+        <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d1fae5"/>
+            <stop offset="100%" stop-color="#a7f3d0"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Central Hub -->
+    <g transform="translate(400,250)">
+        <rect x="-70" y="-70" width="140" height="140" rx="20" fill="#059669">
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <text x="0" y="0" text-anchor="middle" fill="white" font-size="14">Processing Hub</text>
+    </g>
+
+    <!-- POS Terminal -->
+    <g transform="translate(200,150)">
+        <rect x="-50" y="-35" width="100" height="70" rx="10" fill="#10b981"/>
+        <rect x="-40" y="-25" width="80" height="30" fill="url(#screen)"/>
+        <rect x="-30" y="15" width="60" height="10" fill="#d1fae5"/>
+        <text x="0" y="50" text-anchor="middle" font-size="14">POS</text>
+    </g>
+
+    <!-- ATM -->
+    <g transform="translate(200,350)">
+        <rect x="-60" y="-80" width="120" height="160" rx="15" fill="#10b981"/>
+        <rect x="-50" y="-70" width="100" height="60" fill="url(#screen)"/>
+        <rect x="-40" y="0" width="80" height="60" fill="#d1fae5"/>
+        <text x="0" y="100" text-anchor="middle" font-size="14">ATM</text>
+    </g>
+
+    <!-- Web Payment -->
+    <g transform="translate(600,250)">
+        <!-- Laptop -->
+        <path d="M-80,-50 L80,-50 L90,50 L-90,50 Z" fill="#10b981"/>
+        <rect x="-70" y="-45" width="140" height="85" fill="url(#screen)"/>
+        <!-- Browser Window -->
+        <rect x="-60" y="-35" width="120" height="65" fill="white" opacity="0.9"/>
+        <text x="0" y="70" text-anchor="middle" font-size="14">Web Payment</text>
+    </g>
+
+    <!-- Connection Lines -->
+    <g stroke="url(#flow)" stroke-width="3" fill="none">
+        <!-- POS to Hub -->
+        <path d="M250,150 C300,150 350,250 330,250"/>
+        <!-- ATM to Hub -->
+        <path d="M250,350 C300,350 350,250 330,250"/>
+        <!-- Web to Hub -->
+        <path d="M520,250 C470,250 470,250 470,250"/>
+    </g>
+
+    <!-- Animated Transaction Dots -->
+    <g>
+        <circle cx="280" cy="150" r="5" fill="#10b981">
+            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="280" cy="350" r="5" fill="#10b981">
+            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle cx="500" cy="250" r="5" fill="#10b981">
+            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+    </g>
+
+    <!-- Title -->
+    <g font-family="Arial" fill="#064e3b">
+        <text x="400" y="450" text-anchor="middle" font-size="24" font-weight="bold">TerminalInfra™</text>
+        <text x="400" y="480" text-anchor="middle" font-size="16">Unified Multi-Channel Acquiring</text>
+    </g>
+</svg>
