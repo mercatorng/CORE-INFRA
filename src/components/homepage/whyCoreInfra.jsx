@@ -182,7 +182,7 @@ export const WhyCoreInfra = () => {
               }}
             />
           </div>
-          <div className="scroll-container h-fit " ref={containerRef}>
+          <div className="scroll-container h-fit w-full " ref={containerRef}>
             {benefitsData.map(({ header, points }, index) => (
               <div
                 key={index}
