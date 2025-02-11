@@ -84,33 +84,25 @@ export const HeroSection = () => {
           <p className=" mb-4 font-cabinet text-[#333333] font-bold text-[15px]">
             Our Trusted Partners
           </p>
-          <div className=" overflow-hidden  md:w-[416px] mx-auto">
-            <div className=" companyContainer  flex   gap-x-8  ">
-              <div className=" animate-scroll flex  gap-x-8 items-center logosContainer ">
-                {companyLogoData.map(({ img, id, dimension }) => (
-                  <div key={id} className={`shrink-0  ${dimension} h-fit `}>
-                    <img
-                      src={img}
-                      alt={`Image ${id}`}
-                      className={`w-full ${
-                        id == 3 ? "bg-black p-2" : "bg-transparent"
-                      } `}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className=" animate-scroll flex  gap-x-8   items-center logosContainer">
-                {companyLogoData.map(({ img, id, dimension }) => (
-                  <div key={id} className={`shrink-0  ${dimension} h-fit `}>
-                    <img
-                      src={img}
-                      alt={`Image ${id}`}
-                      className={`w-full ${
-                        id == 3 ? "bg-black p-2" : "bg-transparent"
-                      } `}
-                    />
-                  </div>
-                ))}
+          <div className="overflow-hidden md:w-[416px] mx-auto">
+            <div className="companyContainer">
+              <div className="animate-scroll flex gap-x-8 items-center logosContainer">
+                {[...companyLogoData, ...companyLogoData].map(
+                  ({ img, id, dimension }, index) => (
+                    <div
+                      key={`${id}-${index}`}
+                      className={`shrink-0 ${dimension} h-fit`}
+                    >
+                      <img
+                        src={img}
+                        alt={`Image ${id}`}
+                        className={`w-full ${
+                          id == 3 ? "bg-black p-2" : "bg-transparent"
+                        }`}
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>

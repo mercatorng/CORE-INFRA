@@ -15,16 +15,16 @@ export const Footer = () => {
     { linkName: "Contact Us", linkUrl: "/contact-us" },
   ];
   const solutionsData = [
-    { linkName: "Issuing Infrastructure", linkUrl: "/issuing-infrastructure" },
+    { linkName: "Issuing Solutions", linkUrl: "https://cardinfra.com/" },
     {
-      linkName: "Acquiring Infrastructure",
-      linkUrl: "/acquiring-infrastructure",
+      linkName: "Acquiring Solutions",
+      linkUrl: "#",
     },
     {
-      linkName: "Digital Banking Infrastructure",
-      linkUrl: "/digital-banking-infrastructure",
+      linkName: "Digital Banking Solutions",
+      linkUrl: "#",
     },
-    { linkName: "Bespoke Systems", linkUrl: "/bespoke-systems" },
+    { linkName: "Bespoke Solutions", linkUrl: "#" },
   ];
   const resourcesData = [
     { linkName: "Blog", linkUrl: "#" },
@@ -113,9 +113,10 @@ export const Footer = () => {
                 <div className=" mt-4 md:mt-0">
                   <div className=" flex flex-col w-fit gap-1 ">
                     <p className=" font-bold text-[#000000]">Solutions</p>
-                    {solutionsData.map(({ linkName, linkUrl }) => (
+                    {solutionsData.map(({ linkName, linkUrl },index) => (
                       <Link
                         key={linkName}
+                        target={index == 0 ? "_blank" : "_self"}
                         className=" hover:text-ctaGreen globalTransition "
                         to={linkUrl}
                       >

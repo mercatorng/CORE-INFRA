@@ -35,12 +35,6 @@ export const Navbar = ({ homeUrl }) => {
     };
   }, []);
 
-  // change page title
-  const [activePageTitle, setPageTitle] = useState("");
-  useEffect(() => {
-    document.title = activePageTitle;
-  }, [activePageTitle]);
-
   function closeMenuOnSmallScreen() {
     if (showMenu && windowWidth < 768) {
       setMenu(false);
@@ -68,7 +62,9 @@ export const Navbar = ({ homeUrl }) => {
 
   return (
     <nav
-      className={`  z-50 relative flex bg-inherit w-full justify-between items-center  py-2  px-3 mb-16 md:px-16  `}
+      className={`  z-50 relative flex bg-inherit w-full justify-between items-center  py-2  px-3 mb-8 md:mb-16 md:px-16  ${
+        sticky ? "sticky-nav" : ""
+      } `}
     >
       {/* logo */}
       <Link
@@ -96,7 +92,7 @@ export const Navbar = ({ homeUrl }) => {
       {/* nav links */}
       <div
         ref={menuContainerRef}
-        className={`absolute md:relative  md:bg-transparent md:text-inherit md:flex-row  md:w-fit shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50  ${
+        className={`absolute md:relative  md:bg-transparent md:text-inherit md:flex-row border md:border-none  md:w-fit shadow-md md:shadow-none  w-full text-black top-[100%] p-4 bg-white left-0 flex flex-col gap-6 z-50  ${
           !showMenu && windowWidth < 768 ? "-translate-x-[100%]" : ""
         }  `}
       >
@@ -129,7 +125,7 @@ export const Navbar = ({ homeUrl }) => {
             {...{
               setDropDown,
               notificationButtonClassname,
-              setPageTitle,
+
               closeMenuOnSmallScreen,
             }}
           />
@@ -145,7 +141,7 @@ export const Navbar = ({ homeUrl }) => {
 const SolutionLinks = ({
   setDropDown,
   notificationButtonClassname,
-  setPageTitle,
+
   closeMenuOnSmallScreen,
 }) => {
   // hide solution container on click outside
@@ -158,66 +154,33 @@ const SolutionLinks = ({
 
   const data = [
     {
-      id: 6,
-      title: " Issuing as a Service Platform",
-      url: "/issuing-as-a-service-platform",
-      pageTitle: "Seamless collaboration with Fintechs",
-    },
-    {
-      id: 10,
-      title: "Prepaid Card Management System",
-      url: "/prepaid-card-management-system",
-      pageTitle: "Innovative Prepaid Card Solutions for Banks",
-    },
-    {
-      id: 8,
-      title: "Instant Card Solution",
-      url: "/instant-card-solution",
-      pageTitle: "Empowering More Faster, Efficient Card Services",
-    },
-    {
-      id: 4,
-      title: "Payment Experience Platform",
-      url: "/payment-experience-platform",
-      pageTitle:
-        "Transforming Transaction Failures into Strategic Opportunities.",
-    },
-    {
-      id: 3,
-      title: "Card and PIN Solution",
-      url: "/card-and-pin-solution",
-      pageTitle:
-        "Elevate Your Card Services with Our Comprehensive Card and PIN Solution",
-    },
-    {
-      id: 5,
-      title: "Scheme Reporting and Compliance",
-      url: "/scheme-reporting-and-compliance",
-      pageTitle: "Simplify Compliance Reporting with Automation",
-    },
-    {
-      id: 11,
-      title: "POS Monitoring Solution",
-      url: "/pos-monitoring-solution",
-      pageTitle: "Gain Unparalleled Visibility and Control",
+      id: 0,
+      title: "Issuing Solutions",
+      url: "https://cardinfra.com/",
     },
     {
       id: 1,
-      title: "Digital Banking Solutions",
-      url: "/digital-banking-solutions",
-      pageTitle:
-        " Unleash the Power of Digital Banking with Our Comprehensive Infrastructure",
+      title: "Acquiring Solutions",
+      url: "#",
+    },
+    {
+      id: 2,
+      title: " Digital Banking Solutions",
+      url: "#",
+    },
+    {
+      id: 3,
+      title: "Bespoke Solutions",
+      url: "#",
     },
   ];
 
   const { activeLink, setActiveLink, checkContactUsPath } = useGlobalContext();
 
   // on link click
-  function clickLink(path, pageTitle) {
+  function clickLink(path) {
     setDropDown(false);
     setActiveLink(path);
-    setPageTitle(pageTitle);
-    sessionStorage.setItem("pageTitle", pageTitle);
     closeMenuOnSmallScreen();
   }
 
@@ -226,19 +189,18 @@ const SolutionLinks = ({
       ref={linkContainerRef}
       className=" md:border  flex flex-col pl-4 gap-2 md:absolute md:top-[100%] md:-left-[50%] md:bg-white md:w-[400px] md:text-black md:shadow-md md:rounded-md md:p-2 "
     >
-      {data.map(({ id, title, url, pageTitle }) => {
+      {data.map(({ id, title, url }) => {
         return (
           <Link
             onClick={() => {
-              clickLink(url, pageTitle);
+              clickLink(url);
             }}
+            target={id == 0 ? "_blank" : "_self"}
             key={id}
             to={url}
-            className={` rounded-md pl-2 py-2 font-bold globalTransition ${
-              activeLink === url
-                ? "bg-black text-ctaGreen "
-                : "bg-transparent hover:bg-[#DBFFEC] "
-            }  `}
+            className={` rounded-md pl-2 py-2 font-bold globalTransition 
+              hover:bg-[#DBFFEC]
+               `}
           >
             {title}
           </Link>
