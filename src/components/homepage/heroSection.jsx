@@ -6,11 +6,7 @@ import providusLogo from "../../assets/providusLogo.png";
 import titanBank from "../../assets/titanBankLogo.png";
 import keystoneLogo from "../../assets/keystoneLogo.png";
 import { GetInTouchBTN } from "../button";
-import {
-  Link as ScrollToLink,
-  Element,
-  animateScroll as scroll,
-} from "react-scroll";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   const heroContentRef = useRef(null);
@@ -68,14 +64,14 @@ export const HeroSection = () => {
           {/* buttons */}
           <div className=" flex gap-x-4 mt-6 mx-auto w-fit">
             <GetInTouchBTN />
-            <ScrollToLink
-              to="aboutSection"
+            <Link
+              to="/about"
               smooth={true}
               duration={500}
               className=" font-instrument bg-[#F9FAFB] text-[#1A1A1A] text-[13px] border border-[#E1E4EB] rounded-xl px-5 py-[14px] font-medium cursor-pointer grid place-items-center "
             >
               Explore more
-            </ScrollToLink>
+            </Link>
           </div>
         </div>
       </AnimatedContent>
