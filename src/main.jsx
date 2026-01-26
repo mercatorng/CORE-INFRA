@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "@fontsource/aileron";
+import "@fontsource/instrument-sans";
 import App from "./App.jsx";
 import "./index.css";
 import { AppProvider } from "./utils/context.jsx";

@@ -14,7 +14,7 @@ export const HeroSection = () => {
 
   const { isVisible: isVisibleHeroContent } = useScrollVisibility(
     heroContentRef,
-    true
+    true,
   );
 
   const { isVisible: companyScrollContainer } =
@@ -44,30 +44,28 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className=" px-8 md:px-16 lg:px-28  ">
-      <div className=" absolute top-0 left-0 h-full w-full shadow-overlay"></div>
-      <div className=" absolute top-0 left-0 h-full w-full abstract-bg  "></div>
+    <section className="w-full px-8 md:px-16 lg:px-28">
       <AnimatedContent isVisible={isVisibleHeroContent}>
         <div
           ref={heroContentRef}
-          className=" mb-24 text-center pt-8 relative z-50"
+          className="relative z-50 pt-8 mb-24 text-center max-w-[936px] md:px-[120px]  place-self-center "
         >
-          <h1 className=" font-cabinet text-xl md:text-2xl lg:text-4xl relative z-20 font-bold mb-8  ">
-            Building the Core Infrastructure That <br /> Powers Modern Finance
+          <h1 className="relative z-20 mb-4 font-bold tex4t-xl font-aileron md:text-2xl lg:text-4xl ">
+            We build the core infrastructure <br /> behind trusted financial
+            systems.
           </h1>
-          <p className=" text-[#737373]">
-            From card management to payment processing, CoreInfra delivers the
-            essential systems that keep <br /> financial services running. Think
-            of us as the engine room of financial services—providing the <br />
-            critical infrastructure that powers everything else.
+          <p className=" text-[#737373] font-instrument">
+            Modern financial products are only as strong as the infrastructure
+            behind them. <br/> CoreInfra designs and delivers the critical systems that
+            power cards, payments, and digital banking so financial institutions
+            can launch faster, operate securely, and scale with confidence.
           </p>
           {/* buttons */}
-          <div className=" flex gap-x-4 mt-6 mx-auto w-fit">
+          <div className="flex mx-auto mt-12 gap-x-4 w-fit">
             <GetInTouchBTN />
             <Link
               to="/about"
-              duration={500}
-              className=" font-instrument bg-[#F9FAFB] text-[#1A1A1A] text-[13px] border border-[#E1E4EB] rounded-xl px-5 py-[14px] font-medium cursor-pointer grid place-items-center "
+              className="font-instrument rounded-xl px-5 py-[14px] border  shadow-sm   text-white text-[13px] font-semibold bg-ctaGreen bg-gradient-to-tr from-[#10D46B] to-[#086E38B2]/70 w-fit"
             >
               Explore more
             </Link>
@@ -75,38 +73,7 @@ export const HeroSection = () => {
         </div>
       </AnimatedContent>
       {/* company */}
-      <AnimatedContent isVisible={companyScrollContainer}>
-        <div
-          ref={companyScrollRef}
-          className=" flex flex-col text-center md:text-xl mb-12 relative z-50 overflow-hidden "
-        >
-          <p className=" mb-4 font-cabinet text-[#333333] font-bold text-[15px]">
-            Our Trusted Partners
-          </p>
-          <div className="overflow-hidden md:w-[416px] mx-auto">
-            <div className="companyContainer">
-              <div className="animate-scroll flex gap-x-8 items-center logosContainer">
-                {[...companyLogoData, ...companyLogoData].map(
-                  ({ img, id, dimension }, index) => (
-                    <div
-                      key={`${id}-${index}`}
-                      className={`shrink-0 ${dimension} h-fit`}
-                    >
-                      <img
-                        src={img}
-                        alt={`Image ${id}`}
-                        className={`w-full ${
-                          id == 3 ? "bg-black p-2" : "bg-transparent"
-                        }`}
-                      />
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedContent>
+     
     </section>
   );
 };

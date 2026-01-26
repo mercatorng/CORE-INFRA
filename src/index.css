@@ -63,3 +63,11 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
   z-index: 1000; /* Ensure the navbar stays on top of other content */
 }
+
+.font-aileron {
+  font-family: aileron, sans-serif;
+}
+
+.font-instrument {
+  font-family: "Instrument Sans", sans-serif;
+}

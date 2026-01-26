@@ -13,26 +13,7 @@ export const WhyCoreInfra = () => {
 
   const benefitsData = [
     {
-      header: "Tech Advantage",
-      points: [
-        "Built on cloud-native technology for ultimate flexibility",
-        "99.99% uptime to keep your operations running",
-        "Real-time analytics for informed decisions",
-        "Top-tier security to protect your data",
-        "Compliance tools that automate the hard work",
-      ],
-    },
-    {
-      header: "Business Benefits",
-      points: [
-        "Cut implementation time by up to 60%",
-        "Reduce operational costs by 40%",
-        "Scale without limits",
-        "Stay ahead with future-ready technology",
-      ],
-    },
-    {
-      header: "Our Edge",
+    
       points: [
         "Pioneers in the African financial tech scene",
         "An expanding network of satisfied clients",
@@ -153,60 +134,47 @@ export const WhyCoreInfra = () => {
   }, [handleWheel, handleTouchStart, handleTouchMove]);
 
   return (
-    <section className="bg-vignette relative z-50 pl-8 py-8  mx-8 lg:pl-16 lg:py-16 lg:mx-16 text-white">
+    <section className=" mx-auto relative z-50 py-[88px]  bg-[#D9D9D9] px-5">
+      <div className="container mx-auto max-w-[1121px]">
       <AnimatedContent isVisible={headerContentContainer}>
-        <div ref={headerContentRef} className=" mb-20 pr-8 lg:pr-16 ">
-          <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold mb-6">
+        
+        <div ref={headerContentRef} className="mb-10 ">
+          <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold mb-6 font-aileron">
             Why CoreInfra?
           </h1>
-          <p className="  md:text-2xl ">
-            We deliver cutting-edge and distinctive solutions crafted to propel
-            your business into the forefront of the finance and technology
-            landscape, ensuring you stay ahead of the competition
+          <p className="text-lg font-instrument">
+            Financial institutions today face a common challenge:
           </p>
+          <p className="text-lg font-semibold font-instrument">legacy systems were never designed for modern product velocity, digital channels, or modular growth.</p>
         </div>
       </AnimatedContent>
       {/* services */}
       <AnimatedContent isVisible={contentContainer}>
-        <div ref={contentContainerRef} className="flex   gap-4  h-fit ">
+        <p className="pl-2 mb-4 text-lg font-instrument">CoreInfra helps institutions bridge that gap by providing:</p>
+        <div ref={contentContainerRef} className="flex gap-4 h-fit ">
           {/* Custom Progress Bar */}
           <div
-            className="w-[2px] shrink-0 rounded-md   bg-white relative"
+            className="w-[4px] shrink-0 rounded-md   bg-[#48BB78] relative"
             style={{ height: `${calculateTotalHeight()}px` }}
           >
-            <div
-              className="w-[4px] rounded-md bg-[#04B757] absolute top-0 -left-[50%] -translate-x-[50%] transition-all duration-500 ease-out"
-              style={{
-                height: `${height}px`,
-                transform: `translateY(${offset}px)`,
-              }}
-            />
+            
           </div>
-          <div className="scroll-container h-fit w-full pr-8 lg:pr-16 " ref={containerRef}>
-            {benefitsData.map(({ header, points }, index) => (
-              <div
-                key={index}
-                className="pb-6"
-                ref={(el) => (itemRefs.current[index] = el)}
-              >
-                {/* Always show the header */}
-                <h2 className="font-bold text-xl lg:text-3xl mb-2">{header}</h2>
+          <div className="w-full pr-8 scroll-container h-fit lg:pr-16 " ref={containerRef}>
+            
                 <ul
-                  className={` list-disc list-inside pl-2 transition-all duration-500 ease-out  ${
-                    activeIndex === index
-                      ? "opacity-100 translate-y-0 max-h-[400px]"
-                      : "opacity-0 translate-y-4 max-h-0 "
-                  }`}
+                  className={` list-disc list-inside pl-2 transition-all duration-500 ease-out opacity-100 translate-y-0 max-h-[400px]`}
                 >
-                  {points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
+                  <li>Modular infrastructure that integrates with existing systems</li>
+                  <li>Enterprise-grade reliability for mission-critical operations</li>
+                  <li>Compliance-aware design suited for regulated environments</li>
+                  <li>Flexible deployment models aligned with institutional policies</li>
+                  <li>We are not a front-end app vendor.</li>
+                  <li>We are the engine room behind financial services.</li>
                 </ul>
-              </div>
-            ))}
           </div>
         </div>
       </AnimatedContent>
+      </div>
     </section>
   );
 };

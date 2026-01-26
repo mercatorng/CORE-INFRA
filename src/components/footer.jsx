@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { useRef } from "react";
 import AnimatedContent from "../components/animatedContent";
+
+import logoBlack from "../assets/coreInfraLogoBlack.svg";
 import { useScrollVisibility } from "../hooks/useScrollHook";
 import { useLocation } from "react-router-dom";
 import { useGlobalContext } from "../utils/context";
@@ -55,54 +57,38 @@ export const Footer = () => {
   const checkAboutPath = urlPath === aboutPath;
 
   const { checkContactUsPath } = useGlobalContext();
-
+  function closeMenuOnSmallScreen() {
+    if (showMenu && windowWidth < 768) {
+      setMenu(false);
+    }
+  }
   return (
     <>
-      <footer className=" bg-white text-gray-900 pt-16 mt-auto">
+      <footer className="pt-16 pl-4 mt-auto text-gray-900 bg-white ">
         {/* book a demo */}
-        <AnimatedContent isVisible={isVisibleSection1}>
-          <div
-            ref={section1Ref}
-            className=" bg-vignette p-8  mx-8 lg:mx-28  flex flex-col  text-gray-50 mb-16"
-          >
-            <div className=" mb-3 flex flex-col md:flex-row md:justify-between md:items-center gap-3 ">
-              <h1 className=" font-semibold text-lg   lg:text-3xl">
-                Power Your Financial Future
-              </h1>
-              <Link
-                to={"/contact-us"}
-                className=" w-fit inline-block border border-[#D0D5DD] bg-white text-[#344054] font-medium rounded-lg px-4 py-2 shadow-sm "
-              >
-                Book a Demo
-              </Link>
-            </div>
-            <p className=" lg:text-xl">
-              Ready to transform your institution? See how our core
-              infrastructure can help you <br /> innovate, scale, and succeed in
-              the modern financial landscape.
-            </p>
-          </div>
-        </AnimatedContent>
+
         {/* footer content */}
-        <div className=" pb-4  bg-[#FDFDFD] pt-8 px-3  md:px-16  text-sm text-[#475467] font-satoshi">
+        <div className=" pb-4   pt-8 px-3  md:px-16  text-sm text-[#475467] font-satoshi">
           <AnimatedContent isVisible={isVisibleSection2}>
             <div
               ref={section2Ref}
-              className=" lg:flex lg:justify-between gap-x-4 lg:items-center"
+              className="flex flex-col justify-between sm:items-center sm:flex-row gap-x-4"
             >
               {/* logo */}
-              <div className=" lg:mb-auto">
+              <div className=" lg:mb-auto w-fit">
                 <img src={coreInfraBlack} alt="logo" />
-                <p className=" text-xs">The Core of Financial Technology</p>
+                <p className="mb-8 text-xs w-fit">
+                  The Core of Financial Technology
+                </p>
               </div>
               {/* nav link */}
-              <div className=" lg:w-[70%] mt-8 md:mt-0  md:flex md:justify-between ">
-                <div className=" flex flex-col w-fit gap-1 shrink-0">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 md:justify-items-end md:w-[70%]">
+                <div className="flex flex-col gap-4 mt-4 md:mt-0 w-[150px]">
                   <p className=" font-bold text-[#000000]">CoreInfra</p>
                   {navLinks.map(({ linkName, linkUrl }) => (
                     <Link
                       key={linkName}
-                      className=" hover:text-ctaGreen globalTransition"
+                      className="gap-4 hover:text-ctaGreen globalTransition "
                       to={linkUrl}
                     >
                       {linkName}
@@ -110,14 +96,14 @@ export const Footer = () => {
                   ))}
                 </div>
                 {/* solution */}
-                <div className=" mt-4 md:mt-0">
-                  <div className=" flex flex-col w-fit gap-1 ">
+                <div className="mt-4 md:mt-0">
+                  <div className="flex flex-col gap-4  w-[150px]">
                     <p className=" font-bold text-[#000000]">Solutions</p>
-                    {solutionsData.map(({ linkName, linkUrl },index) => (
+                    {solutionsData.map(({ linkName, linkUrl }, index) => (
                       <Link
                         key={linkName}
                         target={index == 0 ? "_blank" : "_self"}
-                        className=" hover:text-ctaGreen globalTransition "
+                        className=" hover:text-ctaGreen globalTransition"
                         to={linkUrl}
                       >
                         {linkName}
@@ -126,13 +112,13 @@ export const Footer = () => {
                   </div>
                 </div>
                 {/* resources */}
-                <div className=" mt-4 md:mt-0">
-                  <div className=" flex flex-col w-fit gap-1 ">
+                <div className="mt-4 md:mt-0">
+                  <div className="flex flex-col gap-4 w-[150px]">
                     <p className=" font-bold text-[#000000]">Resources</p>
                     {resourcesData.map(({ linkName, linkUrl }) => (
                       <Link
                         key={linkName}
-                        className=" hover:text-ctaGreen globalTransition "
+                        className=" hover:text-ctaGreen globalTransition"
                         to={linkUrl}
                       >
                         {linkName}
@@ -141,13 +127,13 @@ export const Footer = () => {
                   </div>
                 </div>
                 {/* legal */}
-                <div className=" mt-4 md:mt-0">
-                  <div className=" flex flex-col w-fit gap-1 ">
+                <div className="mt-4 md:mt-0">
+                  <div className="flex flex-col gap-4 w-[150px]">
                     <p className=" font-bold text-[#000000]">Legal</p>
                     {legalData.map(({ linkName, linkUrl }) => (
                       <Link
                         key={linkName}
-                        className=" hover:text-ctaGreen globalTransition "
+                        className=" hover:text-ctaGreen globalTransition"
                         to={linkUrl}
                       >
                         {linkName}
@@ -158,13 +144,13 @@ export const Footer = () => {
               </div>
             </div>
             {/* copyright */}
-            <div className=" border-t border-gray-200 my-4"></div>
-            <div className=" md:flex md:justify-between items-center">
-              <p className=" text-[#667085] font-bold">
+            <div className="my-4 border-t border-gray-200 "></div>
+            <div className="items-center md:flex md:flex-row md:justify-between ">
+              <p className="font-bold text-center text-gray-500 md:text-start">
                 © {currentYear} CoreInfra™. All rights reserved.{" "}
               </p>
               {/* social icons */}
-              <div>
+              <div className="place-self-center md:place-self-auto">
                 <SocialIcon
                   url="https://x.com/CoreInfraHQ"
                   target="_blank"

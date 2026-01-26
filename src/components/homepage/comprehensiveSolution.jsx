@@ -4,7 +4,7 @@ import AnimatedContent from "../animatedContent";
 import issuingImg from "../../assets/homePage/issuingImg.svg";
 import acquiringImg from "../../assets/homePage/acquiring-channels.svg";
 import digitalBankingImg from "../../assets/homePage/animated-banking-infra.svg";
-import bespokeSystemsImg from "../../assets/homePage/bespoke-systems.jpg";
+import bespokeSystemsImg from "../../assets/homePage/bespoke-systems-UFoxgsya 1.png";
 import { Link } from "react-router-dom";
 
 export const ComprehensiveSolution = () => {
@@ -27,28 +27,28 @@ export const ComprehensiveSolution = () => {
 
   const solutionData = [
     {
-      header: "Issuing Infrastructure",
+      header: "Issuing Infrastructure (CardInfra™)",
       detail:
-        "CardInfra™ is the ultimate solution for seamless digital and physical card issuance:",
-      points: [
-        "Real-time processing for instant card issuance",
-        "Advanced fraud detection and risk management",
-        "API-first architecture for easy integration",
-        "Full program management for your card ecosystem",
+        "Modular infrastructure for building and managing card programs across multiple product types and customer segments.",
+      pointTitle: "Designed to support:",
+        points: [
+        "Card lifecycle and program management",
+        "Secure customer enablement and credential services",
+        "Specialized and value-added card use cases",
       ],
       image: issuingImg,
       refTitle: issuingRef,
       containerTitle: issuingContainer,
     },
     {
-      header: "Acquiring Infrastructure",
+      header: "Acquiring Infrastructure (TerminalInfra™)",
       detail:
-        "TerminalInfra™ is the ultimate solution for acquirers, offering:",
+        "Infrastructure powering the acceptance side of payments for acquirers and merchant ecosystems.",
+      pointTitle: "Designed to support:",
       points: [
-        "Comprehensive POS, ATM, and Web acquiring capabilities",
-        "Advanced transaction monitoring systems for real-time oversight",
-        "Seamless integration with merchant and banking networks",
-        "Scalable systems to support diverse acquiring needs",
+        "Multi-channel payment acceptance",
+        "Merchant and network integrations",
+        "Transaction monitoring and operational controls",
       ],
       image: acquiringImg,
       refTitle: acquiringRef,
@@ -57,26 +57,25 @@ export const ComprehensiveSolution = () => {
     {
       header: "Digital Banking Infrastructure",
       detail:
-        "Build modern, scalable digital banking platforms for every device:",
+        "Platforms that enable banks and fintechs to deliver secure, scalable digital banking experiences.",
+      pointTitle: "Designed to support:",
       points: [
-        "Comprehensive digital banking solutions for retail and business customers",
-        "Scalable cloud-based systems for rapid growth",
-        "Multichannel banking experiences across mobile, web, and more",
-        "Flexible APIs for custom integrations",
+        "Retail, SME, and corporate banking use cases",
+        "Agency and assisted banking models",
+        "Lightweight channels such as USSD and QR",
       ],
       image: digitalBankingImg,
       refTitle: digitalBankingRef,
       containerTitle: digitalBankingContainer,
     },
     {
-      header: "Bespoke Systems",
+      header: "Bespoke Enterprise Systems",
       detail:
-        "Automate banking and payment workflows with tailored systems designed for your unique operational needs:",
-      points: [
-        " Custom-built solutions to address specific challenges",
-        "Enhanced efficiency with intelligent automation tools",
-        "Modular design to adapt to evolving requirements",
-        "Seamless integration with existing infrastructure",
+        "Custom-built financial infrastructure for institutions with unique operational or industry-specific requirements.",
+      pointTitle: "Includes:",
+        points: [
+        "Middleware and orchestration layers",
+        "Workflow automation and system integration",
       ],
       image: bespokeSystemsImg,
       refTitle: bespokeRef,
@@ -86,38 +85,26 @@ export const ComprehensiveSolution = () => {
 
   return (
     <section className=" my-24 px-8 md:px-16 lg:px-32 text-[#020202]">
+      <div className="container mx-auto max-w-[1121px]">
       <AnimatedContent isVisible={headerContentContainer}>
-        <div ref={headerContentRef} className=" mb-12 ">
-          <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold mb-6">
-            Comprehensive Solutions Across <br /> Fintech Verticals
+        <div ref={headerContentRef} className="flex flex-col items-center mb-12">
+          <h1 className=" text-xl md:text-3xl lg:text-[40px] font-bold mb-6 font-aileron">
+            Our Core Infrastructure Platforms
           </h1>
-          <p className="  md:text-lg ">
-            CoreInfra provides an extensive suite of infrastructure solutions to
-            power banking and <br /> payments. Whether it’s issuing, acquiring,
-            digital banking, or bespoke systems, our <br /> solutions are
-            designed to automate and streamline financial operations
-          </p>
-          {/* get started */}
-          <Link
-            to={"/contact-us"}
-            className=" font-semibold inline-block mt-4 bg-[#020202]
-            rounded-[4px] text-white px-4 py-1 w-fit"
-          >
-            Get started
-          </Link>
+          
         </div>
       </AnimatedContent>
       {/* solution */}
-      <div className=" flex flex-col gap-y-20">
+      <div className="flex flex-col gap-y-20">
         {solutionData.map(
           (
-            { containerTitle, detail, header, points, refTitle, image },
+            { containerTitle, detail, header, points, pointTitle, refTitle, image },
             index
           ) => (
             <AnimatedContent key={index} isVisible={containerTitle}>
               <article
                 ref={refTitle}
-                className=" md:flex md:gap-x-8 justify-between items-center"
+                className="items-center justify-between md:flex md:gap-x-8"
               >
                 {/* content */}
                 <div
@@ -125,12 +112,13 @@ export const ComprehensiveSolution = () => {
                     [1, 3].includes(index) ? " md:order-1" : null
                   } `}
                 >
-                  <h1 className=" text-xl lg:text-2xl font-bold mb-4">
+                  <h1 className="mb-4 text-xl font-bold lg:text-2xl">
                     {header}
                   </h1>
                   <div className=" lg:text-lg">
-                    <p className=" mb-4">{detail}</p>
-                    <ul className="list-disc pl-6">
+                    <p className="mb-4 ">{detail}</p>
+                    <p className="mb-4">{pointTitle}</p>
+                    <ul className="pl-6 list-disc">
                       {points.map((point, pointIndex) => (
                         <li key={pointIndex} className="mb-3">
                           {point}
@@ -140,7 +128,7 @@ export const ComprehensiveSolution = () => {
                   </div>
                   <Link
                     to={"/contact-us"}
-                    className=" w-fit font-instrument bg-[#F9FAFB] text-[#1A1A1A] text-[13px] border border-[#020202] rounded-xl px-5 py-[14px] font-medium cursor-pointer grid place-items-center"
+                    className=" w-fit font-instrument mt-8 bg-black text-[#ffffff] text-[13px] border border-[#ffffff] rounded-xl px-5 py-[14px] font-medium cursor-pointer grid place-items-center hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
                   >
                     Learn more
                   </Link>
@@ -150,13 +138,14 @@ export const ComprehensiveSolution = () => {
                   <img
                     src={image}
                     alt={detail}
-                    className=" w-full h-full object-cover"
+                    className="object-cover w-full h-full "
                   />
                 </div>
               </article>
             </AnimatedContent>
           )
         )}
+      </div>
       </div>
     </section>
   );

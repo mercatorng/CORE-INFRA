@@ -62,7 +62,7 @@ export const Navbar = ({ homeUrl }) => {
 
   return (
     <nav
-      className={`  z-50 relative flex bg-inherit w-full justify-between items-center  py-2  px-3 mb-8 md:mb-16 md:px-16  ${
+      className={`  z-50 relative flex    bg-inherit justify-between items-center  py-2  px-3 mb-8 md:mb-16 md:px-16  ${
         sticky ? "sticky-nav" : ""
       } `}
     >
@@ -75,7 +75,7 @@ export const Navbar = ({ homeUrl }) => {
         <img
           src={logoBlack}
           alt="logo"
-          className=" w-full h-full object-cover"
+          className="object-cover w-full h-full "
         />
       </Link>
 
@@ -133,7 +133,12 @@ export const Navbar = ({ homeUrl }) => {
       </div>
 
       {/* lets talk for  medium screen above */}
-      <GetInTouchBTN style={"hidden md:block"} />
+      <Link
+              to="/about"
+              className="font-instrument hidden md:block rounded-xl px-5 py-[14px] border border-ctaGreen500 shadow-sm   text-white text-[13px] font-semibold bg-gradient-to-tr from-[#10D46B] to-[#086E38B2] w-fit"
+            >
+              Get in touch
+            </Link>
     </nav>
   );
 };

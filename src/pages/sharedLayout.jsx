@@ -19,10 +19,10 @@ export const SharedLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className=" flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <ScrollToTopOnPageChange />
       <Navbar {...{ homeUrl }} />
-      <div className=" flex-grow">
+      <div className="flex-grow ">
         <Outlet />
       </div>
       <Footer />

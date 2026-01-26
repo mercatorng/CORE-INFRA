@@ -45,7 +45,8 @@ export const GetInTouchBTN = ({ style }) => {
         setActiveLink("/contact-us");
         navigate("/contact-us");
       }}
-      className={` font-instrument rounded-xl px-5 py-[14px] border border-ctaGreen500 shadow-sm   text-white text-[13px] font-semibold bg-ctaGreen bg-gradient-to-tr from-ctaGreen to-ctaGreen600 w-fit ${
+      
+      className={`shadow-[inset_0px_0px_8px_1px_#14141400] font-instrument rounded-xl px-5 py-[14px] border border-[#807f7f]   text-[13px] font-semibold bg-[#e1e4eb] w-fit ${
         style && style
       } `}
     >
